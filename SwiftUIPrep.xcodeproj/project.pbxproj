@@ -14,6 +14,8 @@
 		4B29CB1E2D23282300B20F1B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB1D2D23282300B20F1B /* MainView.swift */; };
 		4B29CB222D23284900B20F1B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB212D23284900B20F1B /* SettingsView.swift */; };
 		4B29CB242D232A3B00B20F1B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB232D232A3B00B20F1B /* LaunchScreenView.swift */; };
+		4B29CB262D232C8700B20F1B /* LanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB252D232C8700B20F1B /* LanguageButton.swift */; };
+		4B29CB282D232D1300B20F1B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4B29CB272D232D1300B20F1B /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4B29CB1D2D23282300B20F1B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4B29CB212D23284900B20F1B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4B29CB232D232A3B00B20F1B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		4B29CB252D232C8700B20F1B /* LanguageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageButton.swift; sourceTree = "<group>"; };
+		4B29CB272D232D1300B20F1B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		4B29CB182D23221800B20F1B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4B29CB272D232D1300B20F1B /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 		4B29CB1A2D23222B00B20F1B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4B29CB252D232C8700B20F1B /* LanguageButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -177,6 +183,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 4B29CAF12D23212D00B20F1B;
 			minimizedProjectReferenceProxies = 1;
@@ -197,6 +204,7 @@
 			files = (
 				4B29CB112D23213D00B20F1B /* Preview Assets.xcassets in Resources */,
 				4B29CB122D23213D00B20F1B /* Assets.xcassets in Resources */,
+				4B29CB282D232D1300B20F1B /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B29CB242D232A3B00B20F1B /* LaunchScreenView.swift in Sources */,
+				4B29CB262D232C8700B20F1B /* LanguageButton.swift in Sources */,
 				4B29CB132D23213D00B20F1B /* ContentView.swift in Sources */,
 				4B29CB222D23284900B20F1B /* SettingsView.swift in Sources */,
 				4B29CB1E2D23282300B20F1B /* MainView.swift in Sources */,
@@ -277,6 +286,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -333,6 +343,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
