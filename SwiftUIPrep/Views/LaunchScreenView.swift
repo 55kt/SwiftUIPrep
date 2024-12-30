@@ -10,6 +10,7 @@ import SwiftUI
 struct LaunchScreenView: View {
     // MARK: - Properties
     @State private var isActive: Bool = false
+    @AppStorage("AppLanguage") private var appLanguage: String?
     
     let currentYear: String = {
             let formatter = DateFormatter()
@@ -48,6 +49,7 @@ struct LaunchScreenView: View {
                                 .padding(.bottom, 20)
                         }// VStack
                     }// ZStack
+                    .environment(\.locale, .init(identifier: appLanguage ?? "en"))
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                             withAnimation {

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     // MARK: - Properties
+    @AppStorage("AppLanguage") private var appLanguage: String = Locale.current.language.languageCode?.identifier ?? "en"
     
     // MARK: - Body
     var body: some View {
@@ -25,6 +26,7 @@ struct MainView: View {
                     Text("Settings")
                 }
         }// TabView
+        .environment(\.locale, .init(identifier: appLanguage))
     }// Body
 }// View
 
