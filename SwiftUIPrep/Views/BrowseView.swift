@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BrowseView: View {
     // MARK: - Properties
+    let questions: [Question] = Bundle.main.decode("questions.json")
     
     // MARK: - Body
     var body: some View {
@@ -17,6 +18,10 @@ struct BrowseView: View {
                 CoverImageView()
                     .frame(height: 300)
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                
+                ForEach(questions) { question in
+                    QuestionListItemView(question: question)
+                }
             }// List
             .navigationTitle("SwiftUIPrep")
         }// NavigationStack

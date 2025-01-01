@@ -24,6 +24,8 @@
 		4B29CB362D25B53800B20F1B /* CoverImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB352D25B53800B20F1B /* CoverImageModel.swift */; };
 		4B29CB392D25B5F800B20F1B /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB382D25B5F800B20F1B /* CodableBundleExtension.swift */; };
 		4B29CB3B2D25CF1200B20F1B /* QuestionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB3A2D25CF1200B20F1B /* QuestionListItemView.swift */; };
+		4B29CB3D2D25DACD00B20F1B /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB3C2D25DACD00B20F1B /* QuestionModel.swift */; };
+		4B29CB3F2D25DC0700B20F1B /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B29CB3E2D25DC0700B20F1B /* questions.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		4B29CB352D25B53800B20F1B /* CoverImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageModel.swift; sourceTree = "<group>"; };
 		4B29CB382D25B5F800B20F1B /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
 		4B29CB3A2D25CF1200B20F1B /* QuestionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListItemView.swift; sourceTree = "<group>"; };
+		4B29CB3C2D25DACD00B20F1B /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		4B29CB3E2D25DC0700B20F1B /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4B29CB332D25B4B600B20F1B /* covers.json */,
+				4B29CB3E2D25DC0700B20F1B /* questions.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				4B29CB352D25B53800B20F1B /* CoverImageModel.swift */,
+				4B29CB3C2D25DACD00B20F1B /* QuestionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B29CB3F2D25DC0700B20F1B /* questions.json in Resources */,
 				4B29CB112D23213D00B20F1B /* Preview Assets.xcassets in Resources */,
 				4B29CB342D25B4B600B20F1B /* covers.json in Resources */,
 				4B29CB122D23213D00B20F1B /* Assets.xcassets in Resources */,
@@ -255,6 +262,7 @@
 				4B29CB132D23213D00B20F1B /* BrowseView.swift in Sources */,
 				4B29CB362D25B53800B20F1B /* CoverImageModel.swift in Sources */,
 				4B29CB222D23284900B20F1B /* SettingsView.swift in Sources */,
+				4B29CB3D2D25DACD00B20F1B /* QuestionModel.swift in Sources */,
 				4B29CB3B2D25CF1200B20F1B /* QuestionListItemView.swift in Sources */,
 				4B29CB2C2D259FA900B20F1B /* ProgressView.swift in Sources */,
 				4B29CB392D25B5F800B20F1B /* CodableBundleExtension.swift in Sources */,

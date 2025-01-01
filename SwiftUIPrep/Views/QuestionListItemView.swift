@@ -9,23 +9,24 @@ import SwiftUI
 
 struct QuestionListItemView: View {
     // MARK: - Properties
+    let question: Question
     
     // MARK: - Body
     var body: some View {
         HStack(alignment: .center, spacing: 16) {
-            Image("question-icon")
+            Image(question.image)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 90, height: 90)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("Question 1")
+                Text(question.question)
                     .font(.title2)
                     .fontWeight(.heavy)
                     .foregroundStyle(.accent)
                 
-                Text("This is a test question. It is a very long question that will wrap to multiple lines. This is a test question. It is a very long question that will wrap to multiple lines.")
+                Text(question.answer)
                     .font(.footnote)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
@@ -37,5 +38,7 @@ struct QuestionListItemView: View {
 
 // MARK: - Preview
 #Preview {
-    QuestionListItemView()
+    let questions: [Question] = Bundle.main.decode("questions.json")
+    
+    QuestionListItemView(question: questions[0])
 }
