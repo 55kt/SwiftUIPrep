@@ -22,7 +22,6 @@
       }
     },
     "English" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -44,6 +43,7 @@
       }
     },
     "Hello, world!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -75,7 +75,6 @@
       }
     },
     "Russian" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -109,6 +108,7 @@
 
     },
     "Test Text for GitHub" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {

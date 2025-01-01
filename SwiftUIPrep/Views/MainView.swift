@@ -14,7 +14,7 @@ struct MainView: View {
     // MARK: - Body
     var body: some View {
         TabView {
-            ContentView()
+            BrowseView()
                 .tabItem {
                     Image(systemName: "square.grid.2x2")
                     Text("Browse")

@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SwiftUIPrepApp: App {
+    // MARK: - Properties
+    
+    // MARK: - Body
     var body: some Scene {
         WindowGroup {
-            LaunchScreenView()
+            MainView()
         }
-    }
-}
+    }// Body
+}// struct
