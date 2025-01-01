@@ -22,11 +22,23 @@
       }
     },
     "English" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Английский"
+          }
+        }
+      }
+    },
+    "Favorites" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избранное"
           }
         }
       }
@@ -41,7 +53,29 @@
         }
       }
     },
+    "Hello, World!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Привет, Мир!"
+          }
+        }
+      }
+    },
+    "Progress" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прогресс"
+          }
+        }
+      }
+    },
     "Russian" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -80,6 +114,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Тестовый текст для GitHub"
+          }
+        }
+      }
+    },
+    "Tests" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тесты"
           }
         }
       }
