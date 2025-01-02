@@ -38,7 +38,16 @@ struct QuestionListItemView: View {
 
 // MARK: - Preview
 #Preview {
-    let questions: [Question] = Bundle.main.decode("questions.json")
+    // Пример тестовых данных
+    let sampleQuestion = Question(
+        id: "1",
+        category: "Swift",
+        question: "What is a variable?",
+        answer: "A variable is a placeholder for a value that can change during the execution of a program.",
+        image: "question-icon",
+        link: "https://www.google.com",
+        gallery: ["screenshot-1", "screenshot-2"]
+    )
     
-    QuestionListItemView(question: questions[0])
+    QuestionListItemView(question: sampleQuestion)
 }

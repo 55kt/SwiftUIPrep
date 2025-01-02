@@ -9,7 +9,21 @@ import SwiftUI
 
 struct BrowseView: View {
     // MARK: - Properties
-    let questions: [Question] = Bundle.main.decode("questions.json")
+    @AppStorage("AppLanguage") private var appLanguage: String = Locale.current.language.languageCode?.identifier ?? "en"
+    @State private var searchText: String = ""
+    @EnvironmentObject var viewModel: QuestionViewModel
+    
+    // MARK: - Filtered Questions
+    var filteredQuestions: [Question] {
+        if searchText.isEmpty {
+            print("Filtered Questions: \(viewModel.questions)")
+            return viewModel.questions
+        } else {
+            let filtered = viewModel.questions.filter { $0.question.localizedCaseInsensitiveContains(searchText) }
+            print("Filtered Questions with search: \(filtered)")
+            return filtered
+        }
+    }
     
     // MARK: - Body
     var body: some View {
@@ -19,11 +33,16 @@ struct BrowseView: View {
                     .frame(height: 300)
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
-                ForEach(questions) { question in
+                ForEach(filteredQuestions) { question in
                     QuestionListItemView(question: question)
                 }
             }// List
+            .listStyle(PlainListStyle())
             .navigationTitle("SwiftUIPrep")
+            .searchable(text: $searchText, prompt: "Search for a question")
+            .onAppear {
+                viewModel.loadQuestions()
+            }
         }// NavigationStack
     }// Body
 }// View
@@ -31,4 +50,5 @@ struct BrowseView: View {
 // MARK: - Preview
 #Preview {
     BrowseView()
+        .environmentObject(QuestionViewModel())
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     // MARK: - Properties
     @AppStorage("AppLanguage") private var appLanguage: String = Locale.current.language.languageCode?.identifier ?? "en"
+    @EnvironmentObject var questionViewModel: QuestionViewModel
     
     // MARK: - Body
     var body: some View {
@@ -51,4 +52,5 @@ struct MainView: View {
 // MARK: - Preview
 #Preview {
     MainView()
+        .environmentObject(QuestionViewModel())
 }

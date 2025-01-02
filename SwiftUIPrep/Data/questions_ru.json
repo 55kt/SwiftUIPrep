@@ -1,0 +1,20 @@
+[
+    {
+        "id": "Question 1",
+        "category": "Swift",
+        "question": "Что такое переменная?",
+        "answer": "Переменная — это место для хранения изменяемого значения.",
+        "image": "question-icon",
+        "link": "https//www.google.com",
+        "gallery": ["screenshot-1", "screenshot-2", "screenshot-3"]
+    },
+    {
+        "id": "Question 2",
+        "category": "Swift",
+        "question": "Что такое константа?",
+        "answer": "Константа — это место для хранения значения, которое нельзя изменить.",
+        "image": "question-icon",
+        "link": "https//www.google.com",
+        "gallery": ["screenshot-1", "screenshot-2", "screenshot-3"]
+    }
+]

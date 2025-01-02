@@ -1,0 +1,138 @@
+[
+    {
+        "id": "Question 1",
+        "category": "Swift",
+        "question": "What is a variable?",
+        "answer": "A variable is a placeholder for a value that can change during the execution of a program.",
+        "image": "question-icon",
+        "link": "https://www.google.com",
+        "gallery": ["screenshot-1", "screenshot-2", "screenshot-3"]
+    },
+    {
+        "id": "Question 2",
+        "category": "Swift",
+        "question": "What is a constant?",
+        "answer": "A constant is a placeholder for a value that cannot change during the execution of a program.",
+        "image": "question-icon",
+        "link": "https://www.apple.com",
+        "gallery": ["screenshot-4", "screenshot-5", "screenshot-6"]
+    },
+    {
+        "id": "Question 3",
+        "category": "SwiftUI",
+        "question": "What is SwiftUI?",
+        "answer": "SwiftUI is a declarative framework for building user interfaces across all Apple platforms.",
+        "image": "question-icon",
+        "link": "https://developer.apple.com",
+        "gallery": ["screenshot-7", "screenshot-8"]
+    },
+    {
+        "id": "Question 4",
+        "category": "Swift",
+        "question": "What is type inference?",
+        "answer": "Type inference allows Swift to deduce the type of a variable or constant based on its initial value.",
+        "image": "question-icon",
+        "link": "https://www.swift.org",
+        "gallery": []
+    },
+    {
+        "id": "Question 5",
+        "category": "Swift",
+        "question": "What is an optional in Swift?",
+        "answer": "An optional is a type that can hold either a value or nil to indicate the absence of a value.",
+        "image": "question-icon",
+        "link": "https://docs.swift.org",
+        "gallery": ["screenshot-9"]
+    },
+    {
+        "id": "Question 6",
+        "category": "SwiftUI",
+        "question": "What is a VStack?",
+        "answer": "A VStack is a container view that arranges its child views vertically.",
+        "image": "question-icon",
+        "link": "https://developer.apple.com",
+        "gallery": ["screenshot-10", "screenshot-11"]
+    },
+    {
+        "id": "Question 7",
+        "category": "SwiftUI",
+        "question": "What is a HStack?",
+        "answer": "A HStack is a container view that arranges its child views horizontally.",
+        "image": "question-icon",
+        "link": "https://developer.apple.com",
+        "gallery": ["screenshot-12"]
+    },
+    {
+        "id": "Question 8",
+        "category": "SwiftUI",
+        "question": "What is a ZStack?",
+        "answer": "A ZStack is a container view that overlays its child views on top of each other.",
+        "image": "question-icon",
+        "link": "https://developer.apple.com",
+        "gallery": ["screenshot-13", "screenshot-14"]
+    },
+    {
+        "id": "Question 9",
+        "category": "Swift",
+        "question": "What is a protocol in Swift?",
+        "answer": "A protocol defines a blueprint of methods, properties, and other requirements for tasks or functionalities.",
+        "image": "question-icon",
+        "link": "https://docs.swift.org",
+        "gallery": []
+    },
+    {
+        "id": "Question 10",
+        "category": "Swift",
+        "question": "What is a closure?",
+        "answer": "A closure is a self-contained block of functionality that can be passed around and used in your code.",
+        "image": "question-icon",
+        "link": "https://www.apple.com",
+        "gallery": ["screenshot-15"]
+    },
+    {
+        "id": "Question 11",
+        "category": "Swift",
+        "question": "What is the difference between struct and class?",
+        "answer": "Structs are value types and are copied when passed around, while classes are reference types and are passed by reference.",
+        "image": "question-icon",
+        "link": "https://www.swift.org",
+        "gallery": ["screenshot-16"]
+    },
+    {
+        "id": "Question 12",
+        "category": "SwiftUI",
+        "question": "What is a State in SwiftUI?",
+        "answer": "State is a property wrapper that allows a view to read and write a value that is owned by the view.",
+        "image": "question-icon",
+        "link": "https://developer.apple.com",
+        "gallery": ["screenshot-17"]
+    },
+    {
+        "id": "Question 13",
+        "category": "SwiftUI",
+        "question": "What is an ObservableObject?",
+        "answer": "ObservableObject is a protocol that allows a class to publish changes to its properties to SwiftUI views.",
+        "image": "question-icon",
+        "link": "https://developer.apple.com",
+        "gallery": ["screenshot-18"]
+    },
+    {
+        "id": "Question 14",
+        "category": "Swift",
+        "question": "What is the difference between let and var?",
+        "answer": "let declares a constant that cannot change, while var declares a variable that can change.",
+        "image": "question-icon",
+        "link": "https://docs.swift.org",
+        "gallery": []
+    },
+    {
+        "id": "Question 15",
+        "category": "SwiftUI",
+        "question": "What is a modifier in SwiftUI?",
+        "answer": "A modifier is a method that you use to change the appearance or behavior of a view.",
+        "image": "question-icon",
+        "link": "https://developer.apple.com",
+        "gallery": ["screenshot-19"]
+    }
+]
+
