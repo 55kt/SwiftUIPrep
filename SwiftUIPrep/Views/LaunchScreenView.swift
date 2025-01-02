@@ -11,6 +11,7 @@ struct LaunchScreenView: View {
     // MARK: - Properties
     @State private var isActive: Bool = false
     @AppStorage("AppLanguage") private var appLanguage: String?
+    @EnvironmentObject var viewModel: QuestionViewModel
     
     let currentYear: String = {
             let formatter = DateFormatter()
@@ -64,4 +65,5 @@ struct LaunchScreenView: View {
 // MARK: - Preview
 #Preview {
     LaunchScreenView()
+        .environmentObject(QuestionViewModel())
 }

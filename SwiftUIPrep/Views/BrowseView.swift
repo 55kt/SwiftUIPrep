@@ -22,8 +22,8 @@ struct BrowseView: View {
             let filtered = viewModel.questions.filter { $0.question.localizedCaseInsensitiveContains(searchText) }
             print("Filtered Questions with search: \(filtered)")
             return filtered
-        }
-    }
+        }// if - else
+    }// var
     
     // MARK: - Body
     var body: some View {
@@ -35,14 +35,14 @@ struct BrowseView: View {
                 
                 ForEach(filteredQuestions) { question in
                     QuestionListItemView(question: question)
-                }
+                }// ForEach
             }// List
             .listStyle(PlainListStyle())
             .navigationTitle("SwiftUIPrep")
-            .searchable(text: $searchText, prompt: "Search for a question")
+            .searchable(text: $searchText, prompt: LocalizedStringKey("Search for a question"))
             .onAppear {
                 viewModel.loadQuestions()
-            }
+            }// onAppear
         }// NavigationStack
     }// Body
 }// View

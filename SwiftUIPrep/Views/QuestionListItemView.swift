@@ -38,7 +38,8 @@ struct QuestionListItemView: View {
 
 // MARK: - Preview
 #Preview {
-    // Пример тестовых данных
+    
+    // Placeholder
     let sampleQuestion = Question(
         id: "1",
         category: "Swift",

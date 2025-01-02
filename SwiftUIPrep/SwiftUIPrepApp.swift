@@ -16,8 +16,8 @@ struct SwiftUIPrepApp: App {
     // MARK: - Body
     var body: some Scene {
         WindowGroup {
-            MainView()
+            LaunchScreenView()
                 .environmentObject(viewModel)
-        }
+        }// WindowGroup
     }// Body
 }// struct

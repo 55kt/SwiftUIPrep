@@ -30,14 +30,10 @@ final class JSONLoader {
             print("✅ Successfully loaded \(fileName) as \(T.self)")
             return decodedData
         } catch let decodingError as DecodingError {
-            // Handle decoding errors
             handleDecodingError(decodingError, fileName: fileName)
         } catch {
-            // Handle general errors
             print("❌ Error loading \(fileName): \(error.localizedDescription)")
         }
-
-        // Return nil if loading or decoding fails
         return nil
     }
 
@@ -58,10 +54,6 @@ final class JSONLoader {
     }
 
     // MARK: - Handle Decoding Error
-    /// Handles decoding errors and logs detailed messages.
-    /// - Parameters:
-    ///   - error: The decoding error to handle.
-    ///   - fileName: The name of the file where the error occurred.
     private static func handleDecodingError(_ error: DecodingError, fileName: String) {
         switch error {
         case .typeMismatch(let type, let context):

@@ -85,7 +85,14 @@
       }
     },
     "Search for a question" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск вопроса"
+          }
+        }
+      }
     },
     "Select your language" : {
       "localizations" : {

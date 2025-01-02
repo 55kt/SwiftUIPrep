@@ -12,7 +12,6 @@ import SwiftUI
 
 final class QuestionViewModel: ObservableObject {
     @Published var questions: [Question] = []
-
     @AppStorage("AppLanguage") private var appLanguage: String = Locale.current.language.languageCode?.identifier ?? "en" {
         didSet {
             loadQuestions()
@@ -24,7 +23,7 @@ final class QuestionViewModel: ObservableObject {
     }
 
     func loadQuestions() {
-        print("🟢 Loading questions for language: \(appLanguage)") // Debug
+        print("🟢 Loading questions for language: \(appLanguage)")
         questions = JSONLoader.loadQuestions(for: appLanguage)
     }
 }
