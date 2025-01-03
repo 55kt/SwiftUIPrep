@@ -34,7 +34,9 @@ struct BrowseView: View {
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
                 ForEach(filteredQuestions) { question in
-                    QuestionListItemView(question: question)
+                    NavigationLink(destination: QuestionDetailView(question: question)) {
+                        QuestionListItemView(question: question)
+                    }// NavigationLink
                 }// ForEach
             }// List
             .listStyle(PlainListStyle())

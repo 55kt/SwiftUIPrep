@@ -63,6 +63,9 @@
         }
       }
     },
+    "Learn about : %@" : {
+
+    },
     "Progress" : {
       "extractionState" : "manual",
       "localizations" : {

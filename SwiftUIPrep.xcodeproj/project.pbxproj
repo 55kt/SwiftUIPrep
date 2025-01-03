@@ -29,6 +29,9 @@
 		4B29CB452D26EDF100B20F1B /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB442D26EDF100B20F1B /* JSONLoader.swift */; };
 		4B29CB472D26EF4400B20F1B /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB462D26EF4400B20F1B /* QuestionViewModel.swift */; };
 		4B29CB492D26F44400B20F1B /* QuestionLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB482D26F44400B20F1B /* QuestionLoader.swift */; };
+		4B29CB4B2D28429300B20F1B /* QuestionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB4A2D28429300B20F1B /* QuestionDetailView.swift */; };
+		4B29CB4D2D28458200B20F1B /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB4C2D28458200B20F1B /* HeadingView.swift */; };
+		4B29CB4F2D28472900B20F1B /* InsetScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB4E2D28472900B20F1B /* InsetScreenshotView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		4B29CB442D26EDF100B20F1B /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
 		4B29CB462D26EF4400B20F1B /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
 		4B29CB482D26F44400B20F1B /* QuestionLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLoader.swift; sourceTree = "<group>"; };
+		4B29CB4A2D28429300B20F1B /* QuestionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailView.swift; sourceTree = "<group>"; };
+		4B29CB4C2D28458200B20F1B /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
+		4B29CB4E2D28472900B20F1B /* InsetScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetScreenshotView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,9 @@
 				4B29CB2F2D259FD000B20F1B /* FavoritesView.swift */,
 				4B29CB312D25AFB800B20F1B /* CoverImageView.swift */,
 				4B29CB3A2D25CF1200B20F1B /* QuestionListItemView.swift */,
+				4B29CB4A2D28429300B20F1B /* QuestionDetailView.swift */,
+				4B29CB4C2D28458200B20F1B /* HeadingView.swift */,
+				4B29CB4E2D28472900B20F1B /* InsetScreenshotView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,13 +279,16 @@
 				4B29CB322D25AFB800B20F1B /* CoverImageView.swift in Sources */,
 				4B29CB262D232C8700B20F1B /* LanguageButton.swift in Sources */,
 				4B29CB132D23213D00B20F1B /* BrowseView.swift in Sources */,
+				4B29CB4B2D28429300B20F1B /* QuestionDetailView.swift in Sources */,
 				4B29CB452D26EDF100B20F1B /* JSONLoader.swift in Sources */,
 				4B29CB472D26EF4400B20F1B /* QuestionViewModel.swift in Sources */,
 				4B29CB362D25B53800B20F1B /* CoverImageModel.swift in Sources */,
 				4B29CB222D23284900B20F1B /* SettingsView.swift in Sources */,
+				4B29CB4F2D28472900B20F1B /* InsetScreenshotView.swift in Sources */,
 				4B29CB3D2D25DACD00B20F1B /* QuestionModel.swift in Sources */,
 				4B29CB3B2D25CF1200B20F1B /* QuestionListItemView.swift in Sources */,
 				4B29CB2C2D259FA900B20F1B /* ProgressView.swift in Sources */,
+				4B29CB4D2D28458200B20F1B /* HeadingView.swift in Sources */,
 				4B29CB1E2D23282300B20F1B /* MainView.swift in Sources */,
 				4B29CB142D23213D00B20F1B /* SwiftUIPrepApp.swift in Sources */,
 				4B29CB302D259FD000B20F1B /* FavoritesView.swift in Sources */,
