@@ -32,6 +32,7 @@
 		4B29CB4B2D28429300B20F1B /* QuestionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB4A2D28429300B20F1B /* QuestionDetailView.swift */; };
 		4B29CB4D2D28458200B20F1B /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB4C2D28458200B20F1B /* HeadingView.swift */; };
 		4B29CB4F2D28472900B20F1B /* InsetScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB4E2D28472900B20F1B /* InsetScreenshotView.swift */; };
+		4B29CB512D299B1900B20F1B /* CategoryColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB502D299B1900B20F1B /* CategoryColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		4B29CB4A2D28429300B20F1B /* QuestionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailView.swift; sourceTree = "<group>"; };
 		4B29CB4C2D28458200B20F1B /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
 		4B29CB4E2D28472900B20F1B /* InsetScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetScreenshotView.swift; sourceTree = "<group>"; };
+		4B29CB502D299B1900B20F1B /* CategoryColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		4B29CB372D25B5CF00B20F1B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4B29CB502D299B1900B20F1B /* CategoryColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				4B29CB452D26EDF100B20F1B /* JSONLoader.swift in Sources */,
 				4B29CB472D26EF4400B20F1B /* QuestionViewModel.swift in Sources */,
 				4B29CB362D25B53800B20F1B /* CoverImageModel.swift in Sources */,
+				4B29CB512D299B1900B20F1B /* CategoryColorExtension.swift in Sources */,
 				4B29CB222D23284900B20F1B /* SettingsView.swift in Sources */,
 				4B29CB4F2D28472900B20F1B /* InsetScreenshotView.swift in Sources */,
 				4B29CB3D2D25DACD00B20F1B /* QuestionModel.swift in Sources */,

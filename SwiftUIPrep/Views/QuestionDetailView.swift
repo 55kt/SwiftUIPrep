@@ -37,7 +37,6 @@ struct QuestionDetailView: View {
                 Text(question.answer)
                     .font(.headline)
                     .multilineTextAlignment(.leading)
-                    .foregroundStyle(.accent)
                     .padding(.horizontal)
                 
                 // ScreenShots
@@ -55,9 +54,6 @@ struct QuestionDetailView: View {
                 
             }// VStack
         }// ScrollView
-        .navigationBarTitle("Learn about : \(question.category)",
-                            displayMode: .inline
-        )
     }// Body
 }// View
 
