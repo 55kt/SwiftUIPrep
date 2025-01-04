@@ -1,47 +1,92 @@
 [
     {
-        "id": "Question 1",
-        "category": "Swift Basics",
+        "id": "question1",
+        "category": "swift-basics-icon",
         "question": "What is a variable?",
-        "answer": "A variable is a placeholder for a value that can change during the execution of a program.",
-        "image": "swift-icon",
-        "link": "https://www.swift.org",
-        "gallery": ["screenshot-1", "screenshot-2"]
-    },
-    {
-        "id": "Question 2",
-        "category": "SwiftUI Basics",
-        "question": "What is SwiftUI?",
-        "answer": "SwiftUI is a declarative framework for building user interfaces across Apple platforms.",
-        "image": "swiftui-icon",
-        "link": "https://developer.apple.com/swiftui",
-        "gallery": ["screenshot-3", "screenshot-4"]
-    },
-    {
-        "id": "Question 3",
-        "category": "Combine Framework",
-        "question": "What is Combine?",
-        "answer": "Combine is a framework for processing values over time.",
-        "image": "combine-icon",
-        "link": "https://developer.apple.com/documentation/combine",
-        "gallery": ["screenshot-5", "screenshot-6"]
-    },
-    {
-        "id": "Question 4",
-        "category": "Core Data",
-        "question": "What is Core Data?",
-        "answer": "Core Data is a framework for managing the model layer of your application.",
-        "image": "coredata-icon",
-        "link": "https://developer.apple.com/documentation/coredata",
-        "gallery": ["screenshot-7"]
-    },
-    {
-        "id": "Question 5",
-        "category": "Concurrency",
-        "question": "What is async/await?",
-        "answer": "Async/await is a syntax for writing asynchronous code that is more readable and maintainable.",
-        "image": "concurrency-icon",
+        "answer": "A variable is a placeholder for a value.",
+        "image": "swift-basics-icon",
         "link": "https://developer.apple.com/documentation/swift",
-        "gallery": ["screenshot-8"]
+        "gallery": ["screenshot1", "screenshot2"]
+    },
+    {
+        "id": "question2",
+        "category": "advanced-swift-icon",
+        "question": "What are generics in Swift?",
+        "answer": "Generics allow you to write flexible and reusable code.",
+        "image": "advanced-swift-icon",
+        "link": "https://developer.apple.com/documentation/swift/generics",
+        "gallery": ["screenshot3", "screenshot4"]
+    },
+    {
+        "id": "question3",
+        "category": "ui-icon",
+        "question": "What is SwiftUI?",
+        "answer": "SwiftUI is a declarative framework for building user interfaces.",
+        "image": "ui-icon",
+        "link": "https://developer.apple.com/documentation/swiftui",
+        "gallery": ["screenshot5", "screenshot6"]
+    },
+    {
+        "id": "question4",
+        "category": "combine-framework-icon",
+        "question": "What is the Combine framework?",
+        "answer": "Combine is a framework for handling asynchronous events with functional programming.",
+        "image": "combine-framework-icon",
+        "link": "https://developer.apple.com/documentation/combine",
+        "gallery": ["screenshot7", "screenshot8"]
+    },
+    {
+        "id": "question5",
+        "category": "testing-icon",
+        "question": "What is XCTest in Swift?",
+        "answer": "XCTest is a framework for writing unit and UI tests for your app.",
+        "image": "testing-icon",
+        "link": "https://developer.apple.com/documentation/xctest",
+        "gallery": ["screenshot9", "screenshot10"]
+    },
+    {
+        "id": "question6",
+        "category": "localization-icon",
+        "question": "How to localize an app in Swift?",
+        "answer": "Localization is done using .strings files and localized assets.",
+        "image": "localization-icon",
+        "link": "https://developer.apple.com/documentation/foundation/localization",
+        "gallery": ["screenshot11", "screenshot12"]
+    },
+    {
+        "id": "question7",
+        "category": "optimization-icon",
+        "question": "What are some optimization techniques in Swift?",
+        "answer": "Optimize performance using lazy properties, efficient algorithms, and memory management.",
+        "image": "optimization-icon",
+        "link": "https://developer.apple.com/documentation/swift/performance",
+        "gallery": ["screenshot13", "screenshot14"]
+    },
+    {
+        "id": "question8",
+        "category": "core-data-icon",
+        "question": "What is Core Data?",
+        "answer": "Core Data is a framework for managing object graphs and persistence.",
+        "image": "core-data-icon",
+        "link": "https://developer.apple.com/documentation/coredata",
+        "gallery": ["screenshot15", "screenshot16"]
+    },
+    {
+        "id": "question9",
+        "category": "architecture-icon",
+        "question": "What is MVVM architecture?",
+        "answer": "MVVM stands for Model-View-ViewModel and is a design pattern for UI development.",
+        "image": "architecture-icon",
+        "link": "https://developer.apple.com/documentation/swiftui/designing_a_swiftui_app",
+        "gallery": ["screenshot17", "screenshot18"]
+    },
+    {
+        "id": "question10",
+        "category": "accessibility-icon",
+        "question": "How do you implement accessibility in SwiftUI?",
+        "answer": "Use accessibility modifiers like .accessibilityLabel and .accessibilityValue.",
+        "image": "accessibility-icon",
+        "link": "https://developer.apple.com/documentation/swiftui/accessibility",
+        "gallery": ["screenshot19", "screenshot20"]
     }
 ]

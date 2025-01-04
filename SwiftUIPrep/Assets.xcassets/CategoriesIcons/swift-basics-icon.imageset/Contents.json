@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "swift-basics-icon@1x.png",
+      "filename" : "swift-basics-icon.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "swift-basics-icon@2x.png",
+      "filename" : "swift-basics-icon 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "swift-basics-icon@3x.png",
+      "filename" : "swift-basics-icon 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

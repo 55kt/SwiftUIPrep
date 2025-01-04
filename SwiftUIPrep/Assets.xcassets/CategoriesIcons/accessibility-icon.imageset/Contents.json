@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "accessibility-icon@x1.png",
+      "filename" : "accessibility-icon.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "accessibility-icon@x2.png",
+      "filename" : "accessibility-icon 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "accessibility-icon@x3.png",
+      "filename" : "accessibility-icon 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "combine-framework-icon@x1.png",
+      "filename" : "combine-framework-icon.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "combine-framework-icon@x2.png",
+      "filename" : "combine-framework-icon 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "combine-framework-icon@x3.png",
+      "filename" : "combine-framework-icon 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

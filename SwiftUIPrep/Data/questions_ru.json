@@ -1,20 +1,92 @@
 [
     {
-        "id": "Question 1",
-        "category": "Swift",
+        "id": "question1",
+        "category": "swift-basics-icon",
         "question": "Что такое переменная?",
-        "answer": "Переменная — это место для хранения изменяемого значения.",
-        "image": "question-icon",
-        "link": "https//www.google.com",
-        "gallery": ["screenshot-1", "screenshot-2", "screenshot-3"]
+        "answer": "Переменная — это контейнер для значения, которое может изменяться во время выполнения программы.",
+        "image": "swift-basics-icon",
+        "link": "https://developer.apple.com/documentation/swift",
+        "gallery": ["screenshot1", "screenshot2"]
     },
     {
-        "id": "Question 2",
-        "category": "Swift",
-        "question": "Что такое константа?",
-        "answer": "Константа — это место для хранения значения, которое нельзя изменить.",
-        "image": "question-icon",
-        "link": "https//www.google.com",
-        "gallery": ["screenshot-1", "screenshot-2", "screenshot-3"]
+        "id": "question2",
+        "category": "advanced-swift-icon",
+        "question": "Что такое дженерики в Swift?",
+        "answer": "Дженерики позволяют писать гибкий и переиспользуемый код.",
+        "image": "advanced-swift-icon",
+        "link": "https://developer.apple.com/documentation/swift/generics",
+        "gallery": ["screenshot3", "screenshot4"]
+    },
+    {
+        "id": "question3",
+        "category": "ui-icon",
+        "question": "Что такое SwiftUI?",
+        "answer": "SwiftUI — это декларативный фреймворк для создания пользовательских интерфейсов.",
+        "image": "ui-icon",
+        "link": "https://developer.apple.com/documentation/swiftui",
+        "gallery": ["screenshot5", "screenshot6"]
+    },
+    {
+        "id": "question4",
+        "category": "combine-framework-icon",
+        "question": "Что такое Combine?",
+        "answer": "Combine — это фреймворк для обработки асинхронных событий с использованием функционального программирования.",
+        "image": "combine-framework-icon",
+        "link": "https://developer.apple.com/documentation/combine",
+        "gallery": ["screenshot7", "screenshot8"]
+    },
+    {
+        "id": "question5",
+        "category": "testing-icon",
+        "question": "Что такое XCTest?",
+        "answer": "XCTest — это фреймворк для написания юнит-тестов и UI-тестов для вашего приложения.",
+        "image": "testing-icon",
+        "link": "https://developer.apple.com/documentation/xctest",
+        "gallery": ["screenshot9", "screenshot10"]
+    },
+    {
+        "id": "question6",
+        "category": "localization-icon",
+        "question": "Как локализовать приложение в Swift?",
+        "answer": "Локализация выполняется с помощью файлов .strings и локализованных ресурсов.",
+        "image": "localization-icon",
+        "link": "https://developer.apple.com/documentation/foundation/localization",
+        "gallery": ["screenshot11", "screenshot12"]
+    },
+    {
+        "id": "question7",
+        "category": "optimization-icon",
+        "question": "Как проводить оптимизацию в Swift?",
+        "answer": "Оптимизация включает использование ленивых свойств, эффективных алгоритмов и управления памятью.",
+        "image": "optimization-icon",
+        "link": "https://developer.apple.com/documentation/swift/performance",
+        "gallery": ["screenshot13", "screenshot14"]
+    },
+    {
+        "id": "question8",
+        "category": "core-data-icon",
+        "question": "Что такое Core Data?",
+        "answer": "Core Data — это фреймворк для управления графами объектов и сохранения данных.",
+        "image": "core-data-icon",
+        "link": "https://developer.apple.com/documentation/coredata",
+        "gallery": ["screenshot15", "screenshot16"]
+    },
+    {
+        "id": "question9",
+        "category": "architecture-icon",
+        "question": "Что такое архитектура MVVM?",
+        "answer": "MVVM — это паттерн проектирования, который разделяет логику представления и данные.",
+        "image": "architecture-icon",
+        "link": "https://developer.apple.com/documentation/swiftui/designing_a_swiftui_app",
+        "gallery": ["screenshot17", "screenshot18"]
+    },
+    {
+        "id": "question10",
+        "category": "accessibility-icon",
+        "question": "Как реализовать доступность в SwiftUI?",
+        "answer": "Используйте модификаторы доступности, такие как .accessibilityLabel и .accessibilityValue.",
+        "image": "accessibility-icon",
+        "link": "https://developer.apple.com/documentation/swiftui/accessibility",
+        "gallery": ["screenshot19", "screenshot20"]
     }
 ]

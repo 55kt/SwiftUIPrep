@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "swiftui-basics-icon@x1.png",
+      "filename" : "swiftui-basics-icon.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "swiftui-basics-icon@x2.png",
+      "filename" : "swiftui-basics-icon 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "swiftui-basics-icon@x3.png",
+      "filename" : "swiftui-basics-icon 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

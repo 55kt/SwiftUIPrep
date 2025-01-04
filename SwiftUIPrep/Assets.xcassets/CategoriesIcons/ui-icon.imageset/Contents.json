@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ui-icon@x1.png",
+      "filename" : "ui-icon.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ui-icon@x2.png",
+      "filename" : "ui-icon 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ui-icon@x3.png",
+      "filename" : "ui-icon 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
