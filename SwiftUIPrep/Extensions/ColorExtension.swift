@@ -12,7 +12,7 @@ extension Color {
         if let uiColor = UIColor(named: name) {
             self.init(uiColor)
         } else {
-            self.init(.gray)
+            self.init(.accent)
             print("❌ Color not found for name: \(name)")
         }
     }
