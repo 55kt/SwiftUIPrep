@@ -33,6 +33,7 @@
 		4B29CB4D2D28458200B20F1B /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB4C2D28458200B20F1B /* HeadingView.swift */; };
 		4B29CB4F2D28472900B20F1B /* InsetScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB4E2D28472900B20F1B /* InsetScreenshotView.swift */; };
 		4B29CB512D299B1900B20F1B /* CategoryColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB502D299B1900B20F1B /* CategoryColorExtension.swift */; };
+		4B29CB532D2AEC8100B20F1B /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB522D2AEC8100B20F1B /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		4B29CB4C2D28458200B20F1B /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
 		4B29CB4E2D28472900B20F1B /* InsetScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetScreenshotView.swift; sourceTree = "<group>"; };
 		4B29CB502D299B1900B20F1B /* CategoryColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColorExtension.swift; sourceTree = "<group>"; };
+		4B29CB522D2AEC8100B20F1B /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				4B29CB502D299B1900B20F1B /* CategoryColorExtension.swift */,
+				4B29CB522D2AEC8100B20F1B /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				4B29CB512D299B1900B20F1B /* CategoryColorExtension.swift in Sources */,
 				4B29CB222D23284900B20F1B /* SettingsView.swift in Sources */,
 				4B29CB4F2D28472900B20F1B /* InsetScreenshotView.swift in Sources */,
+				4B29CB532D2AEC8100B20F1B /* ColorExtension.swift in Sources */,
 				4B29CB3D2D25DACD00B20F1B /* QuestionModel.swift in Sources */,
 				4B29CB3B2D25CF1200B20F1B /* QuestionListItemView.swift in Sources */,
 				4B29CB2C2D259FA900B20F1B /* ProgressView.swift in Sources */,

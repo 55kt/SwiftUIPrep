@@ -11,12 +11,13 @@ struct HeadingView: View {
     // MARK: - Properties
     var headingImage: String
     var headingText: String
+    var headingColor: Color
     
     // MARK: - Body
     var body: some View {
         HStack {
             Image(systemName: headingImage)
-                .foregroundStyle(.accent)
+                .foregroundStyle(headingColor)
                 .imageScale(.large)
             
             Text(headingText)
@@ -29,5 +30,5 @@ struct HeadingView: View {
 
 // MARK: - Preview
 #Preview {
-    HeadingView(headingImage: "photo.on.rectangle.angled", headingText: "Code in pictures")
+    HeadingView(headingImage: "photo.on.rectangle.angled", headingText: "Code in pictures", headingColor: Color.accent)
 }
