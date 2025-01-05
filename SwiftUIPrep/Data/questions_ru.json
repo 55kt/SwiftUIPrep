@@ -5,10 +5,10 @@
         "categoryName": "Основы Swift",
         "categoryColor": "swift-basics-color",
         "question": "Что такое переменная?",
-        "answer": "Переменная — это контейнер для значения, которое может изменяться в процессе выполнения программы.",
+        "answer": "Переменная — это контейнер для хранения значения.",
+        "description": "Переменная — это контейнер для хранения значения, которое может изменяться в процессе выполнения программы. Она создаётся с помощью ключевого слова var.",
         "image": "swift-basics-icon",
-        "link": "https://developer.apple.com/documentation/swift",
-        "gallery": ["screenshot1", "screenshot2"]
+        "link": "https://developer.apple.com/documentation/swift"
     },
     {
         "id": "question2",
@@ -16,10 +16,10 @@
         "categoryName": "Продвинутый Swift",
         "categoryColor": "advanced-swift-color",
         "question": "Что такое протокол в Swift?",
-        "answer": "Протокол определяет набор методов, свойств и других требований для выполнения задачи или функциональности.",
+        "answer": "Протокол задаёт набор методов и свойств для реализации.",
+        "description": "Протоколы позволяют задавать набор методов и свойств, которые должны быть реализованы классами, структурами или перечислениями, соответствующими этому протоколу.",
         "image": "advanced-swift-icon",
-        "link": "https://developer.apple.com/documentation/swift/protocol",
-        "gallery": ["screenshot3", "screenshot4"]
+        "link": "https://developer.apple.com/documentation/swift/protocols"
     },
     {
         "id": "question3",
@@ -27,43 +27,43 @@
         "categoryName": "App Store",
         "categoryColor": "appstore-color",
         "question": "Что такое App Store Connect?",
-        "answer": "App Store Connect — это платформа для управления приложениями, аналитикой и отправкой приложений в App Store.",
+        "answer": "Это платформа для управления приложениями в App Store.",
+        "description": "App Store Connect — это инструмент для разработчиков, который позволяет загружать приложения, анализировать данные о продажах и обновлять метаданные приложений.",
         "image": "appstore-icon",
-        "link": "https://developer.apple.com/app-store-connect/",
-        "gallery": ["screenshot5", "screenshot6"]
+        "link": "https://developer.apple.com/app-store-connect/"
     },
     {
         "id": "question4",
         "category": "architecture-icon",
         "categoryName": "Архитектура",
         "categoryColor": "architecture-color",
-        "question": "Что такое архитектурный шаблон MVVM?",
-        "answer": "MVVM — это шаблон проектирования Model-View-ViewModel для разделения пользовательского интерфейса и бизнес-логики.",
+        "question": "Что такое MVVM?",
+        "answer": "MVVM — это шаблон проектирования Model-View-ViewModel.",
+        "description": "MVVM — это архитектурный шаблон, который разделяет бизнес-логику и пользовательский интерфейс, облегчая поддержку и тестирование приложения.",
         "image": "architecture-icon",
-        "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel",
-        "gallery": ["screenshot7", "screenshot8"]
+        "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel"
     },
     {
         "id": "question5",
         "category": "combine-framework-icon",
         "categoryName": "Combine Framework",
         "categoryColor": "combine-framework-color",
-        "question": "Что такое Combine в Swift?",
-        "answer": "Combine — это фреймворк для работы с асинхронным и событийным программированием.",
+        "question": "Что такое Combine?",
+        "answer": "Combine — это фреймворк для асинхронного программирования.",
+        "description": "Combine — это фреймворк, который упрощает работу с асинхронными событиями и потоками данных, используя подписчиков и издателей.",
         "image": "combine-framework-icon",
-        "link": "https://developer.apple.com/documentation/combine",
-        "gallery": ["screenshot9", "screenshot10"]
+        "link": "https://developer.apple.com/documentation/combine"
     },
     {
         "id": "question6",
         "category": "concurrency-icon",
         "categoryName": "Параллелизм",
         "categoryColor": "concurrency-color",
-        "question": "Что такое GCD в Swift?",
-        "answer": "GCD (Grand Central Dispatch) — это API для управления параллельными задачами.",
+        "question": "Что такое GCD?",
+        "answer": "GCD — это API для параллельного программирования.",
+        "description": "GCD (Grand Central Dispatch) позволяет эффективно выполнять несколько задач одновременно, управляя системными ресурсами.",
         "image": "concurrency-icon",
-        "link": "https://developer.apple.com/documentation/dispatch",
-        "gallery": ["screenshot11", "screenshot12"]
+        "link": "https://developer.apple.com/documentation/dispatch"
     },
     {
         "id": "question7",
@@ -71,10 +71,10 @@
         "categoryName": "Core Data",
         "categoryColor": "core-data-color",
         "question": "Что такое Core Data?",
-        "answer": "Core Data — это фреймворк для управления модельным слоем в приложении Swift.",
+        "answer": "Core Data — это фреймворк для управления данными.",
+        "description": "Core Data — это фреймворк для работы с модельным слоем приложения, включая хранение и извлечение данных в реляционных базах данных.",
         "image": "core-data-icon",
-        "link": "https://developer.apple.com/documentation/coredata",
-        "gallery": ["screenshot13", "screenshot14"]
+        "link": "https://developer.apple.com/documentation/coredata"
     },
     {
         "id": "question8",
@@ -82,21 +82,21 @@
         "categoryName": "Отладка",
         "categoryColor": "debugging-color",
         "question": "Что такое точка останова?",
-        "answer": "Точка останова — это инструмент отладки, который останавливает выполнение кода на определённой строке.",
+        "answer": "Точка останова — это инструмент для отладки.",
+        "description": "Точка останова останавливает выполнение программы в указанной строке кода, позволяя разработчику исследовать состояние переменных и выполнение программы.",
         "image": "debugging-icon",
-        "link": "https://developer.apple.com/documentation/xcode/using-breakpoints",
-        "gallery": ["screenshot15", "screenshot16"]
+        "link": "https://developer.apple.com/documentation/xcode/using-breakpoints"
     },
     {
         "id": "question9",
         "category": "localization-icon",
         "categoryName": "Локализация",
         "categoryColor": "localization-color",
-        "question": "Что такое локализация в iOS-разработке?",
-        "answer": "Локализация — это процесс адаптации приложения для разных языков и регионов.",
+        "question": "Что такое локализация?",
+        "answer": "Локализация адаптирует приложение для разных языков.",
+        "description": "Локализация — это процесс перевода текстов, адаптации форматов даты, времени и других данных для пользователей из разных стран.",
         "image": "localization-icon",
-        "link": "https://developer.apple.com/documentation/xcode/localization",
-        "gallery": ["screenshot17", "screenshot18"]
+        "link": "https://developer.apple.com/documentation/xcode/localization"
     },
     {
         "id": "question10",
@@ -104,10 +104,10 @@
         "categoryName": "Сетевое взаимодействие",
         "categoryColor": "networking-color",
         "question": "Что такое URLSession?",
-        "answer": "URLSession — это класс для создания и управления сетевыми запросами в Swift.",
+        "answer": "URLSession — это класс для выполнения сетевых запросов.",
+        "description": "URLSession предоставляет API для загрузки и отправки данных через интернет с помощью протоколов HTTP и HTTPS.",
         "image": "networking-icon",
-        "link": "https://developer.apple.com/documentation/foundation/urlsession",
-        "gallery": ["screenshot19", "screenshot20"]
+        "link": "https://developer.apple.com/documentation/foundation/urlsession"
     },
     {
         "id": "question11",
@@ -115,53 +115,53 @@
         "categoryName": "Оптимизация",
         "categoryColor": "optimization-color",
         "question": "Что такое отложенная загрузка?",
-        "answer": "Отложенная загрузка — это метод создания или загрузки ресурсов только тогда, когда они понадобятся.",
+        "answer": "Это метод загрузки ресурсов по мере их необходимости.",
+        "description": "Отложенная загрузка (lazy loading) откладывает создание объектов или загрузку данных до тех пор, пока они не понадобятся, что экономит ресурсы.",
         "image": "optimization-icon",
-        "link": "https://en.wikipedia.org/wiki/Lazy_loading",
-        "gallery": ["screenshot21", "screenshot22"]
+        "link": "https://en.wikipedia.org/wiki/Lazy_loading"
     },
     {
         "id": "question12",
-        "category": "swift-basics-icon",
-        "categoryName": "Основы Swift",
-        "categoryColor": "swift-basics-color",
-        "question": "Что такое константа?",
-        "answer": "Константа — это контейнер для значения, которое не может изменяться в процессе выполнения программы.",
-        "image": "swift-basics-icon",
-        "link": "https://developer.apple.com/documentation/swift",
-        "gallery": ["screenshot23", "screenshot24"]
-    },
-    {
-        "id": "question13",
         "category": "testing-icon",
         "categoryName": "Тестирование",
         "categoryColor": "testing-color",
         "question": "Что такое XCTest?",
-        "answer": "XCTest — это фреймворк для написания и выполнения модульных тестов в Swift.",
+        "answer": "XCTest — это фреймворк для тестирования.",
+        "description": "XCTest предоставляет инструменты для написания модульных и UI-тестов, чтобы убедиться, что ваш код работает правильно.",
         "image": "testing-icon",
-        "link": "https://developer.apple.com/documentation/xctest",
-        "gallery": ["screenshot25", "screenshot26"]
+        "link": "https://developer.apple.com/documentation/xctest"
     },
     {
-        "id": "question14",
+        "id": "question13",
         "category": "ui-icon",
         "categoryName": "Разработка интерфейсов",
         "categoryColor": "ui-color",
         "question": "Что такое SwiftUI?",
-        "answer": "SwiftUI — это декларативный фреймворк для создания пользовательских интерфейсов на всех платформах Apple.",
+        "answer": "SwiftUI — это фреймворк для создания интерфейсов.",
+        "description": "SwiftUI — это декларативный фреймворк, который упрощает создание пользовательских интерфейсов для платформ Apple.",
         "image": "ui-icon",
-        "link": "https://developer.apple.com/documentation/swiftui",
-        "gallery": ["screenshot27", "screenshot28"]
+        "link": "https://developer.apple.com/documentation/swiftui"
     },
     {
-        "id": "question15",
+        "id": "question14",
         "category": "accessibility-icon",
         "categoryName": "Доступность",
         "categoryColor": "accessibility-color",
         "question": "Что такое VoiceOver?",
-        "answer": "VoiceOver — это функция доступности для пользователей с нарушениями зрения, позволяющая взаимодействовать с приложениями.",
+        "answer": "VoiceOver — это функция доступности для слабовидящих.",
+        "description": "VoiceOver позволяет пользователям с нарушениями зрения взаимодействовать с приложениями с помощью голосовых подсказок и жестов.",
         "image": "accessibility-icon",
-        "link": "https://developer.apple.com/accessibility",
-        "gallery": ["screenshot29", "screenshot30"]
+        "link": "https://developer.apple.com/accessibility"
+    },
+    {
+        "id": "question15",
+        "category": "architecture-icon",
+        "categoryName": "Архитектура",
+        "categoryColor": "architecture-color",
+        "question": "Что такое Singleton?",
+        "answer": "Singleton ограничивает класс единственным экземпляром.",
+        "description": "Singleton — это паттерн, который гарантирует, что класс имеет только один экземпляр, и предоставляет глобальную точку доступа к нему.",
+        "image": "architecture-icon",
+        "link": "https://en.wikipedia.org/wiki/Singleton_pattern"
     }
 ]

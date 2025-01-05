@@ -10,7 +10,7 @@ import SwiftUI
 struct HeadingView: View {
     // MARK: - Properties
     var headingImage: String
-    var headingText: String
+    var headingText: LocalizedStringKey
     var headingColor: Color
     
     // MARK: - Body

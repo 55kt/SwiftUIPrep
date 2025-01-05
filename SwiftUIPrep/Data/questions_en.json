@@ -6,9 +6,9 @@
         "categoryColor": "swift-basics-color",
         "question": "What is a variable?",
         "answer": "A variable is a placeholder for a value.",
+        "description": "A variable is a placeholder for a value. It is a container that can hold a value. The value can change during the execution of a program.",
         "image": "swift-basics-icon",
-        "link": "https://developer.apple.com/documentation/swift",
-        "gallery": ["screenshot1", "screenshot2"]
+        "link": "https://developer.apple.com/documentation/swift"
     },
     {
         "id": "question2",
@@ -16,10 +16,10 @@
         "categoryName": "Advanced Swift",
         "categoryColor": "advanced-swift-color",
         "question": "What is a protocol in Swift?",
-        "answer": "A protocol defines a blueprint of methods, properties, and other requirements for a task or functionality.",
+        "answer": "A protocol defines a blueprint of methods, properties, and other requirements.",
+        "description": "Protocols are a way to define a set of methods and properties that a type must conform to. They are widely used in Swift for defining reusable code.",
         "image": "advanced-swift-icon",
-        "link": "https://developer.apple.com/documentation/swift/protocol",
-        "gallery": ["screenshot3", "screenshot4"]
+        "link": "https://developer.apple.com/documentation/swift/protocols"
     },
     {
         "id": "question3",
@@ -27,10 +27,10 @@
         "categoryName": "App Store",
         "categoryColor": "appstore-color",
         "question": "What is App Store Connect?",
-        "answer": "App Store Connect is a platform to manage apps, analytics, and submissions for the App Store.",
+        "answer": "App Store Connect is a platform to manage apps and submissions to the App Store.",
+        "description": "App Store Connect is used by developers to manage their applications, monitor performance, and upload updates or new apps to the App Store.",
         "image": "appstore-icon",
-        "link": "https://developer.apple.com/app-store-connect/",
-        "gallery": ["screenshot5", "screenshot6"]
+        "link": "https://developer.apple.com/app-store-connect/"
     },
     {
         "id": "question4",
@@ -39,9 +39,9 @@
         "categoryColor": "architecture-color",
         "question": "What is the MVVM design pattern?",
         "answer": "MVVM stands for Model-View-ViewModel, a design pattern for separating UI from business logic.",
+        "description": "MVVM is a widely used design pattern in iOS development that helps separate the user interface from the underlying business logic, making the code more maintainable.",
         "image": "architecture-icon",
-        "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel",
-        "gallery": ["screenshot7", "screenshot8"]
+        "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel"
     },
     {
         "id": "question5",
@@ -49,10 +49,10 @@
         "categoryName": "Combine Framework",
         "categoryColor": "combine-framework-color",
         "question": "What is Combine in Swift?",
-        "answer": "Combine is a framework for handling asynchronous and event-driven programming.",
+        "answer": "Combine is a framework for handling asynchronous programming.",
+        "description": "Combine is a framework that simplifies working with asynchronous and event-driven code by providing publishers and subscribers.",
         "image": "combine-framework-icon",
-        "link": "https://developer.apple.com/documentation/combine",
-        "gallery": ["screenshot9", "screenshot10"]
+        "link": "https://developer.apple.com/documentation/combine"
     },
     {
         "id": "question6",
@@ -60,10 +60,10 @@
         "categoryName": "Concurrency",
         "categoryColor": "concurrency-color",
         "question": "What is GCD in Swift?",
-        "answer": "GCD (Grand Central Dispatch) is a low-level API for managing concurrent tasks.",
+        "answer": "GCD (Grand Central Dispatch) is a framework for concurrent programming.",
+        "description": "GCD helps you efficiently execute multiple tasks concurrently while managing system resources.",
         "image": "concurrency-icon",
-        "link": "https://developer.apple.com/documentation/dispatch",
-        "gallery": ["screenshot11", "screenshot12"]
+        "link": "https://developer.apple.com/documentation/dispatch"
     },
     {
         "id": "question7",
@@ -71,10 +71,10 @@
         "categoryName": "Core Data",
         "categoryColor": "core-data-color",
         "question": "What is Core Data?",
-        "answer": "Core Data is a framework for managing the model layer in a Swift application.",
+        "answer": "Core Data is a framework for managing an object graph and persistence.",
+        "description": "Core Data provides object-oriented API for working with data models and saving them persistently, commonly used for databases.",
         "image": "core-data-icon",
-        "link": "https://developer.apple.com/documentation/coredata",
-        "gallery": ["screenshot13", "screenshot14"]
+        "link": "https://developer.apple.com/documentation/coredata"
     },
     {
         "id": "question8",
@@ -82,21 +82,21 @@
         "categoryName": "Debugging",
         "categoryColor": "debugging-color",
         "question": "What is a breakpoint?",
-        "answer": "A breakpoint is a debugging tool that pauses code execution at a specific line.",
+        "answer": "A breakpoint is a debugging tool that pauses code execution.",
+        "description": "Breakpoints allow you to pause code execution at a specific line to inspect the current state of your program and debug effectively.",
         "image": "debugging-icon",
-        "link": "https://developer.apple.com/documentation/xcode/using-breakpoints",
-        "gallery": ["screenshot15", "screenshot16"]
+        "link": "https://developer.apple.com/documentation/xcode/using-breakpoints"
     },
     {
         "id": "question9",
         "category": "localization-icon",
         "categoryName": "Localization",
         "categoryColor": "localization-color",
-        "question": "What is localization in iOS development?",
-        "answer": "Localization is the process of adapting an app for different languages and regions.",
+        "question": "What is localization?",
+        "answer": "Localization is the process of adapting an app for different languages.",
+        "description": "Localization in iOS involves translating text, adapting layouts, and ensuring cultural relevance for users in different regions.",
         "image": "localization-icon",
-        "link": "https://developer.apple.com/documentation/xcode/localization",
-        "gallery": ["screenshot17", "screenshot18"]
+        "link": "https://developer.apple.com/documentation/xcode/localization"
     },
     {
         "id": "question10",
@@ -104,10 +104,10 @@
         "categoryName": "Networking",
         "categoryColor": "networking-color",
         "question": "What is URLSession?",
-        "answer": "URLSession is a class for creating and managing network requests in Swift.",
+        "answer": "URLSession is a class for creating and managing network requests.",
+        "description": "URLSession allows you to download and upload data to and from the internet using APIs.",
         "image": "networking-icon",
-        "link": "https://developer.apple.com/documentation/foundation/urlsession",
-        "gallery": ["screenshot19", "screenshot20"]
+        "link": "https://developer.apple.com/documentation/foundation/urlsession"
     },
     {
         "id": "question11",
@@ -115,53 +115,53 @@
         "categoryName": "Optimization",
         "categoryColor": "optimization-color",
         "question": "What is lazy loading?",
-        "answer": "Lazy loading is a technique to defer the creation or loading of resources until they are needed.",
+        "answer": "Lazy loading defers resource loading until it is needed.",
+        "description": "Lazy loading is a design pattern that delays the creation of an object or the execution of a task until it's actually needed, improving performance.",
         "image": "optimization-icon",
-        "link": "https://en.wikipedia.org/wiki/Lazy_loading",
-        "gallery": ["screenshot21", "screenshot22"]
+        "link": "https://en.wikipedia.org/wiki/Lazy_loading"
     },
     {
         "id": "question12",
-        "category": "swift-basics-icon",
-        "categoryName": "Swift Basics",
-        "categoryColor": "swift-basics-color",
-        "question": "What is a constant?",
-        "answer": "A constant is a placeholder for a value that cannot change during execution.",
-        "image": "swift-basics-icon",
-        "link": "https://developer.apple.com/documentation/swift",
-        "gallery": ["screenshot23", "screenshot24"]
-    },
-    {
-        "id": "question13",
         "category": "testing-icon",
         "categoryName": "Testing",
         "categoryColor": "testing-color",
         "question": "What is XCTest?",
-        "answer": "XCTest is a framework for writing and running unit tests in Swift.",
+        "answer": "XCTest is a framework for writing and running tests.",
+        "description": "XCTest provides tools for writing unit tests and UI tests to ensure your code behaves as expected.",
         "image": "testing-icon",
-        "link": "https://developer.apple.com/documentation/xctest",
-        "gallery": ["screenshot25", "screenshot26"]
+        "link": "https://developer.apple.com/documentation/xctest"
     },
     {
-        "id": "question14",
+        "id": "question13",
         "category": "ui-icon",
         "categoryName": "UI Development",
         "categoryColor": "ui-color",
         "question": "What is SwiftUI?",
-        "answer": "SwiftUI is a declarative framework for building user interfaces across all Apple platforms.",
+        "answer": "SwiftUI is a framework for building UIs across Apple platforms.",
+        "description": "SwiftUI is a declarative framework that simplifies the creation of user interfaces for iOS, macOS, watchOS, and tvOS.",
         "image": "ui-icon",
-        "link": "https://developer.apple.com/documentation/swiftui",
-        "gallery": ["screenshot27", "screenshot28"]
+        "link": "https://developer.apple.com/documentation/swiftui"
     },
     {
-        "id": "question15",
+        "id": "question14",
         "category": "accessibility-icon",
         "categoryName": "Accessibility",
         "categoryColor": "accessibility-color",
         "question": "What is VoiceOver?",
-        "answer": "VoiceOver is an accessibility feature for visually impaired users to interact with apps.",
+        "answer": "VoiceOver is an accessibility feature for visually impaired users.",
+        "description": "VoiceOver enables visually impaired users to interact with apps through spoken feedback, gestures, and other assistive technologies.",
         "image": "accessibility-icon",
-        "link": "https://developer.apple.com/accessibility",
-        "gallery": ["screenshot29", "screenshot30"]
+        "link": "https://developer.apple.com/accessibility"
+    },
+    {
+        "id": "question15",
+        "category": "architecture-icon",
+        "categoryName": "Architecture",
+        "categoryColor": "architecture-color",
+        "question": "What is Singleton design pattern?",
+        "answer": "Singleton restricts a class to a single instance.",
+        "description": "The Singleton pattern ensures a class has only one instance and provides a global point of access to it, commonly used for shared resources.",
+        "image": "architecture-icon",
+        "link": "https://en.wikipedia.org/wiki/Singleton_pattern"
     }
 ]

@@ -53,14 +53,13 @@ struct QuestionDetailView: View {
                     .padding(.horizontal)
                 
                 
-                HeadingView(headingImage: "info.circle", headingText: "Description", headingColor: Color(named: question.categoryColor))
+                HeadingView(headingImage: "info.circle", headingText: LocalizedStringKey("Description"), headingColor: Color(named: question.categoryColor))
                 
-                
-                // Gallery
-                
-                // Answer
-                
-                // Tags
+                // Description
+                Text(question.description)
+                    .font(.headline)
+                    .multilineTextAlignment(.leading)
+                    .padding(.horizontal)
                 
             }// VStack
         }// ScrollView
@@ -76,6 +75,7 @@ struct QuestionDetailView: View {
         categoryColor: "swift-basics-color",
         question: "What is a variable?",
         answer: "A variable is a placeholder for a value that can change during the execution of a program.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis sem ac enim dignissim mollis. In lectus erat, congue vel finibus vel, commodo nec justo. Vivamus vel risus malesuada, rhoncus nibh eu, cursus metus. Sed molestie, dui vel commodo venenatis, diam lorem luctus elit, ut luctus nunc lacus quis nisi. Proin imperdiet eget orci et vestibulum.",
         image: "question-icon",
         link: "https://www.google.com"
     )

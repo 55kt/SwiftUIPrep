@@ -14,6 +14,7 @@ struct Question: Codable, Identifiable {
     let categoryColor: String
     let question: String
     let answer: String
+    let description: String
     let image: String
     let link: String
 }

@@ -21,6 +21,17 @@
         }
       }
     },
+    "Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Описание"
+          }
+        }
+      }
+    },
     "English" : {
       "localizations" : {
         "ru" : {
