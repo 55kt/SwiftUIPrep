@@ -52,12 +52,9 @@ struct QuestionDetailView: View {
                     .multilineTextAlignment(.leading)
                     .padding(.horizontal)
                 
-                // ScreenShots
-                Group {
-                    HeadingView(headingImage: "photo.on.rectangle.angled", headingText: "Screenshots", headingColor: Color(named: question.categoryColor))
-                    
-                    InsetScreenshotView(question: question)
-                }.padding(.horizontal)
+                
+                HeadingView(headingImage: "info.circle", headingText: "Description", headingColor: Color(named: question.categoryColor))
+                
                 
                 // Gallery
                 
@@ -80,8 +77,7 @@ struct QuestionDetailView: View {
         question: "What is a variable?",
         answer: "A variable is a placeholder for a value that can change during the execution of a program.",
         image: "question-icon",
-        link: "https://www.google.com",
-        gallery: ["screenshot-1", "screenshot-2"]
+        link: "https://www.google.com"
     )
     
     NavigationStack {

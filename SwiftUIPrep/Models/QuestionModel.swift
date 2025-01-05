@@ -16,5 +16,4 @@ struct Question: Codable, Identifiable {
     let answer: String
     let image: String
     let link: String
-    let gallery: [String]
 }
