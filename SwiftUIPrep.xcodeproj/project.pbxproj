@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B046F7B2D2D7DBC000D0D6B /* PreviewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B046F7A2D2D7DBC000D0D6B /* PreviewPlaceholder.swift */; };
 		4B29CB112D23213D00B20F1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B29CB0B2D23213D00B20F1B /* Preview Assets.xcassets */; };
 		4B29CB122D23213D00B20F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B29CB0D2D23213D00B20F1B /* Assets.xcassets */; };
 		4B29CB132D23213D00B20F1B /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB0E2D23213D00B20F1B /* BrowseView.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B046F7A2D2D7DBC000D0D6B /* PreviewPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPlaceholder.swift; sourceTree = "<group>"; };
 		4B29CAFA2D23212D00B20F1B /* SwiftUIPrep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B29CB0B2D23213D00B20F1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B29CB0D2D23213D00B20F1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				4B29CB502D299B1900B20F1B /* CategoryColorExtension.swift */,
 				4B29CB522D2AEC8100B20F1B /* ColorExtension.swift */,
+				4B046F7A2D2D7DBC000D0D6B /* PreviewPlaceholder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				4B29CB3D2D25DACD00B20F1B /* QuestionModel.swift in Sources */,
 				4B29CB3B2D25CF1200B20F1B /* QuestionListItemView.swift in Sources */,
 				4B29CB2C2D259FA900B20F1B /* ProgressView.swift in Sources */,
+				4B046F7B2D2D7DBC000D0D6B /* PreviewPlaceholder.swift in Sources */,
 				4B29CB4D2D28458200B20F1B /* HeadingView.swift in Sources */,
 				4B29CB1E2D23282300B20F1B /* MainView.swift in Sources */,
 				4B29CB142D23213D00B20F1B /* SwiftUIPrepApp.swift in Sources */,
