@@ -17,33 +17,27 @@ struct QuestionDetailView: View {
             
             // Header
             VStack(alignment: .center, spacing: 10) {
-                HStack {
-                    // Question Image
+                HStack(alignment: .center, spacing: 16) {
                     Image(question.image)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 150, height: 150, alignment: .leading)
-                        .padding(.leading)
+                        .frame(width: 150, height: 150)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
                     
-                    // Category
-                    Text(question.categoryName)
-                        .font(.title)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(question.categoryName)
+                            .font(.title2)
                             .fontWeight(.heavy)
-                            .foregroundColor(.white)
-                            .multilineTextAlignment(.center)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                    
-                }// HStack - Header
-                .frame(maxWidth: .infinity, alignment: .leading) // Установите фиксированное выравнивание
+                    }// VStack
+                }// HStack
                 
                 // Question
-                VStack(spacing: 0) {
+                VStack(alignment: .center, spacing: 0) {
                     Text(question.question)
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 8)
-                        .foregroundStyle(.primary)
                     
                     Color(question.categoryColor)
                         .frame(height: 6)
@@ -53,7 +47,6 @@ struct QuestionDetailView: View {
                     // Answer
                     Text(question.answer)
                         .font(.headline)
-                        .multilineTextAlignment(.leading)
                         .padding(.top)
                         .padding(.horizontal)
                 }// VStack - Question section
@@ -76,6 +69,6 @@ struct QuestionDetailView: View {
 // MARK: - Preview
 #Preview {
     NavigationStack {
-            QuestionDetailView(question: Question.previewFromJSON(index: 12, language: "ru"))
+            QuestionDetailView(question: Question.previewFromJSON(index: 5, language: "ru"))
         }
 }
