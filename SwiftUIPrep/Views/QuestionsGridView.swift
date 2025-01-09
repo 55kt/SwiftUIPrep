@@ -12,10 +12,10 @@ struct QuestionsGridView: View {
     let filteredQuestions: [Question]
     let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
 
-    // Уникальные категории
+    // Уникальные категории с сортировкой
     var uniqueCategories: [String] {
         let allCategories = filteredQuestions.map { $0.category }
-        return Array(Set(allCategories))
+        return Array(Set(allCategories)).sorted() // Сортировка по алфавиту
     }
 
     // MARK: - Body
@@ -31,6 +31,7 @@ struct QuestionsGridView: View {
                     }
                 }
             }
+            .padding()
         }
     }
 }

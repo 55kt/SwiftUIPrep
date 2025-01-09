@@ -17,17 +17,23 @@ struct BrowseView: View {
     
     let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
     
+    var randomQuestions: [Question] {
+        return viewModel.questions.shuffled()
+    }
+
+    var orderedQuestions: [Question] {
+        return viewModel.questions // Отображение по порядку
+    }
+    
     // MARK: - Filtered Questions
     var filteredQuestions: [Question] {
+        let source = isGridViewActive ? orderedQuestions : randomQuestions
         if searchText.isEmpty {
-            print("Filtered Questions: \(viewModel.questions)")
-            return viewModel.questions
+            return source
         } else {
-            let filtered = viewModel.questions.filter { $0.question.localizedCaseInsensitiveContains(searchText) }
-            print("Filtered Questions with search: \(filtered)")
-            return filtered
-        }// if - else
-    }// var
+            return source.filter { $0.question.localizedCaseInsensitiveContains(searchText) }
+        }
+    }
     
     // MARK: - Body
     var body: some View {
