@@ -20,7 +20,7 @@ struct CategoriesGridItemView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150, height: 150)
-            }
+            }// ZStack
             
             // Category Name
             Text(question.categoryName)
@@ -28,9 +28,9 @@ struct CategoriesGridItemView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.primary)
                 .multilineTextAlignment(.center)
-        }
-    }
-}
+        }// VStack
+    }// Body
+}// View
 
 // MARK: - Preview
 #Preview {

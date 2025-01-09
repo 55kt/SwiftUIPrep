@@ -13,7 +13,7 @@ struct BrowseView: View {
     @State private var searchText: String = ""
     @EnvironmentObject var viewModel: QuestionViewModel
     let haptics = UIImpactFeedbackGenerator(style: .medium)
-    @State private var isGridViewActive: Bool = true
+    @State private var isGridViewActive: Bool = false
     
     let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
     
@@ -34,54 +34,14 @@ struct BrowseView: View {
         NavigationStack {
             Group {
                 if !isGridViewActive {
-                    List {
-                        CoverImageView()
-                            .frame(height: 300)
-                            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                        
-                        ForEach(filteredQuestions) { question in
-                            NavigationLink(destination: QuestionDetailView(question: question)) {
-                                QuestionListItemView(question: question)
-                            }// NavigationLink
-                        }// ForEach
-                    }// List
+                    QuestionsListView(filteredQuestions: filteredQuestions)
                 } else {
-                    ScrollView(.vertical, showsIndicators: false) {
-                        LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
-                            ForEach(filteredQuestions) { question in
-                                NavigationLink(destination: QuestionDetailView(question: question)) {
-                                    CategoriesGridItemView(question: question)
-                                }
-                            }// ForEach
-                        }// LazyVGrid
-                    }// ScrollView
+                    QuestionsGridView(filteredQuestions: filteredQuestions)
                 }// if - else
             }// Group
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    HStack(spacing: 16) {
-                        // List
-                        Button {
-                            print("List view is activated")
-                            isGridViewActive = false
-                            haptics.impactOccurred()
-                        } label: {
-                            Image(systemName: "square.fill.text.grid.1x2")
-                                .font(.title2)
-                                .foregroundStyle(isGridViewActive ? .white : .accent)
-                        }
-                        
-                        // Categories
-                        Button {
-                            print("Categories view is activated")
-                            isGridViewActive = true
-                            haptics.impactOccurred()
-                        } label: {
-                            Image(systemName: "square.stack.fill")
-                                .font(.title2)
-                                .foregroundStyle(isGridViewActive ? .accent : .white)
-                        }
-                    }// HStack
+                    ToolbarContentView(isGridViewActive: $isGridViewActive)
                 }// ToolbarItem
             }// toolbar
             .listStyle(PlainListStyle())
