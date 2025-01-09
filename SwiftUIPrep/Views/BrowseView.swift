@@ -13,7 +13,7 @@ struct BrowseView: View {
     @State private var searchText: String = ""
     @EnvironmentObject var viewModel: QuestionViewModel
     let haptics = UIImpactFeedbackGenerator(style: .medium)
-    @State private var isGridViewActive: Bool = false
+    @State private var isGridViewActive: Bool = true
     
     let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
     

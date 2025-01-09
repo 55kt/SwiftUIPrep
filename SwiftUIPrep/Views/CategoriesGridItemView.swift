@@ -13,20 +13,26 @@ struct CategoriesGridItemView: View {
     
     // MARK: - Body
     var body: some View {
-        ZStack {
-            Image(question.image)
-                .resizable()
-                .scaledToFit()
+        VStack {
+            ZStack {
+                // Category Icon
+                Image(question.image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+            }
             
+            // Category Name
             Text(question.categoryName)
-                .font(.title3)
-                .fontWeight(.heavy)
-                .foregroundStyle(.white)
+                .font(.subheadline)
+                .fontWeight(.bold)
+                .foregroundColor(.primary)
+                .multilineTextAlignment(.center)
         }
     }
 }
 
 // MARK: - Preview
 #Preview {
-    CategoriesGridItemView(question: Question.previewFromJSON(index: 3, language: "en"))
+    CategoriesGridItemView(question: Question.previewFromJSON(index: 5, language: "en"))
 }
