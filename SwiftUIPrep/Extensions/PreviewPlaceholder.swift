@@ -30,3 +30,30 @@ extension Question {
         return sampleQuestions[index]
     }
 }
+
+extension Question {
+    static let exampleQuestions: [Question] = [
+        Question(
+            id: "question1",
+            category: "swift-basics-icon",
+            categoryName: "Swift Basics",
+            categoryColor: "swift-basics-color",
+            question: "What is a variable?",
+            answer: "A variable is a placeholder for a value.",
+            description: "A variable is a container that holds data and can change during the program's execution.",
+            image: "swift-basics-icon",
+            link: "https://developer.apple.com/documentation/swift"
+        ),
+        Question(
+            id: "question2",
+            category: "swift-basics-icon",
+            categoryName: "Swift Basics",
+            categoryColor: "swift-basics-color",
+            question: "What is a constant?",
+            answer: "A constant holds a value that cannot change.",
+            description: "A constant is a container that holds a value which cannot be changed once it's assigned.",
+            image: "swift-basics-icon",
+            link: "https://developer.apple.com/documentation/swift"
+        )
+    ]
+}

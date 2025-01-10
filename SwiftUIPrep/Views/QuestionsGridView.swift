@@ -12,10 +12,9 @@ struct QuestionsGridView: View {
     let filteredQuestions: [Question]
     let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
 
-    // Уникальные категории с сортировкой
     var uniqueCategories: [String] {
         let allCategories = filteredQuestions.map { $0.category }
-        return Array(Set(allCategories)).sorted() // Сортировка по алфавиту
+        return Array(Set(allCategories)).sorted() // Sorted by alphabet
     }
 
     // MARK: - Body
@@ -27,14 +26,14 @@ struct QuestionsGridView: View {
                         let firstQuestionInCategory = filteredQuestions.first { $0.category == category }
                         if let question = firstQuestionInCategory {
                             CategoriesGridItemView(question: question)
-                        }
-                    }
-                }
-            }
+                        }// if
+                    }// NavigationLink
+                }// ForEach
+            }// LazyVGrid
             .padding()
-        }
-    }
-}
+        }// ScrollView
+    }// Body
+}// View
 
 // MARK: - Preview
 #Preview {

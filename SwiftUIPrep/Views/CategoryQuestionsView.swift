@@ -24,18 +24,18 @@ struct CategoryQuestionsView: View {
                 NavigationLink(destination: QuestionDetailView(question: question)) {
                     QuestionListItemView(question: question)
                         .toolbarRole(.editor)
-                }
-            }
-        }
+                }// NavigationLink
+            }// ForEach
+        }// List
         .navigationTitle(questions.first(where: { $0.category == category })?.categoryName ?? category)
         .listStyle(.plain)
-    }
-}
+    }// Body
+}// View
 
 // MARK: - Preview
 #Preview {
     CategoryQuestionsView(
-        category: "Swift Basics",
-        questions: QuestionViewModel().questions
-    )
+            category: "swift-basics-icon",
+            questions: Question.exampleQuestions
+        )
 }

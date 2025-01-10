@@ -22,7 +22,7 @@ struct BrowseView: View {
     }
 
     var orderedQuestions: [Question] {
-        return viewModel.questions // Отображение по порядку
+        return viewModel.questions
     }
     
     // MARK: - Filtered Questions

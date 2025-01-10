@@ -53,4 +53,5 @@ struct MainView: View {
 #Preview {
     MainView()
         .environmentObject(QuestionViewModel())
+        .environmentObject(FavoritesViewModel())
 }

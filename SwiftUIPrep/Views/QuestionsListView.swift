@@ -10,6 +10,7 @@ import SwiftUI
 struct QuestionsListView: View {
     // MARK: - Properties
     let filteredQuestions: [Question]
+    @EnvironmentObject var favoritesViewModel: FavoritesViewModel
     
     // MARK: - Body
     var body: some View {
@@ -21,7 +22,18 @@ struct QuestionsListView: View {
             ForEach(filteredQuestions) { question in
                 NavigationLink(destination: QuestionDetailView(question: question)) {
                     QuestionListItemView(question: question)
-                }// NavigationLink
+                }
+                .swipeActions(edge: .trailing) {
+                    Button(action: {
+                        // Добавление вопроса в избранное
+                        favoritesViewModel.addToFavorites(question)
+                        print("Added to favorites: \(question.question)")
+                    }) {
+                        Label("Favorite", systemImage: "star.fill")
+                    }
+                    .tint(.yellow)
+                }
+                // NavigationLink
             }// ForEach
         }// List
         .listStyle(PlainListStyle())
@@ -31,4 +43,5 @@ struct QuestionsListView: View {
 // MARK: - Preview
 #Preview {
     QuestionsListView(filteredQuestions: [1, 2, 3].map { Question.previewFromJSON(index: $0, language: "ru") })
+        .environmentObject(FavoritesViewModel())
 }

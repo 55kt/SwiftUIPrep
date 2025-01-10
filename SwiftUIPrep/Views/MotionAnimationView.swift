@@ -31,7 +31,7 @@ struct MotionAnimationView: View {
     
     // 4. Random speed
     func randomSpeed() -> Double {
-        return Double.random(in: 0.025...1.0)
+        return Double.random(in: 0.050...1.0)
     }
     
     // 5. Randon delay
