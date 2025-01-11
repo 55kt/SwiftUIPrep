@@ -22,6 +22,16 @@
         }
       }
     },
+    "Categories" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Категории"
+          }
+        }
+      }
+    },
     "Copyright © %@ volos.inc. All rights reserved." : {
       "localizations" : {
         "ru" : {
@@ -44,6 +54,7 @@
       }
     },
     "English" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -95,6 +106,17 @@
         }
       }
     },
+    "Language" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Язык"
+          }
+        }
+      }
+    },
     "No Favorites Yet" : {
       "localizations" : {
         "ru" : {
@@ -117,6 +139,7 @@
       }
     },
     "Russian" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -137,6 +160,7 @@
       }
     },
     "Select your language" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {

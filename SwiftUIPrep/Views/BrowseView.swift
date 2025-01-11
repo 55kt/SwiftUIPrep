@@ -20,7 +20,7 @@ struct BrowseView: View {
     var randomQuestions: [Question] {
         return viewModel.questions.shuffled()
     }
-
+    
     var orderedQuestions: [Question] {
         return viewModel.questions
     }
@@ -42,21 +42,26 @@ struct BrowseView: View {
                 if !isGridViewActive {
                     QuestionsListView(filteredQuestions: filteredQuestions)
                 } else {
-                    QuestionsGridView(filteredQuestions: filteredQuestions)
+                    CategoryGridView(filteredQuestions: filteredQuestions)
                 }// if - else
             }// Group
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     ToolbarContentView(isGridViewActive: $isGridViewActive)
+                        
                 }// ToolbarItem
             }// toolbar
             .listStyle(PlainListStyle())
-            .navigationTitle("SwiftUIPrep")
-            .searchable(text: $searchText, prompt: LocalizedStringKey("Search for a question"))
+            .navigationTitle(!isGridViewActive ? LocalizedStringKey("SwiftUIPrep") : LocalizedStringKey("Categories"))
+            .if(!isGridViewActive) { view in
+                view.searchable(text: $searchText, prompt: LocalizedStringKey("Search for a question"))
+            }
             .animation(.default, value: searchText)
             .onAppear {
                 viewModel.loadQuestions()
             }// onAppear
+            .environment(\.locale, Locale(identifier: appLanguage))
+            
         }// NavigationStack
     }// Body
 }// View

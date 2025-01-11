@@ -1,5 +1,5 @@
 //
-//  QuestionsGridView.swift
+//  CategoryGridView.swift
 //  SwiftUIPrep
 //
 //  Created by Vlad on 9/1/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuestionsGridView: View {
+struct CategoryGridView: View {
     // MARK: - Properties
     let filteredQuestions: [Question]
     let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
@@ -37,5 +37,5 @@ struct QuestionsGridView: View {
 
 // MARK: - Preview
 #Preview {
-    QuestionsGridView(filteredQuestions: QuestionViewModel().questions)
+    CategoryGridView(filteredQuestions: QuestionViewModel().questions)
 }

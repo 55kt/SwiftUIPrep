@@ -35,10 +35,11 @@
 		4B29CB512D299B1900B20F1B /* CategoryColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB502D299B1900B20F1B /* CategoryColorExtension.swift */; };
 		4B29CB532D2AEC8100B20F1B /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB522D2AEC8100B20F1B /* ColorExtension.swift */; };
 		4B8154942D31897700FD8FFA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8154932D31897700FD8FFA /* FavoritesViewModel.swift */; };
+		4B8154962D32D5F500FD8FFA /* SearchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8154952D32D5F500FD8FFA /* SearchExtension.swift */; };
 		4BDB613F2D2DA48C00D31659 /* MotionAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB613E2D2DA48C00D31659 /* MotionAnimationView.swift */; };
 		4BDB61492D2F09B800D31659 /* CategoriesGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61482D2F09B800D31659 /* CategoriesGridItemView.swift */; };
 		4BDB61532D303FB300D31659 /* QuestionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61522D303FB300D31659 /* QuestionsListView.swift */; };
-		4BDB61552D30411200D31659 /* QuestionsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61542D30411200D31659 /* QuestionsGridView.swift */; };
+		4BDB61552D30411200D31659 /* CategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61542D30411200D31659 /* CategoryGridView.swift */; };
 		4BDB61572D30436D00D31659 /* ToolbarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61562D30436D00D31659 /* ToolbarContentView.swift */; };
 		4BDB61592D30472000D31659 /* CategoryQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61582D30472000D31659 /* CategoryQuestionsView.swift */; };
 /* End PBXBuildFile section */
@@ -74,10 +75,11 @@
 		4B29CB502D299B1900B20F1B /* CategoryColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColorExtension.swift; sourceTree = "<group>"; };
 		4B29CB522D2AEC8100B20F1B /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4B8154932D31897700FD8FFA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		4B8154952D32D5F500FD8FFA /* SearchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchExtension.swift; sourceTree = "<group>"; };
 		4BDB613E2D2DA48C00D31659 /* MotionAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionAnimationView.swift; sourceTree = "<group>"; };
 		4BDB61482D2F09B800D31659 /* CategoriesGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGridItemView.swift; sourceTree = "<group>"; };
 		4BDB61522D303FB300D31659 /* QuestionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsListView.swift; sourceTree = "<group>"; };
-		4BDB61542D30411200D31659 /* QuestionsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsGridView.swift; sourceTree = "<group>"; };
+		4BDB61542D30411200D31659 /* CategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGridView.swift; sourceTree = "<group>"; };
 		4BDB61562D30436D00D31659 /* ToolbarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarContentView.swift; sourceTree = "<group>"; };
 		4BDB61582D30472000D31659 /* CategoryQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryQuestionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,7 +165,7 @@
 				4BDB613E2D2DA48C00D31659 /* MotionAnimationView.swift */,
 				4BDB61482D2F09B800D31659 /* CategoriesGridItemView.swift */,
 				4BDB61522D303FB300D31659 /* QuestionsListView.swift */,
-				4BDB61542D30411200D31659 /* QuestionsGridView.swift */,
+				4BDB61542D30411200D31659 /* CategoryGridView.swift */,
 				4BDB61562D30436D00D31659 /* ToolbarContentView.swift */,
 				4BDB61582D30472000D31659 /* CategoryQuestionsView.swift */,
 			);
@@ -219,6 +221,7 @@
 				4B29CB502D299B1900B20F1B /* CategoryColorExtension.swift */,
 				4B29CB522D2AEC8100B20F1B /* ColorExtension.swift */,
 				4B046F7A2D2D7DBC000D0D6B /* PreviewPlaceholder.swift */,
+				4B8154952D32D5F500FD8FFA /* SearchExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -312,13 +315,14 @@
 				4B29CB362D25B53800B20F1B /* CoverImageModel.swift in Sources */,
 				4B29CB512D299B1900B20F1B /* CategoryColorExtension.swift in Sources */,
 				4BDB61592D30472000D31659 /* CategoryQuestionsView.swift in Sources */,
-				4BDB61552D30411200D31659 /* QuestionsGridView.swift in Sources */,
+				4BDB61552D30411200D31659 /* CategoryGridView.swift in Sources */,
 				4B29CB222D23284900B20F1B /* SettingsView.swift in Sources */,
 				4BDB61532D303FB300D31659 /* QuestionsListView.swift in Sources */,
 				4B29CB532D2AEC8100B20F1B /* ColorExtension.swift in Sources */,
 				4B29CB3D2D25DACD00B20F1B /* QuestionModel.swift in Sources */,
 				4B29CB3B2D25CF1200B20F1B /* QuestionListItemView.swift in Sources */,
 				4B29CB2C2D259FA900B20F1B /* ProgressView.swift in Sources */,
+				4B8154962D32D5F500FD8FFA /* SearchExtension.swift in Sources */,
 				4B046F7B2D2D7DBC000D0D6B /* PreviewPlaceholder.swift in Sources */,
 				4B29CB4D2D28458200B20F1B /* HeadingView.swift in Sources */,
 				4B29CB1E2D23282300B20F1B /* MainView.swift in Sources */,
