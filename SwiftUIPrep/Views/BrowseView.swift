@@ -53,6 +53,7 @@ struct BrowseView: View {
             .listStyle(PlainListStyle())
             .navigationTitle("SwiftUIPrep")
             .searchable(text: $searchText, prompt: LocalizedStringKey("Search for a question"))
+            .animation(.default, value: searchText)
             .onAppear {
                 viewModel.loadQuestions()
             }// onAppear

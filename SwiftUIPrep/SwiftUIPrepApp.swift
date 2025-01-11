@@ -20,6 +20,9 @@ struct SwiftUIPrepApp: App {
             LaunchScreenView()
                 .environmentObject(viewModel)
                 .environmentObject(favoritesViewModel)
+                .onChange(of: appLanguage) { newLanguage in
+                    favoritesViewModel.updateLanguage(to: newLanguage)
+                }
         }// WindowGroup
     }// Body
 }// struct

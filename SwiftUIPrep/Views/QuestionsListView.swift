@@ -22,18 +22,18 @@ struct QuestionsListView: View {
             ForEach(filteredQuestions) { question in
                 NavigationLink(destination: QuestionDetailView(question: question)) {
                     QuestionListItemView(question: question)
-                }
-                .swipeActions(edge: .trailing) {
+                }// NavigationLink
+                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                     Button(action: {
-                        // Добавление вопроса в избранное
-                        favoritesViewModel.addToFavorites(question)
+                        withAnimation {
+                            favoritesViewModel.addToFavorites(question)
+                        }
                         print("Added to favorites: \(question.question)")
                     }) {
                         Label("Favorite", systemImage: "star.fill")
                     }
                     .tint(.yellow)
-                }
-                // NavigationLink
+                }// swipeActions
             }// ForEach
         }// List
         .listStyle(PlainListStyle())

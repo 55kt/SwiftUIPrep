@@ -23,8 +23,8 @@ struct CategoryQuestionsView: View {
             ForEach(filteredQuestions) { question in
                 NavigationLink(destination: QuestionDetailView(question: question)) {
                     QuestionListItemView(question: question)
-                        .toolbarRole(.editor)
-                }// NavigationLink
+                }
+                // NavigationLink
             }// ForEach
         }// List
         .navigationTitle(questions.first(where: { $0.category == category })?.categoryName ?? category)

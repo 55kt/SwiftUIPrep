@@ -26,25 +26,22 @@ struct FavoritesView: View {
                             .scaledToFit()
                             .frame(width: 100, height: 100)
                             .foregroundColor(.yellow)
-                    }
+                    }// VStack
                 } else {
                     List {
                         ForEach(favoritesViewModel.favoriteQuestions) { question in
                             NavigationLink(destination: QuestionDetailView(question: question)) {
                                 QuestionListItemView(question: question)
-                            }
-                        }
+                            }// NavigationLink
+                        }// ForEach
                         .onDelete(perform: deleteQuestion)
-                    }
+                    }// List
                     .listStyle(PlainListStyle())
-                }
-            }
+                }// if - else
+            }// Group
             .navigationTitle("Favorites")
-            .toolbar {
-                EditButton()
-            }
-        }
-    }
+        }// NavigationStack
+    }// Body
     
     // MARK: - Methods
     private func deleteQuestion(at offsets: IndexSet) {
@@ -52,8 +49,8 @@ struct FavoritesView: View {
             let question = favoritesViewModel.favoriteQuestions[index]
             favoritesViewModel.removeFromFavorites(question)
         }
-    }
-}
+    }// func
+}// View
 
 // MARK: - Preview
 #Preview {

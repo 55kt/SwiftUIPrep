@@ -11,6 +11,17 @@
         }
       }
     },
+    "Cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
+          }
+        }
+      }
+    },
     "Copyright © %@ volos.inc. All rights reserved." : {
       "localizations" : {
         "ru" : {
@@ -43,7 +54,14 @@
       }
     },
     "Favorite" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избранное"
+          }
+        }
+      }
     },
     "Favorites" : {
       "extractionState" : "manual",
@@ -78,7 +96,14 @@
       }
     },
     "No Favorites Yet" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Список отмеченных вопросов пуст"
+          }
+        }
+      }
     },
     "Progress" : {
       "extractionState" : "manual",
