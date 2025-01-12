@@ -17,4 +17,5 @@ struct Question: Codable, Identifiable {
     let description: String
     let image: String
     let link: String
+    let incorrectAnswers: [String]
 }

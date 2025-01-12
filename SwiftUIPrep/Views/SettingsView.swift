@@ -29,11 +29,11 @@ struct SettingsView: View {
                         .padding(.leading, 20)
                     
                     HStack(spacing: 15) {
-                        LanguageCard(language: "English", isSelected: appLanguage == "en", color: .blue) {
+                        LanguageCard(language: "English", isSelected: appLanguage == "en", color: .debugging) {
                             appLanguage = "en"
                         }
                         
-                        LanguageCard(language: "Russian", isSelected: appLanguage == "ru", color: .red) {
+                        LanguageCard(language: "Russian", isSelected: appLanguage == "ru", color: .accent) {
                             appLanguage = "ru"
                         }
                     }
