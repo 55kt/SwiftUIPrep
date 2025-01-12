@@ -21,7 +21,7 @@ struct MainView: View {
                     Text("Browse")
                 }
             
-            QuestionTestView()
+            StartTestView()
                 .tabItem {
                     Image(systemName: "pencil.and.outline")
                     Text("Tests")

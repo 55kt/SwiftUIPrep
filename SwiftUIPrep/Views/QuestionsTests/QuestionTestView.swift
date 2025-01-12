@@ -7,126 +7,147 @@
 
 import SwiftUI
 
+
 struct QuestionTestView: View {
-    // MARK: - Properties
-    @EnvironmentObject var questionViewModel: QuestionViewModel
-    @State private var currentQuestionIndex = 0
+    let questionCount: Int
+    let testDuration: Int
+    
+    @State private var questions: [Question] = [] // Массив настоящих вопросов
+    @State private var currentQuestionIndex: Int = 0
+    @State private var shuffledAnswers: [String] = []
     @State private var selectedAnswer: String? = nil
-    @State private var testQuestions: [Question] = []
-    @State private var currentShuffledAnswers: [String] = []
+    @State private var timeRemaining: Int
+    @State private var showResultView: Bool = false
+    @State private var correctAnswers: Int = 0
+    @State private var timer: Timer? = nil
+    @State private var timeIsOver: Bool = false
+    
+    init(questionCount: Int = 5, testDuration: Int = 1) {
+        self.questionCount = questionCount
+        self.testDuration = testDuration
+        self._timeRemaining = State(initialValue: testDuration * 60)
+    }
     
     var body: some View {
-        if currentQuestionIndex < testQuestions.count {
-            VStack(spacing: 20) {
-                // Отображение текста вопроса
-                Text(testQuestions[currentQuestionIndex].question)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .padding()
-                
-                // Варианты ответа
-                ForEach(currentShuffledAnswers, id: \.self) { answer in
-                    Button(action: {
-                        handleAnswerSelection(answer)
-                    }) {
-                        Text(answer)
-                            .fontWeight(.medium)
-                            .frame(maxWidth: .infinity)
+        VStack {
+            if showResultView {
+                ResultTestView(correctAnswers: correctAnswers, totalQuestions: questionCount, timeRanOut: timeIsOver)
+            } else {
+                VStack(spacing: 20) {
+                    // Таймер
+                    Text("Time Remaining: \(timeString(from: timeRemaining))")
+                        .font(.headline)
+                    
+                    // Прогресс
+                    Text("Question \(currentQuestionIndex + 1) of \(questionCount)")
+                        .font(.subheadline)
+                    
+                    // Вопрос
+                    if currentQuestionIndex < questions.count {
+                        Text(questions[currentQuestionIndex].question)
+                            .font(.title)
+                            .multilineTextAlignment(.center)
                             .padding()
-                            .background(buttonBackgroundColor(for: answer))
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
                     }
-                    .disabled(selectedAnswer != nil) // Блокируем кнопки после выбора
-                }
-                
-                Spacer()
-            }
-            .padding()
-            .onAppear {
-                loadQuestionsIfNeeded()
-            }
-            .onChange(of: currentQuestionIndex) { _ in
-                resetState()
-                currentShuffledAnswers = generateShuffledAnswers(for: testQuestions[currentQuestionIndex])
-            }
-        } else {
-            // Показываем результаты
-            VStack {
-                Text("Test Completed!")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Text("You completed the test.")
-                    .font(.headline)
-                    .padding()
-                
-                Button("Restart Test") {
-                    restartTest()
+                    
+                    // Варианты ответа
+                    ForEach(shuffledAnswers, id: \.self) { answer in
+                        Button(action: {
+                            handleAnswerSelection(answer)
+                        }) {
+                            Text(answer)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(buttonBackgroundColor(for: answer))
+                                .cornerRadius(8)
+                                .foregroundColor(.white)
+                        }
+                        .disabled(selectedAnswer != nil)
+                    }
+                    
+                    Spacer()
                 }
                 .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(8)
+                .onAppear {
+                    loadQuestions()
+                    startTimer()
+                }
+                .onChange(of: currentQuestionIndex) { _ in
+                    loadShuffledAnswers()
+                }
             }
-            .padding()
         }
+        .padding()
     }
     
     // MARK: - Helper Functions
     
-    private func loadQuestionsIfNeeded() {
-        if testQuestions.isEmpty {
-            testQuestions = questionViewModel.questions.shuffled() // Загружаем вопросы из ViewModel
-        }
-        if !testQuestions.isEmpty {
-            currentShuffledAnswers = generateShuffledAnswers(for: testQuestions[currentQuestionIndex])
+    private func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            if timeRemaining > 0 {
+                timeRemaining -= 1
+            } else {
+                timer.invalidate()
+                timeIsOver = true
+                showResultView = true
+            }
         }
     }
     
-    private func generateShuffledAnswers(for question: Question) -> [String] {
-        var answers = question.incorrectAnswers.shuffled()
-        answers = Array(answers.prefix(2)) // Берем только два случайных неправильных ответа
-        answers.append(question.answer) // Добавляем правильный ответ
-        return answers.shuffled() // Перемешиваем все три ответа
+    private func stopTimer() {
+        timer?.invalidate()
+        timer = nil
     }
     
-    private func shuffledAnswers() -> [String] {
-        var answers = testQuestions[currentQuestionIndex].incorrectAnswers.shuffled()
-        answers = Array(answers.prefix(2)) // Берем только два случайных неправильных ответа
-        answers.append(testQuestions[currentQuestionIndex].answer) // Добавляем правильный ответ
-        return answers.shuffled() // Перемешиваем все три ответа
+    private func timeString(from seconds: Int) -> String {
+        let minutes = seconds / 60
+        let seconds = seconds % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+    private func loadQuestions() {
+        // Здесь вы должны загрузить настоящие вопросы (например, из JSON)
+        questions = QuestionViewModel().questions.shuffled() // Подгружаем и перемешиваем
+        loadShuffledAnswers()
+    }
+    
+    private func loadShuffledAnswers() {
+        guard currentQuestionIndex < questions.count else { return }
+        let currentQuestion = questions[currentQuestionIndex]
+        
+        // Берем правильный ответ и два случайных неправильных ответа
+        var answers = currentQuestion.incorrectAnswers.shuffled().prefix(2).map { $0 }
+        answers.append(currentQuestion.answer)
+        shuffledAnswers = answers.shuffled() // Перемешиваем ответы
     }
     
     private func handleAnswerSelection(_ answer: String) {
         selectedAnswer = answer
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-            if self.currentQuestionIndex < self.testQuestions.count - 1 {
-                self.currentQuestionIndex += 1
+        if answer == questions[currentQuestionIndex].answer {
+            correctAnswers += 1
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            if currentQuestionIndex < questionCount - 1 {
+                currentQuestionIndex += 1
+                selectedAnswer = nil
+            } else {
+                stopTimer()
+                showResultView = true
             }
         }
     }
     
     private func buttonBackgroundColor(for answer: String) -> Color {
         if let selectedAnswer = selectedAnswer {
-            if answer == testQuestions[currentQuestionIndex].answer {
-                return .green // Правильный ответ
+            if answer == questions[currentQuestionIndex].answer {
+                return .green
             } else if answer == selectedAnswer {
-                return .red // Неправильный выбранный ответ
+                return .red
             }
         }
-        return .blue // Кнопки по умолчанию
-    }
-    
-    private func resetState() {
-        selectedAnswer = nil
-    }
-    
-    private func restartTest() {
-        testQuestions = questionViewModel.questions.shuffled()
-        currentQuestionIndex = 0
-        resetState()
+        return .blue
     }
 }
 
