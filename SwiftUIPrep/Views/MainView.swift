@@ -27,7 +27,7 @@ struct MainView: View {
                     Text("Tests")
                 }
             
-            ProgressView()
+            ProgressTabView()
                 .tabItem {
                     Image(systemName: "chart.bar.fill")
                     Text("Progress")

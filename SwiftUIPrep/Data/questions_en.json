@@ -265,9 +265,9 @@
     },
     {
         "id": "question9",
-        "category": "data-persistence-icon",
+        "category": "core-data-icon",
         "categoryName": "Data Persistence",
-        "categoryColor": "data-persistence-color",
+        "categoryColor": "core-data-color",
         "question": "What is Core Data?",
         "answer": "Core Data is an Apple framework used for managing object graphs and persisting data in iOS apps.",
         "incorrectAnswers": [
@@ -293,7 +293,7 @@
             "A library for handling app concurrency."
         ],
         "description": "Core Data allows developers to work with object graphs and store app data persistently, supporting features like undo/redo, relationships, and queries.",
-        "image": "data-persistence-icon",
+        "image": "core-data-icon",
         "link": "https://developer.apple.com/documentation/coredata/"
     },
     {
@@ -397,9 +397,9 @@
     },
     {
         "id": "question13",
-        "category": "core-data-icon",
+        "category": "swift-basics-icon",
         "categoryName": "Core Data",
-        "categoryColor": "core-data-color",
+        "categoryColor": "swift-basics-color",
         "question": "What is Core Data?",
         "answer": "Core Data is a framework for managing and persisting data in iOS applications.",
         "incorrectAnswers": [
@@ -430,9 +430,9 @@
     },
     {
         "id": "question14",
-        "category": "debugging-icon",
+        "category": "optimization-icon",
         "categoryName": "Debugging",
-        "categoryColor": "debugging-color",
+        "categoryColor": "optimization-color",
         "question": "What is a breakpoint in Xcode?",
         "answer": "A breakpoint is a debugging tool in Xcode used to pause the execution of a program at a specific line of code.",
         "incorrectAnswers": [
@@ -458,14 +458,14 @@
             "A service for managing app purchases."
         ],
         "description": "Breakpoints in Xcode allow developers to pause the execution of a program at a specific point, enabling them to inspect variables, check flow, and debug effectively.",
-        "image": "debugging-icon",
+        "image": "optimization-icon",
         "link": "https://developer.apple.com/documentation/xcode/debugging_tools/"
     },
     {
         "id": "question15",
-        "category": "error-handling-icon",
-        "categoryName": "Error Handling",
-        "categoryColor": "error-handling-color",
+        "category": "localization-icon",
+        "categoryName": "Localization",
+        "categoryColor": "localization-color",
         "question": "What is the purpose of the 'do-catch' block in Swift?",
         "answer": "The 'do-catch' block is used in Swift to handle errors thrown by functions.",
         "incorrectAnswers": [
@@ -491,7 +491,7 @@
             "To build machine learning models."
         ],
         "description": "The 'do-catch' block in Swift is a mechanism for handling errors that may be thrown by functions. It allows developers to gracefully handle errors without crashing the app.",
-        "image": "error-handling-icon",
+        "image": "localization-icon",
         "link": "https://developer.apple.com/documentation/swift/error_handling/"
     }
 ]

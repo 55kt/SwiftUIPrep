@@ -9,10 +9,11 @@ import SwiftUI
 
 
 struct QuestionTestView: View {
+    // MARK: - Properties
     let questionCount: Int
     let testDuration: Int
     
-    @State private var questions: [Question] = [] // Массив настоящих вопросов
+    @State private var questions: [Question] = []
     @State private var currentQuestionIndex: Int = 0
     @State private var shuffledAnswers: [String] = []
     @State private var selectedAnswer: String? = nil
@@ -22,66 +23,57 @@ struct QuestionTestView: View {
     @State private var timer: Timer? = nil
     @State private var timeIsOver: Bool = false
     
+    // MARK: - Inizializer
     init(questionCount: Int = 5, testDuration: Int = 1) {
         self.questionCount = questionCount
         self.testDuration = testDuration
         self._timeRemaining = State(initialValue: testDuration * 60)
     }
     
+    // MARK: - Body
     var body: some View {
         VStack {
             if showResultView {
                 ResultTestView(correctAnswers: correctAnswers, totalQuestions: questionCount, timeRanOut: timeIsOver)
             } else {
+                // Timer
+                TimeRemainingHolder(timeRemaining: timeRemaining)
+                
                 VStack(spacing: 20) {
-                    // Таймер
-                    Text("Time Remaining: \(timeString(from: timeRemaining))")
-                        .font(.headline)
+                    // Progress
+                    ProgressBarLine(currentQuestion: currentQuestionIndex + 1, totalQuestions: questionCount)
                     
-                    // Прогресс
-                    Text("Question \(currentQuestionIndex + 1) of \(questionCount)")
-                        .font(.subheadline)
-                    
-                    // Вопрос
+                    // Question
                     if currentQuestionIndex < questions.count {
                         Text(questions[currentQuestionIndex].question)
                             .font(.title)
                             .multilineTextAlignment(.center)
                             .padding()
-                    }
+                    }// if
                     
                     // Варианты ответа
                     ForEach(shuffledAnswers, id: \.self) { answer in
-                        Button(action: {
+                        AnswerCellButton(backgroundColor: buttonBackgroundColor(for: answer), answerText: answer) {
                             handleAnswerSelection(answer)
-                        }) {
-                            Text(answer)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(buttonBackgroundColor(for: answer))
-                                .cornerRadius(8)
-                                .foregroundColor(.white)
-                        }
+                        }// AnswerCellButton
                         .disabled(selectedAnswer != nil)
-                    }
-                    
+                    }// ForEach
                     Spacer()
-                }
+                }// VStack
                 .padding()
                 .onAppear {
                     loadQuestions()
                     startTimer()
-                }
+                }// onAppear
                 .onChange(of: currentQuestionIndex) { _ in
                     loadShuffledAnswers()
-                }
-            }
-        }
+                }// onChange
+            }// if - else
+        }// VStack
         .padding()
-    }
+    }// body
     
     // MARK: - Helper Functions
-    
     private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if timeRemaining > 0 {
@@ -99,26 +91,17 @@ struct QuestionTestView: View {
         timer = nil
     }
     
-    private func timeString(from seconds: Int) -> String {
-        let minutes = seconds / 60
-        let seconds = seconds % 60
-        return String(format: "%02d:%02d", minutes, seconds)
-    }
-    
     private func loadQuestions() {
-        // Здесь вы должны загрузить настоящие вопросы (например, из JSON)
-        questions = QuestionViewModel().questions.shuffled() // Подгружаем и перемешиваем
+        questions = QuestionViewModel().questions.shuffled()
         loadShuffledAnswers()
     }
     
     private func loadShuffledAnswers() {
         guard currentQuestionIndex < questions.count else { return }
         let currentQuestion = questions[currentQuestionIndex]
-        
-        // Берем правильный ответ и два случайных неправильных ответа
         var answers = currentQuestion.incorrectAnswers.shuffled().prefix(2).map { $0 }
         answers.append(currentQuestion.answer)
-        shuffledAnswers = answers.shuffled() // Перемешиваем ответы
+        shuffledAnswers = answers.shuffled()
     }
     
     private func handleAnswerSelection(_ answer: String) {
@@ -149,7 +132,8 @@ struct QuestionTestView: View {
         }
         return .blue
     }
-}
+    
+}// View
 
 // MARK: - Preview
 #Preview {

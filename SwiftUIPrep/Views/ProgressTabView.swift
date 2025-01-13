@@ -1,5 +1,5 @@
 //
-//  ProgressView.swift
+//  ProgressTabView.swift
 //  SwiftUIPrep
 //
 //  Created by Vlad on 1/1/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProgressView: View {
+struct ProgressTabView: View {
     // MARK: - Properties
     
     // MARK: - Body
@@ -24,5 +24,5 @@ struct ProgressView: View {
 
 // MARK: - Preview
 #Preview {
-    ProgressView()
+    ProgressTabView()
 }
