@@ -46,14 +46,17 @@ struct QuestionTestView: View {
                     // Question
                     if currentQuestionIndex < questions.count {
                         Text(questions[currentQuestionIndex].question)
-                            .font(.title)
-                            .multilineTextAlignment(.center)
-                            .padding()
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                            .foregroundStyle(.white)
                     }// if
                     
                     // Варианты ответа
                     ForEach(shuffledAnswers, id: \.self) { answer in
-                        AnswerCellButton(backgroundColor: buttonBackgroundColor(for: answer), answerText: answer) {
+                        AnswerCellButton(
+                            isCorrect: buttonBackground(for: answer),
+                            answerText: answer
+                        ) {
                             handleAnswerSelection(answer)
                         }// AnswerCellButton
                         .disabled(selectedAnswer != nil)
@@ -122,15 +125,15 @@ struct QuestionTestView: View {
         }
     }
     
-    private func buttonBackgroundColor(for answer: String) -> Color {
+    private func buttonBackground(for answer: String) -> Bool? {
         if let selectedAnswer = selectedAnswer {
             if answer == questions[currentQuestionIndex].answer {
-                return .green
+                return true
             } else if answer == selectedAnswer {
-                return .red
+                return false
             }
         }
-        return .blue
+        return nil
     }
     
 }// View

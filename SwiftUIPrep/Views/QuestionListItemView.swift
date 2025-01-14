@@ -38,5 +38,5 @@ struct QuestionListItemView: View {
 
 // MARK: - Preview
 #Preview {
-    QuestionListItemView(question: Question.previewFromJSON(index: 5, language: "ru"))
+    QuestionListItemView(question: Question.previewFromJSON(index: 5, language: "en"))
 }

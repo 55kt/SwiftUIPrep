@@ -8,29 +8,40 @@
 import SwiftUI
 
 struct AnswerCellButton: View {
-    // MARK: - Properties
-    var backgroundColor: Color = .blue
+    var isCorrect: Bool? = nil
     let answerText: String
-    var action: () -> ()
+    var action: () -> Void
     
-    // MARK: - Body
+    private var background: LinearGradient {
+        if let isCorrect = isCorrect {
+            return isCorrect ? ButtonGradients.correctAnswer : ButtonGradients.incorrectAnswer
+        }
+        return ButtonGradients.defaultButton
+    }
+    
     var body: some View {
-        Button {
-            action()
-        } label: {
+        Button(action: action) {
             Text(answerText)
                 .fontWeight(.semibold)
+                .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)
                 .padding()
-                .background(backgroundColor)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(background)
+                        .shadow(color: .gray.opacity(0.3), radius: 4, x: 0, y: 2)
+                )
                 .foregroundColor(.white)
-                .cornerRadius(12)
-                .shadow(color: .gray.opacity(0.4), radius: 4, x: 0, y: 2)
-        }// Button
-    }// Body
-}// View
+        }
+    }
+}
 
 // MARK: - Preview
 #Preview {
-    AnswerCellButton(answerText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo nec nisl non tempus. ?") {}
+    VStack(spacing: 10) {
+        AnswerCellButton(isCorrect: true, answerText: "Correct Answer") {}
+        AnswerCellButton(isCorrect: false, answerText: "Incorrect Answer") {}
+        AnswerCellButton(answerText: "Default Button") {}
+    }
+    .padding()
 }

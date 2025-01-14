@@ -41,6 +41,7 @@
 		4B8154A12D356FED00FD8FFA /* TimeRemainingHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8154A02D356FED00FD8FFA /* TimeRemainingHolder.swift */; };
 		4B8154A52D35877E00FD8FFA /* AnswerCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8154A42D35877E00FD8FFA /* AnswerCellButton.swift */; };
 		4B8154A72D3592D100FD8FFA /* ProgressBarLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8154A62D3592D100FD8FFA /* ProgressBarLine.swift */; };
+		4B8154A92D369FC900FD8FFA /* ButtonGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8154A82D369FC900FD8FFA /* ButtonGradients.swift */; };
 		4BDB613F2D2DA48C00D31659 /* MotionAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB613E2D2DA48C00D31659 /* MotionAnimationView.swift */; };
 		4BDB61492D2F09B800D31659 /* CategoriesGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61482D2F09B800D31659 /* CategoriesGridItemView.swift */; };
 		4BDB61532D303FB300D31659 /* QuestionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61522D303FB300D31659 /* QuestionsListView.swift */; };
@@ -86,6 +87,7 @@
 		4B8154A02D356FED00FD8FFA /* TimeRemainingHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRemainingHolder.swift; sourceTree = "<group>"; };
 		4B8154A42D35877E00FD8FFA /* AnswerCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCellButton.swift; sourceTree = "<group>"; };
 		4B8154A62D3592D100FD8FFA /* ProgressBarLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarLine.swift; sourceTree = "<group>"; };
+		4B8154A82D369FC900FD8FFA /* ButtonGradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGradients.swift; sourceTree = "<group>"; };
 		4BDB613E2D2DA48C00D31659 /* MotionAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionAnimationView.swift; sourceTree = "<group>"; };
 		4BDB61482D2F09B800D31659 /* CategoriesGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGridItemView.swift; sourceTree = "<group>"; };
 		4BDB61522D303FB300D31659 /* QuestionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsListView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				4B29CB272D232D1300B20F1B /* Localizable.xcstrings */,
+				4B8154A82D369FC900FD8FFA /* ButtonGradients.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				4B29CB362D25B53800B20F1B /* CoverImageModel.swift in Sources */,
 				4B29CB512D299B1900B20F1B /* CategoryColorExtension.swift in Sources */,
 				4BDB61592D30472000D31659 /* CategoryQuestionsView.swift in Sources */,
+				4B8154A92D369FC900FD8FFA /* ButtonGradients.swift in Sources */,
 				4B8154A72D3592D100FD8FFA /* ProgressBarLine.swift in Sources */,
 				4BDB61552D30411200D31659 /* CategoryGridView.swift in Sources */,
 				4B29CB222D23284900B20F1B /* SettingsView.swift in Sources */,

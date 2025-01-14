@@ -22,13 +22,14 @@ struct ProgressBarLine: View {
         VStack {
             HStack {
                 Text("Question \(currentQuestion) of \(totalQuestions)")
-                    .font(.caption)
-                    .foregroundColor(.gray)
+                    .font(.callout)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
                 Spacer()
             }// HStack
             ProgressView(value: progress)
-                .tint(.blue) // Задаём цвет прогресса
-                .frame(height: 8)
+                .tint(.accent) // Задаём цвет прогресса
+                .frame(height: 12)
                 .clipShape(Capsule())
         }// VStack
         .padding(.horizontal)
