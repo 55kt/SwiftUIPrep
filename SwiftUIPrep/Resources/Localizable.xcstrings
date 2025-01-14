@@ -189,6 +189,7 @@
       }
     },
     "Restart Test" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -251,6 +252,7 @@
       }
     },
     "Start Test" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -266,7 +268,11 @@
     "SwiftUIPrep" : {
 
     },
+    "Test Completed !" : {
+
+    },
     "Test Completed!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -312,7 +318,11 @@
     "Time Elapsed" : {
 
     },
+    "Time is Over !" : {
+
+    },
     "Time is Over!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {

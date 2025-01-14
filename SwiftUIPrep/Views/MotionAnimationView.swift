@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MotionAnimationView: View {
     // MARK: - Properties
-    @State private var randomCircle = Int.random(in: 12...16)
+    @State private var randomCircle = Int.random(in: 8...12)
     @State private var isAnimating: Bool = false
     
     // MARK: - Functions
@@ -21,7 +21,7 @@ struct MotionAnimationView: View {
     
     // 2. Random size
     func randomSize() -> CGFloat {
-        return CGFloat.random(in: 10...300)
+        return CGFloat.random(in: 20...150)
     }
     
     // 3. Random scale
@@ -54,18 +54,21 @@ struct MotionAnimationView: View {
                             y: randomCoordinate(max: geometry.size.height)
                         )
                         .onAppear {
-                            withAnimation(
-                                Animation.interpolatingSpring(stiffness: 0.5, damping: 0.5)
-                                    .repeatForever()
-                                    .speed(randomSpeed())
-                                    .delay(randomDelay())
-                            ) {
-                                isAnimating = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + randomDelay()) {
+                                withAnimation(
+                                    Animation.interpolatingSpring(stiffness: 0.5, damping: 0.5)
+                                        .repeatForever()
+                                        .speed(randomSpeed())
+                                ) {
+                                    isAnimating = true
+                                }
                             }
                         }// OnAppear
                 }// ForEach
             }// ZStack
-            .drawingGroup()
+            .onDisappear {
+                isAnimating = false
+            }
         }// GeometryReader
     }// Body
 }// View

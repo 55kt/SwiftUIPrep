@@ -28,49 +28,54 @@ struct QuestionTestView: View {
     
     // MARK: - Body
     var body: some View {
-        VStack {
-            if showResultView {
-                ResultTestView(correctAnswers: correctAnswers, totalQuestions: questionCount, timeRanOut: true, timeElapsed: totalTimeElapsed)
-            } else {
-                // Таймер
-                TimeRemainingHolder(timerManager: TimerManager(initialTime: totalTimeElapsed))
-                
-                VStack(spacing: 20) {
-                    // Прогресс
-                    ProgressBarLine(currentQuestion: currentQuestionIndex + 1, totalQuestions: questionCount)
+        ZStack {
+            MotionAnimationView()
+                .ignoresSafeArea()
+            
+            VStack {
+                if showResultView {
+                    ResultTestView(correctAnswers: correctAnswers, totalQuestions: questionCount, timeRanOut: true, timeElapsed: totalTimeElapsed)
+                } else {
+                    // Таймер
+                    TimeRemainingHolder(timerManager: TimerManager(initialTime: totalTimeElapsed))
                     
-                    // Вопрос
-                    if currentQuestionIndex < questions.count {
-                        Text(questions[currentQuestionIndex].question)
-                            .font(.title2)
-                            .fontWeight(.heavy)
-                            .foregroundStyle(.white)
-                    }
-                    
-                    // Варианты ответа
-                    ForEach(shuffledAnswers, id: \.self) { answer in
-                        AnswerCellButton(
-                            isCorrect: buttonBackground(for: answer),
-                            answerText: answer
-                        ) {
-                            handleAnswerSelection(answer)
+                    VStack(spacing: 20) {
+                        // Прогресс
+                        ProgressBarLine(currentQuestion: currentQuestionIndex + 1, totalQuestions: questionCount)
+                        
+                        // Вопрос
+                        if currentQuestionIndex < questions.count {
+                            Text(questions[currentQuestionIndex].question)
+                                .font(.title2)
+                                .fontWeight(.heavy)
+                                .foregroundStyle(.white)
                         }
-                        .disabled(selectedAnswer != nil)
+                        
+                        // Варианты ответа
+                        ForEach(shuffledAnswers, id: \.self) { answer in
+                            AnswerCellButton(
+                                isCorrect: buttonBackground(for: answer),
+                                answerText: answer
+                            ) {
+                                handleAnswerSelection(answer)
+                            }
+                            .disabled(selectedAnswer != nil)
+                        }
+                        
+                        Spacer()
                     }
-                    
-                    Spacer()
-                }
-                .padding()
-                .onAppear {
-                    loadQuestions()
-                    startTimer()
-                }
-                .onChange(of: currentQuestionIndex) { _ in
-                    loadShuffledAnswers()
+                    .padding()
+                    .onAppear {
+                        loadQuestions()
+                        startTimer()
+                    }
+                    .onChange(of: currentQuestionIndex) { _ in
+                        loadShuffledAnswers()
+                    }
                 }
             }
+            .padding()
         }
-        .padding()
     }
     
     // MARK: - Helper Functions
@@ -105,7 +110,7 @@ struct QuestionTestView: View {
             correctAnswers += 1
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             if currentQuestionIndex < questionCount - 1 {
                 currentQuestionIndex += 1
                 selectedAnswer = nil

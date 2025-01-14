@@ -15,93 +15,83 @@ struct ResultTestView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack(spacing: 24) {
-            // Заголовок
-            Text("Test Completed!")
-                .font(.system(size: 36, weight: .bold, design: .rounded))
-                .foregroundStyle(LinearGradient(colors: [.blue, .purple], startPoint: .top, endPoint: .bottom))
-                .padding(.top, 40)
+        ZStack {
+            MotionAnimationView()
+                .ignoresSafeArea(.all)
             
-            if timeRanOut {
-                // Уведомление о завершении времени
-                Text("Time is Over!")
-                    .font(.system(size: 24, weight: .bold, design: .rounded))
-                    .foregroundColor(.red)
-                    .padding(.vertical, 10)
-            }
-            
-            // Результаты теста
-            VStack(spacing: 12) {
-                Text("You answered")
-                    .font(.headline)
-                    .foregroundStyle(.secondary)
+            VStack(spacing: 30) {
+                // Заголовок
+                Text("Test Completed !")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.top, 40)
                 
-                Text("\(correctAnswers) out of \(totalQuestions) correctly")
-                    .font(.system(size: 28, weight: .semibold, design: .rounded))
-                    .foregroundColor(correctAnswers > totalQuestions / 2 ? .green : .orange)
-            }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(Color(UIColor.secondarySystemBackground))
-                    .shadow(color: .gray.opacity(0.2), radius: 5, x: 0, y: 2)
-            )
-            .padding(.horizontal)
-            
-            // Время прохождения теста
-                        VStack(spacing: 12) {
-                            Text("Time Elapsed")
-                                .font(.headline)
-                                .foregroundStyle(.secondary)
-                            
-                            Text("\(timeString(from: timeElapsed))")
-                                .font(.system(size: 28, weight: .semibold, design: .rounded))
-                                .foregroundColor(.blue)
-                        }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color(UIColor.secondarySystemBackground))
-                                .shadow(color: .gray.opacity(0.2), radius: 5, x: 0, y: 2)
-                        )
-                        .padding(.horizontal)
-            
-            // Сообщение о результате
-            Text(resultMessage)
-                .font(.system(size: 18, weight: .medium, design: .rounded))
-                .multilineTextAlignment(.center)
+                if timeRanOut {
+                    // Message if time ran out
+                    Text("Time is Over !")
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
+                        .foregroundColor(.red)
+                        .padding(.vertical, 10)
+                }
+                
+                // Test Results
+                VStack(spacing: 12) {
+                    Text("You answered")
+                        .font(.headline)
+                        .foregroundStyle(.secondary)
+                    
+                    Text("\(correctAnswers) out of \(totalQuestions) correctly")
+                        .font(.title)
+                        .foregroundColor(correctAnswers > totalQuestions / 2 ? .primary : .orange)
+                }
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 12)
-                        .fill(LinearGradient(colors: [Color.blue.opacity(0.1), Color.white], startPoint: .top, endPoint: .bottom))
-                        .shadow(color: .gray.opacity(0.2), radius: 5)
+                        .fill(Color(UIColor.secondarySystemBackground))
+                        .shadow(color: .gray.opacity(0.2), radius: 5, x: 0, y: 2)
                 )
-            
-            Spacer()
-            
-            // Кнопка перезапуска
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Text("Restart Test")
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .frame(maxWidth: .infinity)
+                .padding(.horizontal)
+                
+                // Время прохождения теста
+                            VStack(spacing: 12) {
+                                Text("Time Elapsed")
+                                    .font(.headline)
+                                    .foregroundStyle(.secondary)
+                                
+                                Text("\(timeString(from: timeElapsed))")
+                                    .font(.system(size: 28, weight: .semibold, design: .rounded))
+                                    .foregroundColor(.primary)
+                            }
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(Color(UIColor.secondarySystemBackground))
+                                    .shadow(color: .gray.opacity(0.2), radius: 5, x: 0, y: 2)
+                            )
+                            .padding(.horizontal)
+                
+                // Message based on result
+                Text(resultMessage)
+                    .font(.system(size: 18, weight: .medium, design: .rounded))
+                    .multilineTextAlignment(.center)
                     .padding()
                     .background(
-                        LinearGradient(colors: [.purple, .blue], startPoint: .leading, endPoint: .trailing)
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color(UIColor.secondarySystemBackground))
+                            .shadow(color: .gray.opacity(0.2), radius: 5, x: 0, y: 2)
                     )
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
-                    .shadow(color: .gray.opacity(0.3), radius: 4, x: 0, y: 2)
+                    .padding(.horizontal)
+                
+                Spacer()
+                
+                // Restart button (back to StartTestView)
+                TestViewsButton(buttonName: "Restart Test", action: {
+                    presentationMode.wrappedValue.dismiss()
+                })
+                .padding()
+                .padding(.bottom, 100)
             }
-            .padding(.horizontal)
-            .padding(.bottom, 40)
         }
-        .padding()
-        .background(
-            LinearGradient(colors: [Color(UIColor.systemGroupedBackground), Color.white], startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
-        )
     }
     
     private var resultMessage: String {
