@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AnswerCellButton: View {
+    // MARK: - Properties
     var isCorrect: Bool? = nil
     let answerText: String
     var action: () -> Void
@@ -19,6 +20,7 @@ struct AnswerCellButton: View {
         return ButtonGradients.defaultButton
     }
     
+    // MARK: - Body
     var body: some View {
         Button(action: action) {
             Text(answerText)
@@ -32,9 +34,9 @@ struct AnswerCellButton: View {
                         .shadow(color: .gray.opacity(0.3), radius: 4, x: 0, y: 2)
                 )
                 .foregroundColor(.white)
-        }
-    }
-}
+        }// Button
+    }// Body
+}// View
 
 // MARK: - Preview
 #Preview {

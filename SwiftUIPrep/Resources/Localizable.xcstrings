@@ -4,6 +4,19 @@
     "%@" : {
 
     },
+    "%lld" : {
+
+    },
+    "%lld out of %lld correctly" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld out of %2$lld correctly"
+          }
+        }
+      }
+    },
     "Browse" : {
       "localizations" : {
         "ru" : {
@@ -131,7 +144,14 @@
         }
       }
     },
+    "Number of Questions" : {
+
+    },
+    "Number of Questions:" : {
+
+    },
     "Number of Questions: %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -257,6 +277,7 @@
       }
     },
     "Test Duration: %lld minutes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -288,6 +309,9 @@
         }
       }
     },
+    "Time Elapsed" : {
+
+    },
     "Time is Over!" : {
       "localizations" : {
         "ru" : {
@@ -312,15 +336,8 @@
         }
       }
     },
-    "You answered %lld out of %lld correctly." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "You answered %1$lld out of %2$lld correctly."
-          }
-        }
-      }
+    "You answered" : {
+
     },
     "Your guide to mastering SwiftUI interviews." : {
       "localizations" : {

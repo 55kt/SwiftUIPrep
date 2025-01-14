@@ -8,48 +8,55 @@
 import SwiftUI
 
 struct StartTestView: View {
-    @State private var questionCount: Double = 10
-    @State private var testDuration: Double = 5
+    @State private var questionCount: Int = 10
     @State private var showTestView: Bool = false
+    
+    // Доступные варианты вопросов
+    let questionOptions = Array(10...150).filter { $0 % 5 == 0 }
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
+                // Заголовок
                 Text("Setup Test")
-                    .font(.largeTitle)
+                    .font(.system(size: 40, weight: .bold, design: .rounded))
                     .bold()
                     .padding()
                 
-                VStack(alignment: .leading) {
-                    Text("Number of Questions: \(Int(questionCount))")
-                        .font(.headline)
-                    Slider(value: $questionCount, in: 5...150, step: 5)
-                        .padding(.horizontal)
+                // Выбор количества вопросов
+                VStack(alignment: .center) {
+                    Text("Number of Questions:")
+                        .font(.system(size: 25, weight: .bold, design: .rounded))
+                    
+                    Picker("Number of Questions", selection: $questionCount) {
+                        ForEach(questionOptions, id: \.self) { option in
+                            Text("\(option)").tag(option)
+                                .font(.system(size: 25, weight: .bold, design: .rounded))
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    .frame(height: 150)
                 }
+                .padding(.horizontal)
                 
-                VStack(alignment: .leading) {
-                    Text("Test Duration: \(Int(testDuration)) minutes")
-                        .font(.headline)
-                    Slider(value: $testDuration, in: 1...60, step: 1)
-                        .padding(.horizontal)
-                }
-                
+                // Кнопка запуска теста
                 Button(action: {
                     showTestView = true
                 }) {
                     Text("Start Test")
-                        .font(.headline)
-                        .foregroundColor(.white)
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
-                        .cornerRadius(8)
+                        .background(
+                            LinearGradient(colors: [.accent.opacity(0.7), .gray.opacity(0.2)], startPoint: .leading, endPoint: .trailing)
+                        )
+                        .foregroundColor(.white)
+                        .cornerRadius(12)
                 }
                 .padding(.top)
                 .navigationDestination(isPresented: $showTestView) {
-                    QuestionTestView(questionCount: Int(questionCount), testDuration: Int(testDuration))
+                    QuestionTestView(questionCount: questionCount)
                 }
-                
                 Spacer()
             }
             .padding()

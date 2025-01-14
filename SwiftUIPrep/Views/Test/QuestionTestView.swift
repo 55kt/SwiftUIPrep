@@ -11,45 +11,41 @@ import SwiftUI
 struct QuestionTestView: View {
     // MARK: - Properties
     let questionCount: Int
-    let testDuration: Int
     
     @State private var questions: [Question] = []
     @State private var currentQuestionIndex: Int = 0
     @State private var shuffledAnswers: [String] = []
     @State private var selectedAnswer: String? = nil
-    @State private var timeRemaining: Int
+    @State private var totalTimeElapsed: Int = 0 
     @State private var showResultView: Bool = false
     @State private var correctAnswers: Int = 0
     @State private var timer: Timer? = nil
-    @State private var timeIsOver: Bool = false
     
     // MARK: - Inizializer
-    init(questionCount: Int = 5, testDuration: Int = 1) {
+    init(questionCount: Int = 5) {
         self.questionCount = questionCount
-        self.testDuration = testDuration
-        self._timeRemaining = State(initialValue: testDuration * 60)
     }
     
     // MARK: - Body
     var body: some View {
         VStack {
             if showResultView {
-                ResultTestView(correctAnswers: correctAnswers, totalQuestions: questionCount, timeRanOut: timeIsOver)
+                ResultTestView(correctAnswers: correctAnswers, totalQuestions: questionCount, timeRanOut: true, timeElapsed: totalTimeElapsed)
             } else {
-                // Timer
-                TimeRemainingHolder(timeRemaining: timeRemaining)
+                // Таймер
+                TimeRemainingHolder(timerManager: TimerManager(initialTime: totalTimeElapsed))
                 
                 VStack(spacing: 20) {
-                    // Progress
+                    // Прогресс
                     ProgressBarLine(currentQuestion: currentQuestionIndex + 1, totalQuestions: questionCount)
                     
-                    // Question
+                    // Вопрос
                     if currentQuestionIndex < questions.count {
                         Text(questions[currentQuestionIndex].question)
                             .font(.title2)
                             .fontWeight(.heavy)
                             .foregroundStyle(.white)
-                    }// if
+                    }
                     
                     // Варианты ответа
                     ForEach(shuffledAnswers, id: \.self) { answer in
@@ -58,34 +54,29 @@ struct QuestionTestView: View {
                             answerText: answer
                         ) {
                             handleAnswerSelection(answer)
-                        }// AnswerCellButton
+                        }
                         .disabled(selectedAnswer != nil)
-                    }// ForEach
+                    }
+                    
                     Spacer()
-                }// VStack
+                }
                 .padding()
                 .onAppear {
                     loadQuestions()
                     startTimer()
-                }// onAppear
+                }
                 .onChange(of: currentQuestionIndex) { _ in
                     loadShuffledAnswers()
-                }// onChange
-            }// if - else
-        }// VStack
+                }
+            }
+        }
         .padding()
-    }// body
+    }
     
     // MARK: - Helper Functions
     private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            if timeRemaining > 0 {
-                timeRemaining -= 1
-            } else {
-                timer.invalidate()
-                timeIsOver = true
-                showResultView = true
-            }
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            totalTimeElapsed += 1
         }
     }
     
@@ -135,8 +126,7 @@ struct QuestionTestView: View {
         }
         return nil
     }
-    
-}// View
+}
 
 // MARK: - Preview
 #Preview {
