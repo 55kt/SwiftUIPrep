@@ -29,29 +29,28 @@ struct QuestionTestView: View {
     // MARK: - Body
     var body: some View {
         ZStack {
-            MotionAnimationView()
-                .ignoresSafeArea()
+            // Background
             
             VStack {
                 if showResultView {
-                    ResultTestView(correctAnswers: correctAnswers, totalQuestions: questionCount, timeRanOut: true, timeElapsed: totalTimeElapsed)
+                    ResultTestView(correctAnswers: correctAnswers, totalQuestions: questionCount, timeElapsed: totalTimeElapsed)
                 } else {
-                    // Таймер
+                    // Timer
                     TimeRemainingHolder(timerManager: TimerManager(initialTime: totalTimeElapsed))
                     
                     VStack(spacing: 20) {
-                        // Прогресс
+                        // ProgressLine
                         ProgressBarLine(currentQuestion: currentQuestionIndex + 1, totalQuestions: questionCount)
                         
-                        // Вопрос
+                        // Question
                         if currentQuestionIndex < questions.count {
                             Text(questions[currentQuestionIndex].question)
                                 .font(.title2)
                                 .fontWeight(.heavy)
                                 .foregroundStyle(.white)
-                        }
+                        }// if
                         
-                        // Варианты ответа
+                        // Question Answers
                         ForEach(shuffledAnswers, id: \.self) { answer in
                             AnswerCellButton(
                                 isCorrect: buttonBackground(for: answer),
@@ -60,25 +59,26 @@ struct QuestionTestView: View {
                                 handleAnswerSelection(answer)
                             }
                             .disabled(selectedAnswer != nil)
-                        }
+                        }// ForEach
                         
                         Spacer()
-                    }
+                    }// VStack
                     .padding()
                     .onAppear {
                         loadQuestions()
                         startTimer()
-                    }
+                    }// OnAppear
                     .onChange(of: currentQuestionIndex) { _ in
                         loadShuffledAnswers()
-                    }
-                }
-            }
+                    }// OnChange
+                }// if - else
+            }// VStack
             .padding()
-        }
-    }
+        }// ZStack
+    }// Body
     
     // MARK: - Helper Functions
+    
     private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             totalTimeElapsed += 1
@@ -131,7 +131,8 @@ struct QuestionTestView: View {
         }
         return nil
     }
-}
+    
+}// View
 
 // MARK: - Preview
 #Preview {

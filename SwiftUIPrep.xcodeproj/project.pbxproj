@@ -43,11 +43,14 @@
 		4B8154A52D35877E00FD8FFA /* AnswerCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8154A42D35877E00FD8FFA /* AnswerCellButton.swift */; };
 		4B8154A72D3592D100FD8FFA /* ProgressBarLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8154A62D3592D100FD8FFA /* ProgressBarLine.swift */; };
 		4B8154A92D369FC900FD8FFA /* ButtonGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8154A82D369FC900FD8FFA /* ButtonGradients.swift */; };
+		4B96CCA82D38F66F00DFC13C /* ProgressItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B96CCA72D38F66F00DFC13C /* ProgressItemView.swift */; };
+		4B96CCAA2D39044500DFC13C /* ProgressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B96CCA92D39044500DFC13C /* ProgressItem.swift */; };
+		4B96CCAC2D39047B00DFC13C /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B96CCAB2D39047B00DFC13C /* ProgressViewModel.swift */; };
 		4BDB613F2D2DA48C00D31659 /* MotionAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB613E2D2DA48C00D31659 /* MotionAnimationView.swift */; };
 		4BDB61492D2F09B800D31659 /* CategoriesGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61482D2F09B800D31659 /* CategoriesGridItemView.swift */; };
 		4BDB61532D303FB300D31659 /* QuestionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61522D303FB300D31659 /* QuestionsListView.swift */; };
 		4BDB61552D30411200D31659 /* CategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61542D30411200D31659 /* CategoryGridView.swift */; };
-		4BDB61572D30436D00D31659 /* ToolbarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61562D30436D00D31659 /* ToolbarContentView.swift */; };
+		4BDB61572D30436D00D31659 /* ToolbarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61562D30436D00D31659 /* ToolbarButtons.swift */; };
 		4BDB61592D30472000D31659 /* CategoryQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61582D30472000D31659 /* CategoryQuestionsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,11 +93,14 @@
 		4B8154A42D35877E00FD8FFA /* AnswerCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCellButton.swift; sourceTree = "<group>"; };
 		4B8154A62D3592D100FD8FFA /* ProgressBarLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarLine.swift; sourceTree = "<group>"; };
 		4B8154A82D369FC900FD8FFA /* ButtonGradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGradients.swift; sourceTree = "<group>"; };
+		4B96CCA72D38F66F00DFC13C /* ProgressItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressItemView.swift; sourceTree = "<group>"; };
+		4B96CCA92D39044500DFC13C /* ProgressItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressItem.swift; sourceTree = "<group>"; };
+		4B96CCAB2D39047B00DFC13C /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
 		4BDB613E2D2DA48C00D31659 /* MotionAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionAnimationView.swift; sourceTree = "<group>"; };
 		4BDB61482D2F09B800D31659 /* CategoriesGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGridItemView.swift; sourceTree = "<group>"; };
 		4BDB61522D303FB300D31659 /* QuestionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsListView.swift; sourceTree = "<group>"; };
 		4BDB61542D30411200D31659 /* CategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGridView.swift; sourceTree = "<group>"; };
-		4BDB61562D30436D00D31659 /* ToolbarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarContentView.swift; sourceTree = "<group>"; };
+		4BDB61562D30436D00D31659 /* ToolbarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarButtons.swift; sourceTree = "<group>"; };
 		4BDB61582D30472000D31659 /* CategoryQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryQuestionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,21 +173,14 @@
 			children = (
 				4B29CB232D232A3B00B20F1B /* LaunchScreenView.swift */,
 				4B29CB1D2D23282300B20F1B /* MainView.swift */,
-				4B29CB0E2D23213D00B20F1B /* BrowseView.swift */,
+				4B96CCA42D38F41300DFC13C /* Browse */,
 				4B8154972D338EEF00FD8FFA /* Test */,
-				4B29CB2B2D259FA900B20F1B /* ProgressTabView.swift */,
-				4B29CB2F2D259FD000B20F1B /* FavoritesView.swift */,
-				4B29CB212D23284900B20F1B /* SettingsView.swift */,
-				4B29CB312D25AFB800B20F1B /* CoverImageView.swift */,
-				4B29CB3A2D25CF1200B20F1B /* QuestionListItemView.swift */,
-				4B29CB4A2D28429300B20F1B /* QuestionDetailView.swift */,
-				4B29CB4C2D28458200B20F1B /* HeadingView.swift */,
+				4B96CCA12D38F3B600DFC13C /* Progress */,
+				4B96CCA22D38F3CF00DFC13C /* Favorites */,
+				4B96CCA32D38F3E400DFC13C /* Settings */,
+				4B96CCA52D38F43900DFC13C /* Question */,
+				4B96CCA62D38F51C00DFC13C /* Category */,
 				4BDB613E2D2DA48C00D31659 /* MotionAnimationView.swift */,
-				4BDB61482D2F09B800D31659 /* CategoriesGridItemView.swift */,
-				4BDB61522D303FB300D31659 /* QuestionsListView.swift */,
-				4BDB61542D30411200D31659 /* CategoryGridView.swift */,
-				4BDB61562D30436D00D31659 /* ToolbarContentView.swift */,
-				4BDB61582D30472000D31659 /* CategoryQuestionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +190,7 @@
 			children = (
 				4B29CB462D26EF4400B20F1B /* QuestionViewModel.swift */,
 				4B8154932D31897700FD8FFA /* FavoritesViewModel.swift */,
+				4B96CCAB2D39047B00DFC13C /* ProgressViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -226,6 +226,7 @@
 			children = (
 				4B29CB352D25B53800B20F1B /* CoverImageModel.swift */,
 				4B29CB3C2D25DACD00B20F1B /* QuestionModel.swift */,
+				4B96CCA92D39044500DFC13C /* ProgressItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +254,62 @@
 				4B779C632D36D27A0073A379 /* TestViewsButton.swift */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		4B96CCA12D38F3B600DFC13C /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				4B29CB2B2D259FA900B20F1B /* ProgressTabView.swift */,
+				4B96CCA72D38F66F00DFC13C /* ProgressItemView.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		4B96CCA22D38F3CF00DFC13C /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				4B29CB2F2D259FD000B20F1B /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		4B96CCA32D38F3E400DFC13C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4B29CB212D23284900B20F1B /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		4B96CCA42D38F41300DFC13C /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				4B29CB0E2D23213D00B20F1B /* BrowseView.swift */,
+				4B29CB312D25AFB800B20F1B /* CoverImageView.swift */,
+				4BDB61562D30436D00D31659 /* ToolbarButtons.swift */,
+			);
+			path = Browse;
+			sourceTree = "<group>";
+		};
+		4B96CCA52D38F43900DFC13C /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				4B29CB3A2D25CF1200B20F1B /* QuestionListItemView.swift */,
+				4B29CB4A2D28429300B20F1B /* QuestionDetailView.swift */,
+				4BDB61522D303FB300D31659 /* QuestionsListView.swift */,
+				4B29CB4C2D28458200B20F1B /* HeadingView.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		4B96CCA62D38F51C00DFC13C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4BDB61482D2F09B800D31659 /* CategoriesGridItemView.swift */,
+				4BDB61542D30411200D31659 /* CategoryGridView.swift */,
+				4BDB61582D30472000D31659 /* CategoryQuestionsView.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +396,7 @@
 				4B29CB242D232A3B00B20F1B /* LaunchScreenView.swift in Sources */,
 				4B29CB322D25AFB800B20F1B /* CoverImageView.swift in Sources */,
 				4B29CB262D232C8700B20F1B /* LanguageButton.swift in Sources */,
+				4B96CCAC2D39047B00DFC13C /* ProgressViewModel.swift in Sources */,
 				4B29CB132D23213D00B20F1B /* BrowseView.swift in Sources */,
 				4B29CB4B2D28429300B20F1B /* QuestionDetailView.swift in Sources */,
 				4B29CB452D26EDF100B20F1B /* JSONLoader.swift in Sources */,
@@ -353,6 +411,7 @@
 				4BDB61532D303FB300D31659 /* QuestionsListView.swift in Sources */,
 				4B81549F2D341AF200FD8FFA /* ResultTestView.swift in Sources */,
 				4B29CB532D2AEC8100B20F1B /* ColorExtension.swift in Sources */,
+				4B96CCA82D38F66F00DFC13C /* ProgressItemView.swift in Sources */,
 				4B29CB3D2D25DACD00B20F1B /* QuestionModel.swift in Sources */,
 				4B29CB3B2D25CF1200B20F1B /* QuestionListItemView.swift in Sources */,
 				4B29CB2C2D259FA900B20F1B /* ProgressTabView.swift in Sources */,
@@ -366,7 +425,8 @@
 				4B8154942D31897700FD8FFA /* FavoritesViewModel.swift in Sources */,
 				4BDB613F2D2DA48C00D31659 /* MotionAnimationView.swift in Sources */,
 				4BDB61492D2F09B800D31659 /* CategoriesGridItemView.swift in Sources */,
-				4BDB61572D30436D00D31659 /* ToolbarContentView.swift in Sources */,
+				4BDB61572D30436D00D31659 /* ToolbarButtons.swift in Sources */,
+				4B96CCAA2D39044500DFC13C /* ProgressItem.swift in Sources */,
 				4B29CB302D259FD000B20F1B /* FavoritesView.swift in Sources */,
 				4B29CB492D26F44400B20F1B /* QuestionLoader.swift in Sources */,
 			);

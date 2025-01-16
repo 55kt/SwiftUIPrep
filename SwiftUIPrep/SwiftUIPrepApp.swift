@@ -13,6 +13,7 @@ struct SwiftUIPrepApp: App {
     @AppStorage("AppLanguage") private var appLanguage: String = Locale.current.language.languageCode?.identifier ?? "en"
     @StateObject private var viewModel = QuestionViewModel()
     @StateObject private var favoritesViewModel = FavoritesViewModel()
+    @StateObject private var progressViewModel = ProgressViewModel()
     
     // MARK: - Body
     var body: some Scene {
@@ -20,6 +21,7 @@ struct SwiftUIPrepApp: App {
             LaunchScreenView()
                 .environmentObject(viewModel)
                 .environmentObject(favoritesViewModel)
+                .environmentObject(progressViewModel)
                 .onChange(of: appLanguage) { newLanguage in
                     favoritesViewModel.updateLanguage(to: newLanguage)
                 }

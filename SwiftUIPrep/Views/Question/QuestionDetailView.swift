@@ -60,7 +60,6 @@ struct QuestionDetailView: View {
                         .multilineTextAlignment(.leading)
                         .padding(.horizontal)
                 }// VStack - Description
-                
             }// VStack
         }// ScrollView
     }// Body

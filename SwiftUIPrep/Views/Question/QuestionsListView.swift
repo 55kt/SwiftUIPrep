@@ -15,10 +15,6 @@ struct QuestionsListView: View {
     // MARK: - Body
     var body: some View {
         List {
-            CoverImageView()
-                .frame(height: 300)
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-            
             ForEach(filteredQuestions) { question in
                 NavigationLink(destination: QuestionDetailView(question: question)) {
                     QuestionListItemView(question: question)

@@ -32,6 +32,7 @@ struct MainView: View {
                     Image(systemName: "chart.bar.fill")
                     Text("Progress")
                 }
+
             
             FavoritesView()
                 .tabItem {
@@ -54,4 +55,5 @@ struct MainView: View {
     MainView()
         .environmentObject(QuestionViewModel())
         .environmentObject(FavoritesViewModel())
+        .environmentObject(ProgressViewModel())
 }

@@ -52,7 +52,7 @@ struct LaunchScreenView: View {
                     }// ZStack
                     .environment(\.locale, .init(identifier: appLanguage ?? "en"))
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                             withAnimation {
                                 self.isActive = true
                             }

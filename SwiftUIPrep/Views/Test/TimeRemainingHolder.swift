@@ -37,8 +37,10 @@ class TimerManager: ObservableObject {
 }
 
 struct TimeRemainingHolder: View {
+    // MARK: - Properties
     @ObservedObject var timerManager: TimerManager
 
+    // MARK: - Body
     var body: some View {
         ZStack {
             Rectangle()
@@ -64,18 +66,19 @@ struct TimeRemainingHolder: View {
         } // ZStack
         .onAppear {
             timerManager.startTimer()
-        }
+        }// OnAppear
         .onDisappear {
             timerManager.stopTimer()
-        }
-    }
+        }// OnDisappear
+    }// Body
 
+    // MARK: - Methods
     private func timeString(from seconds: Int) -> String {
         let minutes = seconds / 60
         let seconds = seconds % 60
         return String(format: "%02d:%02d", minutes, seconds)
-    }
-}
+    }// func
+}// View
 
 // MARK: - Preview
 #Preview {

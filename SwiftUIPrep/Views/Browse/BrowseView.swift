@@ -47,7 +47,7 @@ struct BrowseView: View {
             }// Group
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    ToolbarContentView(isGridViewActive: $isGridViewActive)
+                    ToolbarButtons(isGridViewActive: $isGridViewActive)
                         
                 }// ToolbarItem
             }// toolbar

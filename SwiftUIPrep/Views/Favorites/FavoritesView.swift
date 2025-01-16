@@ -24,8 +24,8 @@ struct FavoritesView: View {
                         Image(systemName: "star")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 100, height: 100)
-                            .foregroundColor(.yellow)
+                            .frame(width: 180, height: 180)
+                            .foregroundColor(.accent)
                     }// VStack
                 } else {
                     List {

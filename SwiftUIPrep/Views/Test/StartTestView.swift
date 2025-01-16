@@ -18,8 +18,7 @@ struct StartTestView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                MotionAnimationView()
-                    .ignoresSafeArea()
+                // Background
                 
                 VStack(spacing: 20) {
                     

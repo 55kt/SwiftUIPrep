@@ -1,5 +1,5 @@
 //
-//  ToolbarContentView.swift
+//  ToolbarButtons.swift
 //  SwiftUIPrep
 //
 //  Created by Vlad on 9/1/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ToolbarContentView: View {
+struct ToolbarButtons: View {
     // MARK: - Properties
     @Binding var isGridViewActive: Bool
     let haptics = UIImpactFeedbackGenerator(style: .medium)
@@ -43,5 +43,5 @@ struct ToolbarContentView: View {
 
 // MARK: - Preview
 #Preview {
-    ToolbarContentView(isGridViewActive: .constant(true))
+    ToolbarButtons(isGridViewActive: .constant(true))
 }
