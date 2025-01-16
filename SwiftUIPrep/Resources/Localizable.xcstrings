@@ -59,17 +59,6 @@
         }
       }
     },
-    "English" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Английский"
-          }
-        }
-      }
-    },
     "Favorite" : {
       "localizations" : {
         "ru" : {
@@ -87,28 +76,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Избранное"
-          }
-        }
-      }
-    },
-    "Hello, world!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Привет, Мир!"
-          }
-        }
-      }
-    },
-    "Hello, World!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Привет, Мир!"
           }
         }
       }
@@ -135,18 +102,21 @@
       }
     },
     "Number of Questions" : {
-
-    },
-    "Number of Questions:" : {
-
-    },
-    "Number of Questions: %lld" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Количество вопросов: %lld"
+            "value" : "Количество вопросов"
+          }
+        }
+      }
+    },
+    "Number of Questions:" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Количество вопросов"
           }
         }
       }
@@ -173,29 +143,18 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вопрос"
+            "value" : "Вопрос %1$lld из %2$lld"
           }
         }
       }
     },
-    "Restart Test" : {
-      "extractionState" : "stale",
+    "Save and Return" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Начать сначала"
-          }
-        }
-      }
-    },
-    "Russian" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Русский"
+            "value" : "Сохранить и вернуться"
           }
         }
       }
@@ -206,17 +165,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поиск вопроса"
-          }
-        }
-      }
-    },
-    "Select your language" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Выберите ваш язык"
           }
         }
       }
@@ -241,13 +189,24 @@
         }
       }
     },
-    "Start Test" : {
-      "extractionState" : "stale",
+    "Start Again" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Настройка теста"
+            "value" : "Начать Сначала"
+          }
+        }
+      }
+    },
+    "Start Test" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Начать Тест"
           }
         }
       }
@@ -256,40 +215,17 @@
 
     },
     "Test Completed !" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тест завершен !"
+          }
+        }
+      }
+    },
+    "Test Views Button" : {
 
-    },
-    "Test Completed!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тест Завершен"
-          }
-        }
-      }
-    },
-    "Test Duration: %lld minutes" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Длительность теста в минутах: %lld"
-          }
-        }
-      }
-    },
-    "Test Text for GitHub" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тестовый текст для GitHub"
-          }
-        }
-      }
     },
     "Tests" : {
       "extractionState" : "manual",
@@ -302,40 +238,71 @@
         }
       }
     },
-    "Time Elapsed: %@" : {
-
-    },
-    "Time is Over!" : {
-      "extractionState" : "stale",
+    "Time" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Время вышло"
+            "value" : "Время прохождения"
+          }
+        }
+      }
+    },
+    "Time Elapsed: %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Время прохождения: %@"
           }
         }
       }
     },
     "Time Remaining:" : {
-
-    },
-    "Time Remaining: %@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Оставшееся время: %@"
+            "value" : "Время"
           }
         }
       }
     },
-    "You answered %lld out of %lld correctly" : {
+    "Time: %@" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Время %@"
+          }
+        }
+      }
+    },
+    "You answered %d out of %d questions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы ответили %d из %d вопросов"
+          }
+        }
+      }
+    },
+    "You answered %lld out of %lld questions" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "You answered %1$lld out of %2$lld correctly"
+            "value" : "You answered %1$lld out of %2$lld questions"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы ответили на %1$lld вопросов из %2$lld"
           }
         }
       }

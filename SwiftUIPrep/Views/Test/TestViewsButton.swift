@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TestViewsButton: View {
-    var buttonName: String = "Test Views Button"
+    var buttonName: LocalizedStringKey = "Test Views Button"
     var action: () -> ()
     
     var body: some View {

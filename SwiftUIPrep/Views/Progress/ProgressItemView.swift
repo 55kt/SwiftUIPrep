@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProgressItemView: View {
     // MARK: - Properties
-    var answeredQText: String
-    var time: String
+    var answeredQText: LocalizedStringKey
+    var time: LocalizedStringKey
     var date: Date
     var medalColor: Color
     

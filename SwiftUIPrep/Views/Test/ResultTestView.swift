@@ -24,10 +24,11 @@ struct ResultTestView: View {
                     .bold()
 
                 VStack(spacing: 10) {
-                    Text("You answered \(correctAnswers) out of \(totalQuestions) correctly")
+                    Text(String(format: NSLocalizedString("You answered %d out of %d questions", comment: ""),
+                                correctAnswers, totalQuestions))
                         .font(.headline)
 
-                    Text("Time Elapsed: \(timeString(from: timeElapsed))")
+                    Text(String(format: NSLocalizedString("Time: \(timeString(from: timeElapsed))", comment: "")))
                         .font(.subheadline)
 
                     Text(resultMessage)
@@ -35,7 +36,7 @@ struct ResultTestView: View {
                         .foregroundColor(.secondary)
                 }// VStack
 
-                TestViewsButton(buttonName: "Save and Return") {
+                TestViewsButton(buttonName: "Start Again") {
                     addProgressAutomatically()
                     presentationMode.wrappedValue.dismiss()
                 }// TestViewsButton
