@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct BrowseView: View {
     // MARK: - Properties
     @AppStorage("AppLanguage") private var appLanguage: String = Locale.current.language.languageCode?.identifier ?? "en"
@@ -14,24 +15,17 @@ struct BrowseView: View {
     @EnvironmentObject var viewModel: QuestionViewModel
     let haptics = UIImpactFeedbackGenerator(style: .medium)
     @State private var isGridViewActive: Bool = false
+    @State private var currentQuestions: [Question] = []
+    @State private var shuffleTrigger: Bool = false
     
     let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
     
-    var randomQuestions: [Question] {
-        return viewModel.questions.shuffled()
-    }
-    
-    var orderedQuestions: [Question] {
-        return viewModel.questions
-    }
-    
     // MARK: - Filtered Questions
     var filteredQuestions: [Question] {
-        let source = isGridViewActive ? orderedQuestions : randomQuestions
         if searchText.isEmpty {
-            return source
+            return currentQuestions
         } else {
-            return source.filter { $0.question.localizedCaseInsensitiveContains(searchText) }
+            return currentQuestions.filter { $0.question.localizedCaseInsensitiveContains(searchText) }
         }
     }
     
@@ -41,30 +35,46 @@ struct BrowseView: View {
             Group {
                 if !isGridViewActive {
                     QuestionsListView(filteredQuestions: filteredQuestions)
+                        .animation(.default, value: shuffleTrigger)
                 } else {
                     CategoryGridView(filteredQuestions: filteredQuestions)
-                }// if - else
-            }// Group
+                }
+            }
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    ToolbarButtons(isGridViewActive: $isGridViewActive)
-                        
-                }// ToolbarItem
-            }// toolbar
-            .listStyle(PlainListStyle())
-            .navigationTitle(!isGridViewActive ? LocalizedStringKey("SwiftUIPrep") : LocalizedStringKey("Categories"))
+                ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarButtons.shuffleButton(onShuffle: shuffleQuestions)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack(spacing: 16) {
+                        ToolbarButtons.listViewButton(isGridViewActive: $isGridViewActive)
+                        ToolbarButtons.gridViewButton(isGridViewActive: $isGridViewActive)
+                    }
+                }
+            }
+            .listStyle(.plain)
+            .navigationTitle(!isGridViewActive ? "SwiftUIPrep" : LocalizedStringKey("Categories"))
             .if(!isGridViewActive) { view in
                 view.searchable(text: $searchText, prompt: LocalizedStringKey("Search for a question"))
             }
             .animation(.default, value: searchText)
             .onAppear {
-                viewModel.loadQuestions()
-            }// onAppear
+                loadInitialQuestions()
+            }
             .environment(\.locale, Locale(identifier: appLanguage))
-            
-        }// NavigationStack
-    }// Body
-}// View
+        }
+    }
+    
+    // MARK: - Methods
+    
+    private func loadInitialQuestions() {
+        currentQuestions = viewModel.questions
+    }
+    
+    private func shuffleQuestions() {
+        haptics.impactOccurred()
+        currentQuestions.shuffle()
+    }
+}
 
 // MARK: - Preview
 #Preview {
