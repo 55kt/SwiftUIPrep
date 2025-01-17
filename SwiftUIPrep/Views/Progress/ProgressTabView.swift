@@ -21,15 +21,19 @@ struct ProgressTabView: View {
                         : 0.0
                     
                     ProgressItemView(
-                        answeredQText: "You answered \(item.correctAnswers) out of \(item.totalQuestions) questions",
+                        answeredQText:  "You answered \(item.correctAnswers) out of \(item.totalQuestions) questions",
                         time: "Time: \(timeString(from: item.timeElapsed))",
                         date: item.date,
                         medalColor: progressViewModel.medalColor(for: score)
                     )// ProgressItemView
+                    .listRowBackground(Color.clear)
                 }// ForEach
             }// List
             .listStyle(.plain) // Опционально: плоский стиль списка
             .navigationTitle("Progress") // Заголовок в NavigationStack
+            .background(
+                MotionAnimationView()
+            )
         }// NavigationStack
     }// Body
     

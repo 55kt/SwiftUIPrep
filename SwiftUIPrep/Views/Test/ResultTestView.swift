@@ -17,19 +17,20 @@ struct ResultTestView: View {
 
     var body: some View {
         ZStack {
-            // Background
+            
             VStack(spacing: 30) {
                 Text("Test Completed !")
                     .font(.title)
                     .bold()
 
                 VStack(spacing: 10) {
-                    Text(String(format: NSLocalizedString("You answered %d out of %d questions", comment: ""),
-                                correctAnswers, totalQuestions))
-                        .font(.headline)
-
-                    Text(String(format: NSLocalizedString("Time: \(timeString(from: timeElapsed))", comment: "")))
-                        .font(.subheadline)
+                    Text(LocalizedStringKey("You answered \(correctAnswers) out of \(totalQuestions) questions"))
+                        .bold()
+                        .foregroundColor(.primary)
+                    
+                    Text(LocalizedStringKey("Time: \(timeString(from: timeElapsed))"))
+                        .font(.body)
+                        .foregroundColor(.secondary)
 
                     Text(resultMessage)
                         .font(.body)
@@ -45,15 +46,15 @@ struct ResultTestView: View {
         }// ZStack
     }// Body
 
-    private var resultMessage: String {
+    private var resultMessage: LocalizedStringKey {
         let score = Double(correctAnswers) / Double(totalQuestions)
         if score == 1.0 {
-            return "Perfect Score! Well done!"
-        } else if score >= 0.8 {
-            return "Great Job! You can do even better."
-        } else {
-            return "Keep practicing to improve."
-        }
+                    return "Perfect Score! Well done!"
+                } else if score >= 0.8 {
+                    return "Great Job! You can do even better."
+                } else {
+                    return "Keep practicing to improve."
+                }
     }
 
     private func timeString(from seconds: Int) -> String {

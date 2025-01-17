@@ -17,17 +17,6 @@
         }
       }
     },
-    "Cancel" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отмена"
-          }
-        }
-      }
-    },
     "Categories" : {
       "localizations" : {
         "ru" : {
@@ -80,6 +69,27 @@
         }
       }
     },
+    "Great Job! You can do even better." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отличная работа. Но ты можешь лучше !"
+          }
+        }
+      }
+    },
+    "Keep practicing to improve." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тебе нужно больше практиковаться !"
+          }
+        }
+      }
+    },
     "Language" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -121,6 +131,17 @@
         }
       }
     },
+    "Perfect Score! Well done!" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отличная работа. Так держать !"
+          }
+        }
+      }
+    },
     "Progress" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -144,17 +165,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Вопрос %1$lld из %2$lld"
-          }
-        }
-      }
-    },
-    "Save and Return" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сохранить и вернуться"
           }
         }
       }
@@ -238,28 +248,6 @@
         }
       }
     },
-    "Time" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Время прохождения"
-          }
-        }
-      }
-    },
-    "Time Elapsed: %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Время прохождения: %@"
-          }
-        }
-      }
-    },
     "Time Remaining:" : {
       "localizations" : {
         "ru" : {
@@ -275,18 +263,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Время %@"
-          }
-        }
-      }
-    },
-    "You answered %d out of %d questions" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вы ответили %d из %d вопросов"
+            "value" : "Время: %@"
           }
         }
       }
