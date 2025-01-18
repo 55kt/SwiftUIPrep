@@ -47,6 +47,7 @@ struct QuestionDetailView: View {
                     // Answer
                     Text(question.answer)
                         .font(.headline)
+                        .multilineTextAlignment(.center)
                         .padding(.top)
                         .padding(.horizontal)
                 }// VStack - Question section
@@ -57,7 +58,7 @@ struct QuestionDetailView: View {
                     // Description
                     Text(question.description)
                         .font(.headline)
-                        .multilineTextAlignment(.leading)
+                        .multilineTextAlignment(.center)
                         .padding(.horizontal)
                 }// VStack - Description
             }// VStack
@@ -68,6 +69,6 @@ struct QuestionDetailView: View {
 // MARK: - Preview
 #Preview {
     NavigationStack {
-            QuestionDetailView(question: Question.previewFromJSON(index: 5, language: "ru"))
+            QuestionDetailView(question: Question.previewFromJSON(index: 2, language: "ru"))
         }
 }

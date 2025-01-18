@@ -24,13 +24,9 @@ struct QuestionListItemView: View {
                 Text(question.question)
                     .font(.title2)
                     .fontWeight(.heavy)
+                    .lineLimit(3)
                     .foregroundStyle(.accent)
-                
-                Text(question.answer)
-                    .font(.footnote)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(2)
-                    .padding(.trailing, 8)
+
             }// VStack
         }// HStack
     }// Body
@@ -38,5 +34,5 @@ struct QuestionListItemView: View {
 
 // MARK: - Preview
 #Preview {
-    QuestionListItemView(question: Question.previewFromJSON(index: 5, language: "en"))
+    QuestionListItemView(question: Question.previewFromJSON(index: 5, language: "ru"))
 }
