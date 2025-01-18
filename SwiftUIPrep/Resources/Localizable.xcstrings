@@ -48,6 +48,16 @@
         }
       }
     },
+    "English" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Английский"
+          }
+        }
+      }
+    },
     "Favorite" : {
       "localizations" : {
         "ru" : {
@@ -89,6 +99,9 @@
           }
         }
       }
+    },
+    "Key" : {
+      "extractionState" : "manual"
     },
     "Language" : {
       "extractionState" : "manual",
@@ -165,6 +178,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Вопрос %1$lld из %2$lld"
+          }
+        }
+      }
+    },
+    "Russian" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Русский"
           }
         }
       }

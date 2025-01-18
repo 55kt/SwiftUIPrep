@@ -8,76 +8,37 @@
 import SwiftUI
 
 struct SettingsView: View {
-    // MARK: - Properties
-    @AppStorage("AppLanguage") private var appLanguage: String = "en"
-    
     // MARK: - Body
     var body: some View {
         NavigationStack {
-            VStack(spacing: 20) {
-                Text("Settings")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.primary)
-                    .padding(.top, 40)
-                
-                // Language Section
-                VStack(spacing: 10) {
-                    Text("Language")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.leading, 20)
-                    
-                    HStack(spacing: 15) {
-                        LanguageCard(language: "English", isSelected: appLanguage == "en", color: .debugging) {
-                            appLanguage = "en"
-                        }
+            ScrollView {
+                VStack(spacing: 20) {
+                    // Language Section
+                    VStack(spacing: 10) {
+                        Text("Language")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.leading, 20)
                         
-                        LanguageCard(language: "Russian", isSelected: appLanguage == "ru", color: .accent) {
-                            appLanguage = "ru"
+                        // Language Options
+                        VStack(spacing: 10) {
+                            LanguageItemView(flag: "🇺🇸", languageCode: "en", languageName: "English")
+                            LanguageItemView(flag: "🇷🇺", languageCode: "ru", languageName: "Russian")
                         }
+                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
-                }
-                .padding(.vertical)
-                .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color(UIColor.systemGray6))
-                )
-                .padding(.horizontal)
-                
-                Spacer()
-            }// VStack
-            .padding()
-        }
-    }
-}
-
-// MARK: - Language Card Component
-struct LanguageCard: View {
-    let language: String
-    let isSelected: Bool
-    let color: Color
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: 10) {
-                Text(language)
-                    .font(.headline)
-                    .foregroundColor(isSelected ? .white : color)
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 10)
-                    .frame(maxWidth: .infinity)
+                    .padding(.vertical)
                     .background(
                         RoundedRectangle(cornerRadius: 12)
-                            .fill(isSelected ? color : Color.clear)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(color, lineWidth: 2)
-                            )
+                            .fill(Color(UIColor.systemGray6))
                     )
+                    .padding(.horizontal)
+                    
+                    Spacer()
+                }// VStack
+                .padding()
             }
+            .navigationTitle("Settings")
         }
     }
 }
