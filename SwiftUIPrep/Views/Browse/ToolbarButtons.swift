@@ -14,8 +14,6 @@ struct ToolbarButtons {
     // Button for shuffling questions list
     static func shuffleButton(onShuffle: @escaping () -> Void) -> some View {
         Button(action: {
-            let haptics = UIImpactFeedbackGenerator(style: .medium)
-            haptics.impactOccurred()
             onShuffle()
         }) {
             Image(systemName: "shuffle")
