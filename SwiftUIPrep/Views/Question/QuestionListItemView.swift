@@ -25,7 +25,7 @@ struct QuestionListItemView: View {
                     .font(.title2)
                     .fontWeight(.heavy)
                     .lineLimit(3)
-                    .foregroundStyle(.accent)
+                    .foregroundStyle(Color(question.categoryColor))
 
             }// VStack
         }// HStack

@@ -28,7 +28,7 @@ struct QuestionTestView: View {
     
     // MARK: - Body
     var body: some View {
-        ZStack {
+        ScrollView(.vertical, showsIndicators: false) {
             // Background
             
             VStack {
@@ -74,7 +74,7 @@ struct QuestionTestView: View {
                 }// if - else
             }// VStack
             .padding()
-        }// ZStack
+        }// ScrollView
     }// Body
     
     // MARK: - Helper Functions
