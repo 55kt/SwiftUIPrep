@@ -32,7 +32,7 @@ struct LaunchScreenView: View {
                             
                             Image("launch-screen-image")
                                 .resizable()
-                                .frame(width: 150, height: 150, alignment: .center)
+                                .frame(maxWidth: 300, maxHeight: 300)
                             
                             Text("SwiftUIPrep")
                                 .font(.largeTitle)
