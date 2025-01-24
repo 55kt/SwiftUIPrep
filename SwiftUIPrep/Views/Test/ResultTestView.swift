@@ -12,14 +12,13 @@ struct ResultTestView: View {
     let totalQuestions: Int
     let timeElapsed: Int
 
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var progressViewModel: ProgressViewModel
 
     var body: some View {
         ZStack {
-            
             VStack(spacing: 30) {
-                Text("Test Completed !")
+                Text("Test Completed!")
                     .font(.title)
                     .bold()
 
@@ -27,7 +26,7 @@ struct ResultTestView: View {
                     Text(LocalizedStringKey("You answered \(correctAnswers) out of \(totalQuestions) questions"))
                         .bold()
                         .foregroundColor(.primary)
-                    
+
                     Text(LocalizedStringKey("Time: \(timeString(from: timeElapsed))"))
                         .font(.body)
                         .foregroundColor(.secondary)
@@ -35,26 +34,28 @@ struct ResultTestView: View {
                     Text(resultMessage)
                         .font(.body)
                         .foregroundColor(.secondary)
-                }// VStack
+                } // VStack
 
                 TestViewsButton(buttonName: "Start Again") {
-                    addProgressAutomatically()
-                    presentationMode.wrappedValue.dismiss()
-                }// TestViewsButton
-            }// VStack
+                    dismiss()
+                } // TestViewsButton
+            } // VStack
             .padding()
-        }// ZStack
-    }// Body
+        } // ZStack
+        .onAppear {
+            addProgressAutomatically()
+        }
+    }
 
     private var resultMessage: LocalizedStringKey {
         let score = Double(correctAnswers) / Double(totalQuestions)
         if score == 1.0 {
-                    return "Perfect Score! Well done!"
-                } else if score >= 0.8 {
-                    return "Great Job! You can do even better."
-                } else {
-                    return "Keep practicing to improve."
-                }
+            return "Perfect Score! Well done!"
+        } else if score >= 0.8 {
+            return "Great Job! You can do even better."
+        } else {
+            return "Keep practicing to improve."
+        }
     }
 
     private func timeString(from seconds: Int) -> String {
@@ -76,4 +77,5 @@ struct ResultTestView: View {
 
 #Preview {
     ResultTestView(correctAnswers: 3, totalQuestions: 5, timeElapsed: 120)
+        .environmentObject(ProgressViewModel())
 }

@@ -183,6 +183,7 @@
 				4B96CCA52D38F43900DFC13C /* Question */,
 				4B96CCA62D38F51C00DFC13C /* Category */,
 				4BDB613E2D2DA48C00D31659 /* MotionAnimationView.swift */,
+				4BDB61562D30436D00D31659 /* ToolbarButtons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,7 +290,6 @@
 			children = (
 				4B29CB0E2D23213D00B20F1B /* BrowseView.swift */,
 				4B29CB312D25AFB800B20F1B /* CoverImageView.swift */,
-				4BDB61562D30436D00D31659 /* ToolbarButtons.swift */,
 			);
 			path = Browse;
 			sourceTree = "<group>";

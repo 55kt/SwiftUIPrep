@@ -10,6 +10,7 @@ import SwiftUI
 struct ProgressTabView: View {
     // MARK: - Properties
     @EnvironmentObject var progressViewModel: ProgressViewModel
+    @State private var showAlert = false
     
     // MARK: - Body
     var body: some View {
@@ -17,8 +18,8 @@ struct ProgressTabView: View {
             List {
                 ForEach(progressViewModel.sortedProgressItems, id: \.date) { item in
                     let score = item.totalQuestions > 0
-                        ? Double(item.correctAnswers) / Double(item.totalQuestions)
-                        : 0.0
+                    ? Double(item.correctAnswers) / Double(item.totalQuestions)
+                    : 0.0
                     
                     ProgressItemView(
                         answeredQText:  "You answered \(item.correctAnswers) out of \(item.totalQuestions) questions",
@@ -29,11 +30,16 @@ struct ProgressTabView: View {
                     .listRowBackground(Color.clear)
                 }// ForEach
             }// List
-            .listStyle(.plain) // Опционально: плоский стиль списка
-            .navigationTitle("Progress") // Заголовок в NavigationStack
+            .listStyle(.plain)
+            .navigationTitle("Progress")
             .background(
                 MotionAnimationView()
             )
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarButtons.clearProgressButton(showAlert: $showAlert, progressViewModel: progressViewModel)
+                }// ToolbarItem
+            }// .toolbar
         }// NavigationStack
     }// Body
     

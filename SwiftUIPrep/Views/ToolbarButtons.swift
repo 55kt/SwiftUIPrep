@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ToolbarButtons {
     // MARK: - Static Button Functions
-
+    
     // Button for shuffling questions list
     static func shuffleButton(onShuffle: @escaping () -> Void) -> some View {
         Button(action: {
@@ -21,7 +21,7 @@ struct ToolbarButtons {
                 .foregroundStyle(.accent)
         }
     }
-
+    
     // Button for activating list view
     static func listViewButton(isGridViewActive: Binding<Bool>) -> some View {
         Button(action: {
@@ -35,7 +35,7 @@ struct ToolbarButtons {
                 .foregroundStyle(isGridViewActive.wrappedValue ? .white : .accent)
         }
     }
-
+    
     // Button for activating grid categories view
     static func gridViewButton(isGridViewActive: Binding<Bool>) -> some View {
         Button(action: {
@@ -47,6 +47,36 @@ struct ToolbarButtons {
             Image(systemName: "square.stack.fill")
                 .font(.title2)
                 .foregroundStyle(isGridViewActive.wrappedValue ? .accent : .white)
+        }
+    }
+    
+    // Button for clearing progress
+    static func clearProgressButton(showAlert: Binding<Bool>, progressViewModel: ProgressViewModel) -> some View {
+        Button(action: {
+            if progressViewModel.progressItems.isEmpty {
+                let haptics = UINotificationFeedbackGenerator()
+                haptics.notificationOccurred(.error)
+                print("No progress to clear")
+            } else {
+                showAlert.wrappedValue = true
+            }
+        }) {
+            Image(systemName: "trash")
+                .font(.title2)
+                .foregroundStyle(.red)
+        }
+        .alert(isPresented: showAlert) {
+            Alert(
+                title: Text("Delete all progress ?"),
+                message: Text("Are you sure you want to delete all progress ? Current data cannot be restored !"),
+                primaryButton: .destructive(Text("Delete")) {
+                    progressViewModel.clearProgress()
+                    let haptics = UINotificationFeedbackGenerator()
+                    haptics.notificationOccurred(.warning)
+                    print("Progress cleared")
+                },
+                secondaryButton: .cancel(Text("Cancel"))
+            )
         }
     }
 }

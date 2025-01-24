@@ -11,8 +11,8 @@ class ProgressViewModel: ObservableObject {
     @Published var progressItems: [ProgressItem] = []
     
     var sortedProgressItems: [ProgressItem] {
-            progressItems.sorted { $0.date > $1.date }
-        }
+        progressItems.sorted { $0.date > $1.date }
+    }
     
     init() {
         loadProgress()
@@ -23,19 +23,24 @@ class ProgressViewModel: ObservableObject {
         saveProgress()
     }
     
+    func clearProgress() {
+        progressItems.removeAll()
+        saveProgress()
+    }
+    
     func medalColor(for score: Double) -> Color {
-        // Debugging: Отладочный вывод
+        // Debugging
         print("Score received in medalColor: \(score)")
         
         switch score {
-        case 0.9...: // Если score >= 0.9
-            return .yellow
-        case 0.5..<0.9: // Если 0.5 <= score < 0.9
-            return .gray
-        case 0.2..<0.5: // Если 0.2 <= score < 0.5
-            return .brown
-        default: // Если score < 0.2
-            return .secondary
+        case 0.9...: // if score >= 0.9
+            return .gold
+        case 0.5..<0.9: // if 0.5 <= score < 0.9
+            return .silver
+        case 0.2..<0.5: // if 0.2 <= score < 0.5
+            return .bronze
+        default: // if score < 0.2
+            return .white
         }
     }
     

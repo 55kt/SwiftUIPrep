@@ -7,12 +7,32 @@
     "%lld" : {
 
     },
+    "Are you sure you want to delete all progress ? Current data cannot be restored !" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы действительно хотите удалить весь прогресс ? Текущие данные восстановить будет невозможно !"
+          }
+        }
+      }
+    },
     "Browse" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Главная"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
           }
         }
       }
@@ -33,6 +53,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Авторские права © volos.inc. Все права защищены."
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить"
+          }
+        }
+      }
+    },
+    "Delete all progress ?" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить весь прогресс ?"
           }
         }
       }
@@ -101,7 +141,15 @@
       }
     },
     "Key" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ключ"
+          }
+        }
+      }
     },
     "Language" : {
       "extractionState" : "manual",
@@ -247,7 +295,7 @@
     "SwiftUIPrep" : {
 
     },
-    "Test Completed !" : {
+    "Test Completed!" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
