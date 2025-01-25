@@ -17,13 +17,20 @@ final class QuestionViewModel: ObservableObject {
             loadQuestions()
         }
     }
+    
+    private var lastLoadedLanguage: String = ""
 
     init() {
         loadQuestions()
     }
 
     func loadQuestions() {
-        print("🟢 Loading questions for language: \(appLanguage)")
-        questions = JSONLoader.loadQuestions(for: appLanguage)
-    }
+            guard appLanguage != lastLoadedLanguage else {
+                print("🔵 Questions are already loaded for \(appLanguage)")
+                return
+            }
+            print("🟢 Loading questions for language: \(appLanguage)")
+            questions = JSONLoader.loadQuestions(for: appLanguage)
+            lastLoadedLanguage = appLanguage
+        }
 }
