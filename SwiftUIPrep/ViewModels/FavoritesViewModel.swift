@@ -54,6 +54,18 @@ class FavoritesViewModel: ObservableObject {
 
     func updateLanguage(to newLanguage: String) {
         appLanguage = newLanguage
-        loadFavorites()
+        updateFavorites(for: newLanguage)
+    }
+    
+    func updateFavorites(for newLanguage: String) {
+        let newQuestions = JSONLoader.loadQuestions(for: newLanguage)
+        favoriteQuestions = favoriteQuestions.compactMap { favorite in
+            if let updatedQuestion = newQuestions.first(where: { $0.id == favorite.id }) {
+                return updatedQuestion
+            } else {
+                return nil
+            }
+        }
+        saveFavorites()
     }
 }
