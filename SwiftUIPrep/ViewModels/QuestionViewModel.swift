@@ -18,7 +18,7 @@ final class QuestionViewModel: ObservableObject {
         }
     }
     
-    private var lastLoadedLanguage: String = ""
+     var lastLoadedLanguage: String = ""
 
     init() {
         loadQuestions()

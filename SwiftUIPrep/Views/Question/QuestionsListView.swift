@@ -19,7 +19,7 @@ struct QuestionsListView: View {
                 NavigationLink(destination: QuestionDetailView(question: question)) {
                     QuestionListItemView(question: question)
                 }// NavigationLink
-                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                     Button(action: {
                         withAnimation {
                             favoritesViewModel.addToFavorites(question)

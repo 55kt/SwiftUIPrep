@@ -18,7 +18,6 @@ extension Question {
             answer: "A variable is a placeholder for a value.",
             description: "A variable is a placeholder for a value. It is a container that can hold a value. The value can change during the execution of a program.",
             image: "swift-basics-icon",
-            link: "https://developer.apple.com/documentation/swift",
             incorrectAnswers: [
                         "A container that cannot hold values.",
                         "An immutable data container.",
@@ -47,7 +46,6 @@ extension Question {
             answer: "A variable is a placeholder for a value.",
             description: "A variable is a container that holds data and can change during the program's execution.",
             image: "swift-basics-icon",
-            link: "https://developer.apple.com/documentation/swift",
             incorrectAnswers: [
                         "A container that cannot hold values.",
                         "An immutable data container.",
@@ -63,7 +61,6 @@ extension Question {
             answer: "A constant holds a value that cannot change.",
             description: "A constant is a container that holds a value which cannot be changed once it's assigned.",
             image: "swift-basics-icon",
-            link: "https://developer.apple.com/documentation/swift",
             incorrectAnswers: [
                         "A mutable data structure.",
                         "A runtime dynamic value.",
