@@ -10,8 +10,8 @@ import SwiftUI
 struct FormRowStaticView: View {
     // MARK: - Properties
     var icon: String
-    var firstText: String
-    var secondText: String
+    var firstText: LocalizedStringResource
+    var secondText: LocalizedStringResource
     
     // MARK: - Body
     var body: some View {

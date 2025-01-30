@@ -7,8 +7,28 @@
     "%lld" : {
 
     },
-    "About the application" : {
+    "1.0" : {
 
+    },
+    "About the application" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "О приложении"
+          }
+        }
+      }
+    },
+    "Application" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Приложение"
+          }
+        }
+      }
     },
     "Are you sure you want to delete all progress ? Current data cannot be restored !" : {
       "localizations" : {
@@ -46,6 +66,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Категории"
+          }
+        }
+      }
+    },
+    "Compatibility" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Совместимость"
           }
         }
       }
@@ -91,6 +121,26 @@
         }
       }
     },
+    "Designer" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дизайн"
+          }
+        }
+      }
+    },
+    "Developer" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Разработчики"
+          }
+        }
+      }
+    },
     "English" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -124,7 +174,14 @@
       }
     },
     "Follow us on social media" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подпишитесь на нас в соц сетях."
+          }
+        }
+      }
     },
     "Great Job! You can do even better." : {
       "localizations" : {
@@ -135,6 +192,12 @@
           }
         }
       }
+    },
+    "iPhone" : {
+
+    },
+    "Ivanno Ruddio" : {
+
     },
     "Keep practicing to improve." : {
       "extractionState" : "manual",
@@ -259,7 +322,14 @@
       }
     },
     "Select Language" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите язык"
+          }
+        }
+      }
     },
     "Settings" : {
       "localizations" : {
@@ -349,6 +419,19 @@
           }
         }
       }
+    },
+    "Version" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версия"
+          }
+        }
+      }
+    },
+    "volos.inc" : {
+
     },
     "You answered %lld out of %lld questions" : {
       "localizations" : {

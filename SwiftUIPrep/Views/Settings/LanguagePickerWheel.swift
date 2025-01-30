@@ -17,6 +17,7 @@ struct LanguagePickerWheel: View {
         ("🇷🇺", "ru", "Русский")
     ]
     @Binding var isSheetPresented: Bool // Передаем из SettingsView
+    let haptics = UIImpactFeedbackGenerator(style: .medium)
     
     // MARK: - Body
     var body: some View {
@@ -42,6 +43,15 @@ struct LanguagePickerWheel: View {
             
             Spacer()
         }
+        .onChange(of: appLanguage) { newLanguage in
+                    haptics.impactOccurred()
+                    
+                    // Добавляем задержку
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        // Здесь можно добавить дополнительную логику, если нужно
+                        print("Language changed to \(newLanguage). Delay applied for UI refresh.")
+                    }
+                }
     }
 }
 

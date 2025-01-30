@@ -52,7 +52,7 @@ struct SettingsView: View {
                     .padding(.bottom, 8)
                 
             }// VStack
-            .navigationBarTitle("Settings")
+            .navigationTitle("Settings")
         }// NavigationStack
     }// Body
 }// View
