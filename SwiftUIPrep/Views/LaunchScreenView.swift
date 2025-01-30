@@ -13,12 +13,6 @@ struct LaunchScreenView: View {
     @AppStorage("AppLanguage") private var appLanguage: String?
     @EnvironmentObject var viewModel: QuestionViewModel
     
-    let currentYear: String = {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy"
-            return formatter.string(from: Date())
-        }()
-    
     // MARK: - Body
     var body: some View {
         if isActive {
@@ -44,9 +38,7 @@ struct LaunchScreenView: View {
                             
                             Spacer()
                             
-                            Text("Copyright © \(currentYear) volos.inc. All rights reserved.")
-                                .font(.footnote)
-                                .foregroundStyle(.gray.opacity(0.7))
+                            CopyrightSection()
                                 .padding(.bottom, 20)
                         }// VStack
                     }// ZStack

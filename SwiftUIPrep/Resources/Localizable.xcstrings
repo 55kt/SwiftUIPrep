@@ -7,6 +7,9 @@
     "%lld" : {
 
     },
+    "About the application" : {
+
+    },
     "Are you sure you want to delete all progress ? Current data cannot be restored !" : {
       "localizations" : {
         "ru" : {
@@ -89,6 +92,7 @@
       }
     },
     "English" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -118,6 +122,9 @@
           }
         }
       }
+    },
+    "Follow us on social media" : {
+
     },
     "Great Job! You can do even better." : {
       "localizations" : {
@@ -231,6 +238,7 @@
       }
     },
     "Russian" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -249,6 +257,9 @@
           }
         }
       }
+    },
+    "Select Language" : {
+
     },
     "Settings" : {
       "localizations" : {
