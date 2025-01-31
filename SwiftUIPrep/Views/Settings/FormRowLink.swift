@@ -11,7 +11,7 @@ struct FormRowLink: View {
     // MARK: - Properties
     var icon: String
     var color: Color
-    var text: String
+    var text: LocalizedStringResource
     var link: String
     
     // MARK: - Body

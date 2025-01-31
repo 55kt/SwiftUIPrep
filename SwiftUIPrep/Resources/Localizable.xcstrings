@@ -193,6 +193,16 @@
         }
       }
     },
+    "INTERFACE LANGUAGE" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ЯЗЫК ИНТЕРФЕЙСА"
+          }
+        }
+      }
+    },
     "iPhone" : {
 
     },
@@ -300,33 +310,12 @@
         }
       }
     },
-    "Russian" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Русский"
-          }
-        }
-      }
-    },
     "Search for a question" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поиск вопроса"
-          }
-        }
-      }
-    },
-    "Select Language" : {
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Выберите язык"
           }
         }
       }
@@ -420,6 +409,16 @@
         }
       }
     },
+    "Updating language..." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Смена языка"
+          }
+        }
+      }
+    },
     "Version" : {
       "localizations" : {
         "ru" : {
@@ -431,6 +430,19 @@
       }
     },
     "volos.inc" : {
+
+    },
+    "Website" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сайт"
+          }
+        }
+      }
+    },
+    "X" : {
 
     },
     "You answered %lld out of %lld questions" : {

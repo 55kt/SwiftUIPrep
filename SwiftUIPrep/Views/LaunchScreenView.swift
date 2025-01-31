@@ -10,7 +10,7 @@ import SwiftUI
 struct LaunchScreenView: View {
     // MARK: - Properties
     @State private var isActive: Bool = false
-    @AppStorage("AppLanguage") private var appLanguage: String?
+    @AppStorage("AppLanguage") private var appLanguage: String = Locale.current.language.languageCode?.identifier ?? "en"
     @EnvironmentObject var viewModel: QuestionViewModel
     
     // MARK: - Body
@@ -42,7 +42,7 @@ struct LaunchScreenView: View {
                                 .padding(.bottom, 20)
                         }// VStack
                     }// ZStack
-                    .environment(\.locale, .init(identifier: appLanguage ?? "en"))
+                    .environment(\.locale, .init(identifier: appLanguage))
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                             withAnimation {

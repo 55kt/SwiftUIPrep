@@ -29,14 +29,6 @@ struct SelectRowView: View {
             Text(text).foregroundStyle(.gray)
             
             Spacer()
-            
-            Button {
-                action()
-            } label: {
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
-            }
-            .foregroundStyle(.gray)
         }// HStack
     }// Body
 }

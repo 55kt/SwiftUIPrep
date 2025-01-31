@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct SettingsView: View {
-    // MARK: - Properties
-    @State private var isSheetPresented: Bool = false
-    
     // MARK: - Body
     var body: some View {
         NavigationStack {
@@ -20,13 +17,8 @@ struct SettingsView: View {
                 Form {
                     
                     Section {
-                        SelectRowView(icon: "globe", color: .pink, text: "Language") {
-                            isSheetPresented.toggle()
-                        }
-                        .sheet(isPresented: $isSheetPresented) {
-                            LanguagePickerWheel(isSheetPresented: $isSheetPresented)
-                                .presentationDetents([.fraction(0.2)])
-                                .presentationDragIndicator(.visible)
+                        NavigationLink(destination: LanguageSelectionView()) {
+                            SelectRowView(icon: "globe", color: .pink, text: "Language") {}
                         }
                     }
                     
