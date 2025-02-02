@@ -29,7 +29,7 @@ struct LanguageSelectionView: View {
                             Text(language.2)
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
-                        }
+                        }// VStack
                         .padding(.vertical, 6)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .background(
@@ -39,39 +39,42 @@ struct LanguageSelectionView: View {
                                     Image(systemName: "checkmark")
                                         .foregroundColor(.accentColor)
                                 }
-                            }
+                            }// HStack
                                 .padding(.trailing, 8)
-                        )
+                        )// background
                         .contentShape(Rectangle())
                         .onTapGesture {
                             updateLanguage(to: language.0)
                         }
-                    }
-                }
-            }
+                    }// ForEach
+                }// Section
+            }// List
             .listStyle(InsetGroupedListStyle())
             .navigationBarTitleDisplayMode(.inline)
             .disabled(isLoading)
             
-            // Прогресс-бар и затемнение
+            // Progress bar & background opacity
             if isLoading {
                 Color.black.opacity(0.6)
                     .edgesIgnoringSafeArea(.all)
                 ProgressView("Updating language...")
                     .padding()
-            }
-        }
-    }
+            }// if
+            
+        }// ZStack
+    }// Body
     
+    // MARK: - Functions
     private func updateLanguage(to languageCode: String) {
         guard currentLanguage != languageCode else { return }
         isLoading = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            currentLanguage = languageCode // Изменяем через @Binding
+            currentLanguage = languageCode
             isLoading = false
         }
-    }
-}
+        
+    }// updateLanguage
+}// View
 
 // MARK: - Preview
 #Preview {

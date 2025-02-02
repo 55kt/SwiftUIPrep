@@ -48,10 +48,10 @@ final class JSONLoader {
 
     /// Loads cover images from the JSON file.
     /// - Returns: An array of `CoverImage` objects, or an empty array if an error occurs.
-    static func loadCovers() -> [CoverImage] {
-        let fileName = "covers"
-        return load(fileName: fileName, as: [CoverImage].self) ?? []
-    }
+//    static func loadCovers() -> [CoverImage] {
+//        let fileName = "covers"
+//        return load(fileName: fileName, as: [CoverImage].self) ?? []
+//    }
 
     // MARK: - Handle Decoding Error
     private static func handleDecodingError(_ error: DecodingError, fileName: String) {

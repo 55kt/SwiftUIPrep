@@ -44,19 +44,25 @@ struct SettingsView: View {
                     .padding(.top, 6)
                     .padding(.bottom, 8)
             }// VStack
-            .navigationTitle(navigationTitle) // Привязка к navigationTitle
+            .navigationTitle(navigationTitle)
             .onAppear {
-                updateNavigationTitle()
-            }
+                NavigationTitleHelper.updateTitle(
+                    for: currentLanguage,
+                    defaultTitle: "Settings",
+                    localizedTitle: "Настройки",
+                    binding: $navigationTitle
+                )
+            }// onAppear
             .onChange(of: currentLanguage) { _ in
-                updateNavigationTitle()
-            }
+                NavigationTitleHelper.updateTitle(
+                    for: currentLanguage,
+                    defaultTitle: "Settings",
+                    localizedTitle: "Настройки",
+                    binding: $navigationTitle
+                )
+            }// onChange
         }// NavigationStack
     }// Body
-    
-    private func updateNavigationTitle() {
-            navigationTitle = currentLanguage == "en" ? "Settings" : "Настройки"
-        }
 }// View
 
 // MARK: - Preview
