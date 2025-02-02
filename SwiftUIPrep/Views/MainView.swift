@@ -32,7 +32,7 @@ struct MainView: View {
                     Image(systemName: "chart.bar.fill")
                     Text("Progress")
                 }
-
+            
             
             FavoritesView()
                 .tabItem {

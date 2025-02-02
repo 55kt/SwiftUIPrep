@@ -141,17 +141,6 @@
         }
       }
     },
-    "English" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Английский"
-          }
-        }
-      }
-    },
     "Favorite" : {
       "localizations" : {
         "ru" : {

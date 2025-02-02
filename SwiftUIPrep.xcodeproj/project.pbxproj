@@ -57,6 +57,7 @@
 		4BDB61552D30411200D31659 /* CategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61542D30411200D31659 /* CategoryGridView.swift */; };
 		4BDB61572D30436D00D31659 /* ToolbarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61562D30436D00D31659 /* ToolbarButtons.swift */; };
 		4BDB61592D30472000D31659 /* CategoryQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB61582D30472000D31659 /* CategoryQuestionsView.swift */; };
+		4BDF2B9E2D4FBEC50048B64C /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF2B9D2D4FBEC50048B64C /* LanguageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		4BDB61542D30411200D31659 /* CategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGridView.swift; sourceTree = "<group>"; };
 		4BDB61562D30436D00D31659 /* ToolbarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarButtons.swift; sourceTree = "<group>"; };
 		4BDB61582D30472000D31659 /* CategoryQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryQuestionsView.swift; sourceTree = "<group>"; };
+		4BDF2B9D2D4FBEC50048B64C /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			children = (
 				4B29CB442D26EDF100B20F1B /* JSONLoader.swift */,
 				4B29CB482D26F44400B20F1B /* QuestionLoader.swift */,
+				4BDF2B9D2D4FBEC50048B64C /* LanguageManager.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				4B29CB532D2AEC8100B20F1B /* ColorExtension.swift in Sources */,
 				4B8136522D4BD9CC005639D5 /* FormRowLink.swift in Sources */,
 				4B96CCA82D38F66F00DFC13C /* ProgressItemView.swift in Sources */,
+				4BDF2B9E2D4FBEC50048B64C /* LanguageManager.swift in Sources */,
 				4B29CB3D2D25DACD00B20F1B /* QuestionModel.swift in Sources */,
 				4B96CCAE2D3BF71200DFC13C /* LanguageSelectionView.swift in Sources */,
 				4B29CB3B2D25CF1200B20F1B /* QuestionListItemView.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LanguageSelectionView: View {
     // MARK: - Properties
-    @AppStorage("AppLanguage") private var appLanguage: String = "en"
+    @Binding var currentLanguage: String
     @State private var isLoading: Bool = false
     
     private let languages = [
@@ -35,12 +35,12 @@ struct LanguageSelectionView: View {
                         .background(
                             HStack {
                                 Spacer()
-                                if appLanguage == language.0 {
+                                if currentLanguage == language.0 {
                                     Image(systemName: "checkmark")
                                         .foregroundColor(.accentColor)
                                 }
                             }
-                            .padding(.trailing, 8)
+                                .padding(.trailing, 8)
                         )
                         .contentShape(Rectangle())
                         .onTapGesture {
@@ -63,14 +63,11 @@ struct LanguageSelectionView: View {
         }
     }
     
-    // MARK: - Methods
     private func updateLanguage(to languageCode: String) {
-        guard appLanguage != languageCode else { return } // Не выполнять, если язык не меняется
-        
+        guard currentLanguage != languageCode else { return }
         isLoading = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            appLanguage = languageCode
-            // Здесь можно добавить дополнительную логику, например, обновление UI
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            currentLanguage = languageCode // Изменяем через @Binding
             isLoading = false
         }
     }
@@ -79,6 +76,6 @@ struct LanguageSelectionView: View {
 // MARK: - Preview
 #Preview {
     NavigationStack {
-        LanguageSelectionView()
+        LanguageSelectionView(currentLanguage: .constant(""))
     }
 }
