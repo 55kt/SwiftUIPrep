@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ProgressTabView: View {
     // MARK: - Properties
+    @AppStorage("AppLanguage") private var currentLanguage: String = Locale.current.language.languageCode?.identifier ?? "en"
     @EnvironmentObject var progressViewModel: ProgressViewModel
     @State private var showAlert = false
+    @State private var navigationTitle: String = ""
     
     // MARK: - Body
     var body: some View {
@@ -31,7 +33,21 @@ struct ProgressTabView: View {
                 }// ForEach
             }// List
             .listStyle(.plain)
-            .navigationTitle("Progress")
+            .navigationTitle(navigationTitle)
+            .onAppear{
+                NavigationTitleHelper.updateTitle(
+                    for: currentLanguage,
+                    key: "progress",
+                    binding: $navigationTitle
+                )
+            }
+            .onChange(of: currentLanguage) { _ in
+                NavigationTitleHelper.updateTitle(
+                    for: currentLanguage,
+                    key: "progress",
+                    binding: $navigationTitle
+                )
+            }
             .background(
                 MotionAnimationView()
             )

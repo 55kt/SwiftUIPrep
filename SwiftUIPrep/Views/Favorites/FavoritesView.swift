@@ -9,7 +9,9 @@ import SwiftUI
 
 struct FavoritesView: View {
     // MARK: - Properties
+    @AppStorage("AppLanguage") private var currentLanguage: String = Locale.current.language.languageCode?.identifier ?? "en"
     @EnvironmentObject var favoritesViewModel: FavoritesViewModel
+    @State private var navigationTitle: String = ""
     
     // MARK: - Body
     var body: some View {
@@ -39,7 +41,21 @@ struct FavoritesView: View {
                     .listStyle(PlainListStyle())
                 }// if - else
             }// Group
-            .navigationTitle("Favorites")
+            .navigationTitle(navigationTitle)
+            .onAppear {
+                NavigationTitleHelper.updateTitle(
+                    for: currentLanguage,
+                    key: "favorites",
+                    binding: $navigationTitle
+                )
+            }
+            .onChange(of: currentLanguage) { _ in
+                NavigationTitleHelper.updateTitle(
+                    for: currentLanguage,
+                    key: "favorites",
+                    binding: $navigationTitle
+                )
+            }
         }// NavigationStack
     }// Body
     

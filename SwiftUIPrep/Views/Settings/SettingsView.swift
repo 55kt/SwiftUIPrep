@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct SettingsView: View {
+    // MARK: - Properties
     @AppStorage("AppLanguage") private var currentLanguage: String = Locale.current.language.languageCode?.identifier ?? "en"
-    @State private var navigationTitle: String = "Settings"
+    @State private var navigationTitle: String = ""
     
     // MARK: - Body
     var body: some View {
@@ -48,19 +49,17 @@ struct SettingsView: View {
             .onAppear {
                 NavigationTitleHelper.updateTitle(
                     for: currentLanguage,
-                    defaultTitle: "Settings",
-                    localizedTitle: "Настройки",
+                    key: "settings",
                     binding: $navigationTitle
                 )
-            }// onAppear
+            }
             .onChange(of: currentLanguage) { _ in
                 NavigationTitleHelper.updateTitle(
                     for: currentLanguage,
-                    defaultTitle: "Settings",
-                    localizedTitle: "Настройки",
+                    key: "settings",
                     binding: $navigationTitle
                 )
-            }// onChange
+            }
         }// NavigationStack
     }// Body
 }// View
