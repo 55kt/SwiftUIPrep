@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B046F7B2D2D7DBC000D0D6B /* PreviewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B046F7A2D2D7DBC000D0D6B /* PreviewPlaceholder.swift */; };
+		4B0EE4812D51454C00AC4941 /* NavigationControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0EE4802D51454C00AC4941 /* NavigationControllerWrapper.swift */; };
 		4B29CB112D23213D00B20F1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B29CB0B2D23213D00B20F1B /* Preview Assets.xcassets */; };
 		4B29CB122D23213D00B20F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B29CB0D2D23213D00B20F1B /* Assets.xcassets */; };
 		4B29CB132D23213D00B20F1B /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB0E2D23213D00B20F1B /* BrowseView.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		4B046F7A2D2D7DBC000D0D6B /* PreviewPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPlaceholder.swift; sourceTree = "<group>"; };
+		4B0EE4802D51454C00AC4941 /* NavigationControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerWrapper.swift; sourceTree = "<group>"; };
 		4B29CAFA2D23212D00B20F1B /* SwiftUIPrep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B29CB0B2D23213D00B20F1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B29CB0D2D23213D00B20F1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				4BDF2BA02D4FD9C70048B64C /* LocalizationHelper.swift */,
+				4B0EE4802D51454C00AC4941 /* NavigationControllerWrapper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				4BDB61552D30411200D31659 /* CategoryGridView.swift in Sources */,
 				4B29CB222D23284900B20F1B /* SettingsView.swift in Sources */,
 				4BDB61532D303FB300D31659 /* QuestionsListView.swift in Sources */,
+				4B0EE4812D51454C00AC4941 /* NavigationControllerWrapper.swift in Sources */,
 				4B81549F2D341AF200FD8FFA /* ResultTestView.swift in Sources */,
 				4B29CB532D2AEC8100B20F1B /* ColorExtension.swift in Sources */,
 				4B8136522D4BD9CC005639D5 /* FormRowLink.swift in Sources */,
