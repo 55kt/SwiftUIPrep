@@ -59,8 +59,8 @@ struct LanguageSelectionView: View {
                         Image(systemName: "chevron.backward")
                             .foregroundColor(.accentColor)
                     }
-                }
-            }
+                }// ToolbarItem
+            }// .toolbar
             .listStyle(InsetGroupedListStyle())
             .navigationBarTitleDisplayMode(.inline)
             .disabled(isLoading)
@@ -72,7 +72,6 @@ struct LanguageSelectionView: View {
                 ProgressView("Updating language...")
                     .padding()
             }// if
-            
         }// ZStack
     }// Body
     

@@ -49,9 +49,9 @@ struct CategoryQuestionsView: View {
                 }) {
                     Image(systemName: "chevron.backward")
                         .foregroundColor(.accentColor)
-                }
-            }
-        }
+                }// Button
+            }// ToolbarItem
+        }// .toolbar
         .listStyle(.plain)
     }// Body
 }// View

@@ -73,8 +73,8 @@ struct QuestionDetailView: View {
                     Image(systemName: "chevron.backward")
                         .foregroundColor(.accentColor)
                 }
-            }
-        }
+            }// ToolbarItem
+        }// .toolbar
     }// Body
 }// View
 

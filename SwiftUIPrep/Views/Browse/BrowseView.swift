@@ -17,24 +17,16 @@ struct BrowseView: View {
     @State private var isGridViewActive: Bool = false
     @State private var currentQuestions: [Question] = []
     @State private var shuffleTrigger: Bool = false
+    @State private var hasLoadedQuestions: Bool = false
     
     let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
     
-    var randomQuestions: [Question] {
-            return viewModel.questions.shuffled()
-        }
-        
-        var orderedQuestions: [Question] {
-            return viewModel.questions
-        }
-    
     // MARK: - Filtered Questions
     var filteredQuestions: [Question] {
-        let source = isGridViewActive ? orderedQuestions : randomQuestions
         if searchText.isEmpty {
-            return source
+            return currentQuestions
         } else {
-            return source.filter { $0.question.localizedCaseInsensitiveContains(searchText) }
+            return currentQuestions.filter { $0.question.localizedCaseInsensitiveContains(searchText) }
         }
     }
     
@@ -51,7 +43,9 @@ struct BrowseView: View {
             }// Group
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    ToolbarButtons.shuffleButton(onShuffle: shuffleQuestions)
+                    if !isGridViewActive {
+                        ToolbarButtons.shuffleButton(onShuffle: shuffleQuestions)
+                    }
                 }// ToolbarItem leading
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack(spacing: 16) {
@@ -68,14 +62,34 @@ struct BrowseView: View {
             .animation(.default, value: searchText)
             .onAppear {
                 viewModel.loadQuestions()
-            }// .onAppear
+                
+                if !hasLoadedQuestions {
+                    loadInitialQuestions()
+                    hasLoadedQuestions = true                }
+            }
             .environment(\.locale, Locale(identifier: appLanguage))
         }// NavigationStack
     }// Body
     
     // MARK: - Methods
     private func loadInitialQuestions() {
-        currentQuestions = viewModel.questions
+        // Проверяем, есть ли сохранённые перемешанные вопросы
+        if let savedQuestions = UserDefaults.standard.data(forKey: "ShuffledQuestions") {
+            if let decodedQuestions = try? JSONDecoder().decode([Question].self, from: savedQuestions), !decodedQuestions.isEmpty {
+                currentQuestions = decodedQuestions
+                print("Loaded questions from UserDefaults.")
+                return
+            }
+        }
+        
+        let shuffledQuestions = viewModel.questions.shuffled()
+        currentQuestions = shuffledQuestions
+        
+        if let encodedQuestions = try? JSONEncoder().encode(shuffledQuestions) {
+            UserDefaults.standard.set(encodedQuestions, forKey: "ShuffledQuestions")
+        }
+        UserDefaults.standard.set(true, forKey: "DidShuffleQuestions")
+        print("Shuffled and saved questions.")
     }
     
     private func shuffleQuestions() {
@@ -83,6 +97,10 @@ struct BrowseView: View {
         withAnimation {
             currentQuestions.shuffle()
             shuffleTrigger.toggle()
+            
+            if let encodedQuestions = try? JSONEncoder().encode(currentQuestions) {
+                UserDefaults.standard.set(encodedQuestions, forKey: "ShuffledQuestions")
+            }
         }
     }
 }// View
