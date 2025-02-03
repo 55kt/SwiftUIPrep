@@ -11,6 +11,7 @@ struct LanguageSelectionView: View {
     // MARK: - Properties
     @Binding var currentLanguage: String
     @State private var isLoading: Bool = false
+    @Environment(\.dismiss) private var dismiss
     
     private let languages = [
         ("en", "English", "English"),
@@ -49,6 +50,17 @@ struct LanguageSelectionView: View {
                     }// ForEach
                 }// Section
             }// List
+            .navigationBarBackButtonHidden(true) // Скрытие стандартной кнопки назад
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.accentColor)
+                    }
+                }
+            }
             .listStyle(InsetGroupedListStyle())
             .navigationBarTitleDisplayMode(.inline)
             .disabled(isLoading)

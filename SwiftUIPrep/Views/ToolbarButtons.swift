@@ -11,6 +11,15 @@ import SwiftUI
 struct ToolbarButtons {
     // MARK: - Static Button Functions
     
+    // Button for going back
+    static func backButton(action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: "chevron.left")
+                .font(.title2)
+                .foregroundStyle(.accent)
+        }
+    }
+    
     // Button for shuffling questions list
     static func shuffleButton(onShuffle: @escaping () -> Void) -> some View {
         Button(action: {

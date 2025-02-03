@@ -10,6 +10,7 @@ import SwiftUI
 struct QuestionDetailView: View {
     // MARK: - Properties
     let question: Question
+    @Environment(\.dismiss) private var dismiss
     
     // MARK: - Body
     var body: some View {
@@ -63,12 +64,23 @@ struct QuestionDetailView: View {
                 }// VStack - Description
             }// VStack
         }// ScrollView
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    Image(systemName: "chevron.backward")
+                        .foregroundColor(.accentColor)
+                }
+            }
+        }
     }// Body
 }// View
 
 // MARK: - Preview
 #Preview {
     NavigationStack {
-            QuestionDetailView(question: Question.previewFromJSON(index: 2, language: "ru"))
-        }
+        QuestionDetailView(question: Question.previewFromJSON(index: 2, language: "ru"))
+    }
 }
