@@ -67,13 +67,23 @@ struct BrowseView: View {
                     loadInitialQuestions()
                     hasLoadedQuestions = true                }
             }
+            .onChange(of: appLanguage) { newLanguage in
+                print("🌐 Language changed to: \(newLanguage)")
+                
+                UserDefaults.standard.removeObject(forKey: "ShuffledQuestions")
+                UserDefaults.standard.removeObject(forKey: "DidShuffleQuestions")
+                
+                viewModel.loadQuestions()
+                
+                loadInitialQuestions()
+                print("✅ Questions reloaded for \(newLanguage)")
+            }
             .environment(\.locale, Locale(identifier: appLanguage))
         }// NavigationStack
     }// Body
     
     // MARK: - Methods
     private func loadInitialQuestions() {
-        // Проверяем, есть ли сохранённые перемешанные вопросы
         if let savedQuestions = UserDefaults.standard.data(forKey: "ShuffledQuestions") {
             if let decodedQuestions = try? JSONDecoder().decode([Question].self, from: savedQuestions), !decodedQuestions.isEmpty {
                 currentQuestions = decodedQuestions
