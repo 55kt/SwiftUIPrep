@@ -84,17 +84,18 @@ struct BrowseView: View {
     
     // MARK: - Methods
     private func loadInitialQuestions() {
-        if let savedQuestions = UserDefaults.standard.data(forKey: "ShuffledQuestions") {
-            if let decodedQuestions = try? JSONDecoder().decode([Question].self, from: savedQuestions), !decodedQuestions.isEmpty {
-                currentQuestions = decodedQuestions
-                print("Loaded questions from UserDefaults.")
-                return
-            }
+        let latestQuestions = viewModel.questions
+        if let savedQuestions = UserDefaults.standard.data(forKey: "ShuffledQuestions"),
+           let decodedQuestions = try? JSONDecoder().decode([Question].self, from: savedQuestions),
+           decodedQuestions.count == latestQuestions.count {
+            currentQuestions = decodedQuestions
+            print("Loaded questions from UserDefaults.")
+            return
         }
-        
-        let shuffledQuestions = viewModel.questions.shuffled()
+
+        let shuffledQuestions = latestQuestions.shuffled()
         currentQuestions = shuffledQuestions
-        
+
         if let encodedQuestions = try? JSONEncoder().encode(shuffledQuestions) {
             UserDefaults.standard.set(encodedQuestions, forKey: "ShuffledQuestions")
         }
