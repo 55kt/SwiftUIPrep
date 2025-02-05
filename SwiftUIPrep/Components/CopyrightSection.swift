@@ -15,7 +15,7 @@ struct CopyrightSection: View {
         }()
 
         var body: some View {
-            Text("Copyright © \(currentYear) volos.inc. All rights reserved.")
+            Text("Copyright © \(currentYear) Volos Software LLC. All rights reserved")
                 .multilineTextAlignment(.center)
                 .font(.footnote)
                 .foregroundStyle(.secondary)

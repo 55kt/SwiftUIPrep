@@ -81,6 +81,16 @@
         }
       }
     },
+    "Close" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрыть"
+          }
+        }
+      }
+    },
     "Compatibility" : {
       "localizations" : {
         "ru" : {
@@ -91,12 +101,12 @@
         }
       }
     },
-    "Copyright © %@ volos.inc. All rights reserved." : {
+    "Copyright © %@ Volos Software LLC. All rights reserved" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Авторские права © volos.inc. Все права защищены."
+            "value" : "Авторские права © %@ Volos Software LLC. Все права защищены."
           }
         }
       }
@@ -283,6 +293,16 @@
         }
       }
     },
+    "Privacy and Policy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Политика конфиденциальности"
+          }
+        }
+      }
+    },
     "Progress" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -429,7 +449,7 @@
         }
       }
     },
-    "volos.inc" : {
+    "Volos Software LLC" : {
 
     },
     "Website" : {

@@ -11,6 +11,7 @@ struct SettingsView: View {
     // MARK: - Properties
     @AppStorage("AppLanguage") private var currentLanguage: String = Locale.current.language.languageCode?.identifier ?? "en"
     @State private var navigationTitle: String = ""
+    @State private var isShowingSheet: Bool = false
     
     // MARK: - Body
     var body: some View {
@@ -30,20 +31,38 @@ struct SettingsView: View {
                     }// FormRowLink Section
                     
                     Section(header: Text("About the application")) {
-                        FormRowStaticView(icon: "gear", firstText: "Application", secondText: "SwiftUIPrep")
-                        FormRowStaticView(icon: "checkmark.seal", firstText: "Compatibility", secondText: "iPhone")
-                        FormRowStaticView(icon: "keyboard", firstText: "Developer", secondText: "volos.inc")
-                        FormRowStaticView(icon: "paintbrush", firstText: "Designer", secondText: "Ivanno Ruddio")
-                        FormRowStaticView(icon: "flag", firstText: "Version", secondText: "1.0")
+                        FormRowStaticView(icon: "gear", firstText: "Application", secondText: "SwiftUIPrep", rectangleFillColor: .purple)
+                        FormRowStaticView(icon: "checkmark.seal", firstText: "Compatibility", secondText: "iPhone", rectangleFillColor: .green)
+                        FormRowStaticView(icon: "keyboard", firstText: "Developer", secondText: "Volos Software LLC", rectangleFillColor: .orange)
+                        FormRowStaticView(icon: "paintbrush", firstText: "Designer", secondText: "Ivanno Ruddio", rectangleFillColor: .pink)
+                        FormRowStaticView(icon: "flag", firstText: "Version", secondText: "1.0", rectangleFillColor: .blue)
                     }// FormRowStatic Section
+                    
+                    // MARK: - Footer
+                    Section {
+                        VStack {
+                            Button {
+                                isShowingSheet.toggle()
+                            } label: {
+                                Text("Privacy and Policy")
+                                    .foregroundStyle(.blue)
+                            }
+                            .padding()
+                            .sheet(isPresented: $isShowingSheet) {
+                                PrivacyAndPolicyView()
+                            }
+                            
+                            CopyrightSection()
+                                .padding(.top, 6)
+                                .padding(.bottom, 8)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    }// Section
                 }// Form
                 .listStyle(GroupedListStyle())
                 .environment(\.horizontalSizeClass, .regular)
                 
-                // MARK: - Footer
-                CopyrightSection()
-                    .padding(.top, 6)
-                    .padding(.bottom, 8)
+                
             }// VStack
             .navigationTitle(navigationTitle)
             .onAppear {

@@ -1,0 +1,21 @@
+{
+    "title": "Privacy Policy",
+    "sections": [
+        {
+            "header": "Copyright",
+            "content": "© Volos Software LLC. All rights reserved. Unauthorized copying or distribution is prohibited."
+        },
+        {
+            "header": "Privacy Policy",
+            "content": "We do not collect or store any personal information. Your usage data is processed only locally on your device."
+        },
+        {
+            "header": "Disclaimer",
+            "content": "This application is designed to help you prepare for SwiftUI interviews, but we do not guarantee job placement or success. Results depend on your individual efforts and skills."
+        },
+        {
+            "header": "Limitation of Liability",
+            "content": "We are not responsible for any issues, including failure to meet your expectations or achieve your personal goals, resulting from the use of this application."
+        }
+    ]
+}

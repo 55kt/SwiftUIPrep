@@ -26,6 +26,7 @@ struct LaunchScreenView: View {
                             
                             Image("launch-screen-image")
                                 .resizable()
+                                .scaledToFit()
                                 .frame(maxWidth: 300, maxHeight: 300)
                             
                             Text("SwiftUIPrep")

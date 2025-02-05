@@ -25,4 +25,10 @@ struct ButtonGradients {
         startPoint: .top,
         endPoint: .bottom
     )
+    
+    static let birdGradient = LinearGradient(
+        gradient: Gradient(colors: [Color(red: 1.0, green: 0.27, blue: 0.0), Color(red: 1.0, green: 0.39, blue: 0.28)]),
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
 }

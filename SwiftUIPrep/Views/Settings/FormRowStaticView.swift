@@ -12,15 +12,18 @@ struct FormRowStaticView: View {
     var icon: String
     var firstText: LocalizedStringResource
     var secondText: LocalizedStringResource
+    var rectangleFillColor: Color? = Color.gray
     
     // MARK: - Body
     var body: some View {
         HStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .fill(Color.gray)
+                    .fill(rectangleFillColor!)
                 Image(systemName: icon)
+                    .imageScale(.large)
                     .foregroundStyle(.white)
+                    
             }// ZStack
             .frame(width: 36, height: 36, alignment: .center)
             

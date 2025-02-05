@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		4B046F7B2D2D7DBC000D0D6B /* PreviewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B046F7A2D2D7DBC000D0D6B /* PreviewPlaceholder.swift */; };
 		4B0EE4812D51454C00AC4941 /* NavigationControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0EE4802D51454C00AC4941 /* NavigationControllerWrapper.swift */; };
+		4B0EE4862D53E8EB00AC4941 /* PrivacyPolicyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0EE4852D53E8EB00AC4941 /* PrivacyPolicyModel.swift */; };
+		4B0EE4882D53E91A00AC4941 /* PrivacyPolicyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0EE4872D53E91A00AC4941 /* PrivacyPolicyLoader.swift */; };
+		4B0EE48A2D53E95600AC4941 /* PrivacyAndPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0EE4892D53E95600AC4941 /* PrivacyAndPolicyView.swift */; };
+		4B0EE4902D53EA2A00AC4941 /* privacy_policy_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B0EE48F2D53EA2A00AC4941 /* privacy_policy_en.json */; };
+		4B0EE4922D53EA3A00AC4941 /* privacy_policy_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B0EE4912D53EA3A00AC4941 /* privacy_policy_ru.json */; };
 		4B29CB112D23213D00B20F1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B29CB0B2D23213D00B20F1B /* Preview Assets.xcassets */; };
 		4B29CB122D23213D00B20F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B29CB0D2D23213D00B20F1B /* Assets.xcassets */; };
 		4B29CB132D23213D00B20F1B /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29CB0E2D23213D00B20F1B /* BrowseView.swift */; };
@@ -61,6 +66,11 @@
 /* Begin PBXFileReference section */
 		4B046F7A2D2D7DBC000D0D6B /* PreviewPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPlaceholder.swift; sourceTree = "<group>"; };
 		4B0EE4802D51454C00AC4941 /* NavigationControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerWrapper.swift; sourceTree = "<group>"; };
+		4B0EE4852D53E8EB00AC4941 /* PrivacyPolicyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyModel.swift; sourceTree = "<group>"; };
+		4B0EE4872D53E91A00AC4941 /* PrivacyPolicyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyLoader.swift; sourceTree = "<group>"; };
+		4B0EE4892D53E95600AC4941 /* PrivacyAndPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAndPolicyView.swift; sourceTree = "<group>"; };
+		4B0EE48F2D53EA2A00AC4941 /* privacy_policy_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = privacy_policy_en.json; sourceTree = "<group>"; };
+		4B0EE4912D53EA3A00AC4941 /* privacy_policy_ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = privacy_policy_ru.json; sourceTree = "<group>"; };
 		4B29CAFA2D23212D00B20F1B /* SwiftUIPrep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B29CB0B2D23213D00B20F1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B29CB0D2D23213D00B20F1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +133,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B0EE4842D53E8BB00AC4941 /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				4B0EE4852D53E8EB00AC4941 /* PrivacyPolicyModel.swift */,
+				4B0EE4872D53E91A00AC4941 /* PrivacyPolicyLoader.swift */,
+				4B0EE4892D53E95600AC4941 /* PrivacyAndPolicyView.swift */,
+			);
+			path = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
 		4B29CAF12D23212D00B20F1B = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +183,7 @@
 				4B29CB192D23222000B20F1B /* Utilites */,
 				4B29CB182D23221800B20F1B /* Resources */,
 				4B29CB0C2D23213D00B20F1B /* Preview Content */,
+				4B0EE4842D53E8BB00AC4941 /* PrivacyPolicy */,
 			);
 			path = SwiftUIPrep;
 			sourceTree = "<group>";
@@ -172,6 +193,8 @@
 			children = (
 				4B29CB402D26ED2600B20F1B /* questions_ru.json */,
 				4B29CB422D26ED3900B20F1B /* questions_en.json */,
+				4B0EE48F2D53EA2A00AC4941 /* privacy_policy_en.json */,
+				4B0EE4912D53EA3A00AC4941 /* privacy_policy_ru.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -395,6 +418,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B29CB112D23213D00B20F1B /* Preview Assets.xcassets in Resources */,
+				4B0EE4922D53EA3A00AC4941 /* privacy_policy_ru.json in Resources */,
+				4B0EE4902D53EA2A00AC4941 /* privacy_policy_en.json in Resources */,
 				4B29CB432D26ED3900B20F1B /* questions_en.json in Resources */,
 				4B29CB122D23213D00B20F1B /* Assets.xcassets in Resources */,
 				4B29CB412D26ED2600B20F1B /* questions_ru.json in Resources */,
@@ -416,6 +441,7 @@
 				4B29CB262D232C8700B20F1B /* LanguageButton.swift in Sources */,
 				4B96CCAC2D39047B00DFC13C /* ProgressViewModel.swift in Sources */,
 				4B8136502D4BD76C005639D5 /* FormRowStaticView.swift in Sources */,
+				4B0EE4862D53E8EB00AC4941 /* PrivacyPolicyModel.swift in Sources */,
 				4BDF2BA12D4FD9C70048B64C /* LocalizationHelper.swift in Sources */,
 				4B29CB132D23213D00B20F1B /* BrowseView.swift in Sources */,
 				4B29CB4B2D28429300B20F1B /* QuestionDetailView.swift in Sources */,
@@ -423,6 +449,7 @@
 				4B29CB472D26EF4400B20F1B /* QuestionViewModel.swift in Sources */,
 				4B29CB512D299B1900B20F1B /* CategoryColorExtension.swift in Sources */,
 				4BDB61592D30472000D31659 /* CategoryQuestionsView.swift in Sources */,
+				4B0EE4882D53E91A00AC4941 /* PrivacyPolicyLoader.swift in Sources */,
 				4B8154A92D369FC900FD8FFA /* ButtonGradients.swift in Sources */,
 				4B8154A72D3592D100FD8FFA /* ProgressBarLine.swift in Sources */,
 				4BDB61552D30411200D31659 /* CategoryGridView.swift in Sources */,
@@ -447,6 +474,7 @@
 				4B29CB142D23213D00B20F1B /* SwiftUIPrepApp.swift in Sources */,
 				4B81364E2D4BD586005639D5 /* CopyrightSection.swift in Sources */,
 				4B8154942D31897700FD8FFA /* FavoritesViewModel.swift in Sources */,
+				4B0EE48A2D53E95600AC4941 /* PrivacyAndPolicyView.swift in Sources */,
 				4BDB613F2D2DA48C00D31659 /* MotionAnimationView.swift in Sources */,
 				4BDB61492D2F09B800D31659 /* CategoriesGridItemView.swift in Sources */,
 				4BDB61572D30436D00D31659 /* ToolbarButtons.swift in Sources */,
