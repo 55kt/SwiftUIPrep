@@ -16,10 +16,13 @@ struct QuestionTestView: View {
     @State private var currentQuestionIndex: Int = 0
     @State private var shuffledAnswers: [String] = []
     @State private var selectedAnswer: String? = nil
-    @State private var totalTimeElapsed: Int = 0 
+    @State private var totalTimeElapsed: Int = 0
     @State private var showResultView: Bool = false
     @State private var correctAnswers: Int = 0
     @State private var timer: Timer? = nil
+    @State private var isStopAlertPresented: Bool = false
+    @State private var navigateToStartTestView: Bool = false
+    @Environment(\.dismiss) private var dismiss
     
     // MARK: - Inizializer
     init(questionCount: Int = 5) {
@@ -63,14 +66,50 @@ struct QuestionTestView: View {
                         
                         Spacer()
                     }// VStack
-                    .padding()
                     .onAppear {
                         loadQuestions()
                         startTimer()
                     }// OnAppear
                     .onChange(of: currentQuestionIndex) { _ in
                         loadShuffledAnswers()
+                    }
+                    
+                    .padding()
+                    .onChange(of: currentQuestionIndex) { _ in
+                        loadShuffledAnswers()
                     }// OnChange
+                    
+                    // MARK: - Stop Test Button
+                    Button {
+                        isStopAlertPresented = true
+                    } label: {
+                        ZStack {
+                            Rectangle()
+                                .fill(Color.red)
+                                .frame(width: 200, height: 60)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                            
+                            Text("Stop Test")
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .alert("Stop Test?", isPresented: $isStopAlertPresented) {
+                        Button("Cancel", role: .cancel) {}
+                        Button("Stop", role: .destructive) {
+                            stopTimer()
+                            resetTest()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                dismiss()
+                            }
+                        }
+                    } message: {
+                        Text("Are you sure you want to stop the test? All progress will be lost")
+                    }
+                    .navigationDestination(isPresented: $navigateToStartTestView) {
+                        StartTestView()
+                            .navigationBarBackButtonHidden(true)
+                    }
+                    
                 }// if - else
             }// VStack
             .padding()
@@ -91,8 +130,10 @@ struct QuestionTestView: View {
     }
     
     private func loadQuestions() {
-        questions = QuestionViewModel().questions.shuffled()
-        loadShuffledAnswers()
+        if questions.isEmpty {
+            questions = QuestionViewModel().questions.shuffled()
+            loadShuffledAnswers()
+        }
     }
     
     private func loadShuffledAnswers() {
@@ -115,7 +156,7 @@ struct QuestionTestView: View {
                 currentQuestionIndex += 1
                 selectedAnswer = nil
             } else {
-                stopTimer()
+                resetTest()
                 showResultView = true
             }
         }
@@ -130,6 +171,18 @@ struct QuestionTestView: View {
             }
         }
         return nil
+    }
+    
+    private func resetTest() {
+        stopTimer()
+        questions = []
+        currentQuestionIndex = 0
+        shuffledAnswers = []
+        selectedAnswer = nil
+        totalTimeElapsed = 0
+        showResultView = false
+        correctAnswers = 0
+        navigateToStartTestView = false
     }
     
 }// View

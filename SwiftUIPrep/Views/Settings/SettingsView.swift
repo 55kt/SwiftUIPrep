@@ -12,6 +12,7 @@ struct SettingsView: View {
     @AppStorage("AppLanguage") private var currentLanguage: String = Locale.current.language.languageCode?.identifier ?? "en"
     @State private var navigationTitle: String = ""
     @State private var isShowingSheet: Bool = false
+    @State private var isWebsiteAlertPresented: Bool = false
     
     // MARK: - Body
     var body: some View {

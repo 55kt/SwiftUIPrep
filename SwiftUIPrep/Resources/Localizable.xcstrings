@@ -40,6 +40,9 @@
         }
       }
     },
+    "Are you sure you want to stop the test? All progress will be lost" : {
+
+    },
     "Back" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -381,6 +384,15 @@
           }
         }
       }
+    },
+    "Stop" : {
+
+    },
+    "Stop Test" : {
+
+    },
+    "Stop Test?" : {
+
     },
     "SwiftUIPrep" : {
 
