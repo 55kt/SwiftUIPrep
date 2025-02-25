@@ -21,7 +21,6 @@ struct QuestionTestView: View {
     @State private var correctAnswers: Int = 0
     @State private var timer: Timer? = nil
     @State private var isStopAlertPresented: Bool = false
-    @State private var navigateToStartTestView: Bool = false
     @Environment(\.dismiss) private var dismiss
     
     // MARK: - Inizializer
@@ -31,89 +30,77 @@ struct QuestionTestView: View {
     
     // MARK: - Body
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            // Background
-            
-            VStack {
-                if showResultView {
-                    ResultTestView(correctAnswers: correctAnswers, totalQuestions: questionCount, timeElapsed: totalTimeElapsed)
-                } else {
-                    // Timer
-                    TimeRemainingHolder(timerManager: TimerManager(initialTime: totalTimeElapsed))
-                    
-                    VStack(spacing: 20) {
-                        // ProgressLine
-                        ProgressBarLine(currentQuestion: currentQuestionIndex + 1, totalQuestions: questionCount)
+        NavigationStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                // Background
+                
+                VStack {
+                    if showResultView {
+                        ResultTestView(correctAnswers: correctAnswers, totalQuestions: questionCount, timeElapsed: totalTimeElapsed)
+                    } else {
+                        // Timer
+                        TimeRemainingHolder(timerManager: TimerManager(initialTime: totalTimeElapsed))
                         
-                        // Question
-                        if currentQuestionIndex < questions.count {
-                            Text(questions[currentQuestionIndex].question)
-                                .font(.title2)
-                                .fontWeight(.heavy)
-                                .foregroundStyle(.white)
-                        }// if
-                        
-                        // Question Answers
-                        ForEach(shuffledAnswers, id: \.self) { answer in
-                            AnswerCellButton(
-                                isCorrect: buttonBackground(for: answer),
-                                answerText: answer
-                            ) {
-                                handleAnswerSelection(answer)
-                            }
-                            .disabled(selectedAnswer != nil)
-                        }// ForEach
-                        
-                        Spacer()
-                    }// VStack
-                    .onAppear {
-                        loadQuestions()
-                        startTimer()
-                    }// OnAppear
-                    .onChange(of: currentQuestionIndex) { _ in
-                        loadShuffledAnswers()
-                    }
-                    
-                    .padding()
-                    .onChange(of: currentQuestionIndex) { _ in
-                        loadShuffledAnswers()
-                    }// OnChange
-                    
-                    // MARK: - Stop Test Button
-                    Button {
-                        isStopAlertPresented = true
-                    } label: {
-                        ZStack {
-                            Rectangle()
-                                .fill(Color.red)
-                                .frame(width: 200, height: 60)
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                        VStack(spacing: 20) {
+                            // ProgressLine
+                            ProgressBarLine(currentQuestion: currentQuestionIndex + 1, totalQuestions: questionCount)
                             
-                            Text("Stop Test")
-                                .foregroundColor(.white)
+                            // Question
+                            if currentQuestionIndex < questions.count {
+                                Text(questions[currentQuestionIndex].question)
+                                    .font(.title2)
+                                    .fontWeight(.heavy)
+                                    .foregroundStyle(.white)
+                            }// if
+                            
+                            // Question Answers
+                            ForEach(shuffledAnswers, id: \.self) { answer in
+                                AnswerCellButton(
+                                    isCorrect: buttonBackground(for: answer),
+                                    answerText: answer
+                                ) {
+                                    handleAnswerSelection(answer)
+                                }
+                                .disabled(selectedAnswer != nil)
+                            }// ForEach
+                            
+                            Spacer()
+                        }// VStack
+                        
+                        .onAppear {
+                            loadQuestions()
+                            startTimer()
+                        }// OnAppear
+                        .onChange(of: currentQuestionIndex) { _ in
+                            loadShuffledAnswers()
                         }
+                        
+                        .padding()
+                        .onChange(of: currentQuestionIndex) { _ in
+                            loadShuffledAnswers()
+                        }// OnChange
+                    }// if - else
+                }// VStack
+                .padding()
+            }// ScrollView
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarButtons.stopTestButton(isStopAlertPresented: $isStopAlertPresented)
+                }
+            }
+            .alert("Stop Test?", isPresented: $isStopAlertPresented) {
+                Button("Cancel", role: .cancel) {}
+                Button("Stop", role: .destructive) {
+                    stopTimer()
+                    resetTest()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        dismiss()
                     }
-                    .alert("Stop Test?", isPresented: $isStopAlertPresented) {
-                        Button("Cancel", role: .cancel) {}
-                        Button("Stop", role: .destructive) {
-                            stopTimer()
-                            resetTest()
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                dismiss()
-                            }
-                        }
-                    } message: {
-                        Text("Are you sure you want to stop the test? All progress will be lost")
-                    }
-                    .navigationDestination(isPresented: $navigateToStartTestView) {
-                        StartTestView()
-                            .navigationBarBackButtonHidden(true)
-                    }
-                    
-                }// if - else
-            }// VStack
-            .padding()
-        }// ScrollView
+                }
+            } message: {
+                Text("Are you sure you want to stop the test? All progress will be lost.")
+            }
+        }// NavigationStack
     }// Body
     
     // MARK: - Helper Functions
@@ -182,7 +169,6 @@ struct QuestionTestView: View {
         totalTimeElapsed = 0
         showResultView = false
         correctAnswers = 0
-        navigateToStartTestView = false
     }
     
 }// View

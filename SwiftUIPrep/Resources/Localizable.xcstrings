@@ -40,8 +40,15 @@
         }
       }
     },
-    "Are you sure you want to stop the test? All progress will be lost" : {
-
+    "Are you sure you want to stop the test? All progress will be lost." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы действительно хотите остановить тест ? Весь ваш прогресс будет утерян."
+          }
+        }
+      }
     },
     "Back" : {
       "extractionState" : "manual",
@@ -386,13 +393,24 @@
       }
     },
     "Stop" : {
-
-    },
-    "Stop Test" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Остановить"
+          }
+        }
+      }
     },
     "Stop Test?" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Остановить тест ? "
+          }
+        }
+      }
     },
     "SwiftUIPrep" : {
 

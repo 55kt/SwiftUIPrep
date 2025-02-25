@@ -88,4 +88,19 @@ struct ToolbarButtons {
             )
         }
     }
+    
+    // Button for stopping test
+    static func stopTestButton(isStopAlertPresented: Binding<Bool>) -> some View {
+        Button(action: {
+            let haptics = UIImpactFeedbackGenerator(style: .medium)
+            haptics.impactOccurred()
+
+            isStopAlertPresented.wrappedValue = true
+        }) {
+            Image(systemName: "stop.circle")
+                .font(.title2)
+                .foregroundStyle(.red)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
 }

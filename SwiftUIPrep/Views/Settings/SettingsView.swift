@@ -26,10 +26,10 @@ struct SettingsView: View {
                         }
                     }// SelectedRow Section
                     
-                    Section(header: Text("Follow us on social media")) {
-                        FormRowLink(icon: "link", color: .accent, text: "Website", link: "https://volos.inc")
-                        FormRowLink(icon: "link", color: Color.black, text: "X", link: "https://twitter.com/volos_inc")
-                    }// FormRowLink Section
+//                    Section(header: Text("Follow us on social media")) {
+//                        FormRowLink(icon: "link", color: .accent, text: "Website", link: "https://volos.inc")
+//                        FormRowLink(icon: "link", color: Color.black, text: "X", link: "https://twitter.com/volos_inc")
+//                    }// FormRowLink Section
                     
                     Section(header: Text("About the application")) {
                         FormRowStaticView(icon: "gear", firstText: "Application", secondText: "SwiftUIPrep", rectangleFillColor: .purple)
