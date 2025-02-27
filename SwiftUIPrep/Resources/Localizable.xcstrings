@@ -20,6 +20,9 @@
         }
       }
     },
+    "Add some question in favorites" : {
+
+    },
     "Application" : {
       "localizations" : {
         "ru" : {
@@ -194,6 +197,7 @@
       }
     },
     "Follow us on social media" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -227,6 +231,9 @@
 
     },
     "Ivanno Ruddio" : {
+
+    },
+    "Just slide left for adding to favorites" : {
 
     },
     "Keep practicing to improve." : {
@@ -370,6 +377,9 @@
         }
       }
     },
+    "Shuffle the list" : {
+
+    },
     "Start Again" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -413,6 +423,9 @@
       }
     },
     "SwiftUIPrep" : {
+
+    },
+    "Tap to shuffle the list of questions" : {
 
     },
     "Test Completed!" : {
@@ -483,6 +496,7 @@
 
     },
     "Website" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -491,9 +505,6 @@
           }
         }
       }
-    },
-    "X" : {
-
     },
     "You answered %lld out of %lld questions" : {
       "localizations" : {

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import TipKit
 
 struct BrowseView: View {
     // MARK: - Properties
@@ -21,6 +21,9 @@ struct BrowseView: View {
     
     let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
     
+    let favoriteTip = AddToFavoritesTip()
+    let shuffleTip = ShuffleListButtonTip()
+    
     // MARK: - Filtered Questions
     var filteredQuestions: [Question] {
         if searchText.isEmpty {
@@ -33,6 +36,11 @@ struct BrowseView: View {
     // MARK: - Body
     var body: some View {
         NavigationStack {
+            VStack {
+                TipView(shuffleTip)
+                TipView(favoriteTip)
+            }
+            .padding()
             Group {
                 if !isGridViewActive {
                     QuestionsListView(filteredQuestions: filteredQuestions)
@@ -65,9 +73,10 @@ struct BrowseView: View {
                 
                 if !hasLoadedQuestions {
                     loadInitialQuestions()
-                    hasLoadedQuestions = true                }
+                    hasLoadedQuestions = true
+                }
             }
-            .onChange(of: appLanguage) { newLanguage in
+            .onChange(of: appLanguage) {oldValue, newLanguage in
                 print("🌐 Language changed to: \(newLanguage)")
                 
                 UserDefaults.standard.removeObject(forKey: "ShuffledQuestions")
@@ -92,10 +101,10 @@ struct BrowseView: View {
             print("Loaded questions from UserDefaults.")
             return
         }
-
+        
         let shuffledQuestions = latestQuestions.shuffled()
         currentQuestions = shuffledQuestions
-
+        
         if let encodedQuestions = try? JSONEncoder().encode(shuffledQuestions) {
             UserDefaults.standard.set(encodedQuestions, forKey: "ShuffledQuestions")
         }

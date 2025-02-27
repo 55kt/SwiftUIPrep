@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct QuestionsListView: View {
     // MARK: - Properties

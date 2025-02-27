@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 @main
 struct SwiftUIPrepApp: App {
@@ -19,10 +20,18 @@ struct SwiftUIPrepApp: App {
     var body: some Scene {
         WindowGroup {
             LaunchScreenView()
+                .task {
+                    try? Tips.resetDatastore()
+                    Tips.showAllTipsForTesting()
+                    try? Tips.configure([
+//                        .displayFrequency(.immediate),
+                        .datastoreLocation(.applicationDefault)
+                    ])
+                }
                 .environmentObject(viewModel)
                 .environmentObject(favoritesViewModel)
                 .environmentObject(progressViewModel)
-                .onChange(of: appLanguage) { newLanguage in
+                .onChange(of: appLanguage) {oldValue, newLanguage in
                     favoritesViewModel.updateLanguage(to: newLanguage)
                 }
         }// WindowGroup
